@@ -39,12 +39,14 @@ export default function Values() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
-          {VALUES.map(({ icon: Icon, title, description }) => (
+          {VALUES.map(({ icon: Icon, title, description }, index) => (
             <div
               key={title}
-              className="rounded-2xl bg-white p-8 text-center shadow-sm"
+              className={`bounce-transition group rounded-2xl bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0 hover:shadow-xl ${
+                index % 2 === 0 ? "hover:-rotate-1" : "hover:rotate-1"
+              }`}
             >
-              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-navy-900 text-white">
+              <span className="blob-shape mx-auto flex h-14 w-14 items-center justify-center bg-navy-900 text-white group-hover:animate-wiggle">
                 <Icon className="h-6 w-6" />
               </span>
               <h3 className="mt-5 font-display text-xl font-bold text-navy-950">

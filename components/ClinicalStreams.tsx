@@ -1,43 +1,156 @@
-import { Accessibility, Baby, Brain, HeartHandshake } from "lucide-react";
+import { Accessibility, Baby, Brain, HeartHandshake, type LucideIcon } from "lucide-react";
 
-const STREAMS = [
+interface Stream {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  panelBg: string;
+  panelImage?: string;
+  panelText: string;
+  badgeBg: string;
+  badgeText: string;
+  ringColor: string;
+}
+
+const STREAMS: Stream[] = [
   {
     icon: Accessibility,
     title: "Physical Disability",
     description:
-      "Individuals with disabilities may encounter limitations in their physical capacities, which can impact their ability to move, perform self-care tasks, and manage their daily lives independently.",
-    iconBg: "bg-emerald-100",
-    iconColor: "text-emerald-600",
+      "Support for people navigating limits on movement, self-care, and independent daily living.",
+    panelBg: "bg-navy-950",
+    panelText: "text-white",
+    badgeBg: "bg-white/15",
+    badgeText: "text-white",
+    ringColor: "text-orange-400/40",
   },
   {
     icon: Baby,
     title: "Paediatrics",
     description:
-      "Children with disabilities may encounter challenges in their physical, cognitive, social, and emotional capacities, which can impact their ability to learn, engage in play, move, communicate, perform self-care tasks, and interact with others.",
-    iconBg: "bg-rose-100",
-    iconColor: "text-rose-600",
+      "Helping kids build skills to learn, play, move, communicate, and connect with others.",
+    panelBg: "bg-orange-500",
+    panelImage: "/backgrounds/paediatrics-blob.png",
+    panelText: "text-white",
+    badgeBg: "bg-white/20",
+    badgeText: "text-white",
+    ringColor: "text-white/40",
   },
   {
     icon: Brain,
     title: "Psychosocial Disability",
     description:
-      "Individuals with disabilities may face challenges in their psychosocial functioning, which can influence their ability to communicate, participate in social interactions, learn, and independently carry out self-care and self-management tasks.",
-    iconBg: "bg-slate-200",
-    iconColor: "text-slate-600",
+      "Care for communication, social participation, learning, and everyday self-management.",
+    panelBg: "bg-peach-200",
+    panelImage: "/backgrounds/psychosocial-disability-blob.png",
+    panelText: "text-navy-950",
+    badgeBg: "bg-navy-950/10",
+    badgeText: "text-navy-900",
+    ringColor: "text-navy-900/25",
   },
   {
     icon: HeartHandshake,
     title: "Specialist Behavioural Support",
     description:
-      "Individuals with disabilities may face challenges in their cognitive, emotional, and social abilities, which can influence their capacity to adapt to social needs, maintain physical safety, achieve emotional well-being, and engage cognitively.",
-    iconBg: "bg-sky-100",
-    iconColor: "text-sky-600",
+      "Positive, evidence-based support for safety, wellbeing, and cognitive-social adaptation.",
+    panelBg: "bg-navy-700",
+    panelImage: "/backgrounds/specialist-behavioural-support-blob.png",
+    panelText: "text-white",
+    badgeBg: "bg-white/15",
+    badgeText: "text-white",
+    ringColor: "text-peach-200/40",
   },
 ];
 
-export default function ClinicalStreams() {
+function TextPanel({ stream }: { stream: Stream }) {
+  const { title, description, panelBg, panelImage, panelText } = stream;
+
   return (
-    <section id="services" className="bg-white py-20 lg:py-28">
+    <div
+      className={`group relative flex min-h-[220px] flex-col justify-end overflow-hidden p-7 lg:min-h-[280px] ${panelBg} ${panelText}`}
+    >
+      {panelImage && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={panelImage}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
+
+      <div className="relative">
+        <h3 className="font-display text-xl font-extrabold leading-snug sm:text-2xl">
+          {title}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed opacity-80">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+function PhotoPanel({ index, image, alt }: { index: number; image?: string; alt?: string }) {
+  if (image) {
+    return (
+      <div className="relative min-h-[220px] overflow-hidden bg-white lg:min-h-[280px]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={image}
+          alt={alt ?? ""}
+          className="absolute inset-0 h-full w-full object-cover object-top"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative min-h-[220px] overflow-hidden bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500 lg:min-h-[280px]">
+      <div
+        className={`absolute inset-0 mix-blend-color ${
+          index % 2 === 0 ? "bg-orange-500/40" : "bg-navy-900/40"
+        }`}
+      />
+      <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-white/80">
+        Photography placeholder
+      </div>
+    </div>
+  );
+}
+
+export default function ClinicalStreams() {
+  const cells = [
+    { type: "text" as const, stream: STREAMS[0] },
+    {
+      type: "photo" as const,
+      index: 0,
+      image: "/photos/clinical-physical-disability.png",
+      alt: "Portrait of a client supported through our Physical Disability stream",
+    },
+    { type: "text" as const, stream: STREAMS[1] },
+    {
+      type: "photo" as const,
+      index: 1,
+      image: "/photos/clinical-paediatrics.png",
+      alt: "Portrait of a client supported through our Paediatrics stream",
+    },
+    {
+      type: "photo" as const,
+      index: 2,
+      image: "/photos/clinical-psychosocial-disability.png",
+      alt: "Portrait of a client supported through our Psychosocial Disability stream",
+    },
+    { type: "text" as const, stream: STREAMS[2] },
+    {
+      type: "photo" as const,
+      index: 3,
+      image: "/photos/clinical-specialist-behavioural-support.png",
+      alt: "Portrait of a parent and child supported through our Specialist Behavioural Support stream",
+    },
+    { type: "text" as const, stream: STREAMS[3] },
+  ];
+
+  return (
+    <section id="services" className="bg-[#f5f5f5] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
           <span className="text-sm font-semibold uppercase tracking-wide text-orange-700">
@@ -52,25 +165,21 @@ export default function ClinicalStreams() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {STREAMS.map(({ icon: Icon, title, description, iconBg, iconColor }) => (
-            <div
-              key={title}
-              className="rounded-2xl border border-slate-200 p-6 transition-colors hover:border-slate-300"
-            >
-              <span
-                className={`flex h-11 w-11 items-center justify-center rounded-full ${iconBg} ${iconColor}`}
-              >
-                <Icon className="h-5 w-5" />
-              </span>
-              <h3 className="mt-6 font-display text-lg font-bold text-navy-950">
-                {title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                {description}
-              </p>
-            </div>
-          ))}
+        <div className="mt-12 overflow-hidden rounded-[2rem]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+            {cells.map((cell, i) =>
+              cell.type === "text" ? (
+                <TextPanel key={cell.stream.title} stream={cell.stream} />
+              ) : (
+                <PhotoPanel
+                  key={`photo-${i}`}
+                  index={cell.index}
+                  image={cell.image}
+                  alt={cell.alt}
+                />
+              )
+            )}
+          </div>
         </div>
       </div>
     </section>

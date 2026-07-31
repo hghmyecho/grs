@@ -3,54 +3,70 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
 
-const DISCIPLINES = [
+interface Discipline {
+  tags: string[];
+  title: string;
+  description: string;
+  gradient: string;
+  image?: string;
+}
+
+const DISCIPLINES: Discipline[] = [
   {
     tags: ["All ages", "Daily living"],
     title: "Occupational Therapy",
     description: "Building skills for independence in everyday life.",
     gradient: "from-navy-700 to-navy-950",
+    image: "/photos/discipline-occupational-therapy.png",
   },
   {
     tags: ["All ages", "Mobility"],
     title: "Physiotherapy",
     description: "Movement-focused care to build strength and function.",
     gradient: "from-orange-400 to-orange-600",
+    image: "/photos/discipline-physiotherapy.png",
   },
   {
     tags: ["All ages", "Communication"],
     title: "Speech Pathology",
     description: "Support for communication, language, and swallowing.",
     gradient: "from-peach-200 to-orange-400",
+    image: "/photos/discipline-speech-pathology.png",
   },
   {
     tags: ["Adults", "Mental health"],
     title: "Psychology",
     description: "Evidence-based therapy for mental health and wellbeing.",
     gradient: "from-navy-500 to-navy-900",
+    image: "/photos/discipline-psychology.png",
   },
   {
     tags: ["All ages", "Nutrition"],
     title: "Dietetics",
     description: "Personalised nutrition support for better health.",
     gradient: "from-orange-500 to-navy-900",
+    image: "/photos/discipline-dietetics.png",
   },
   {
     tags: ["All ages", "Creative"],
     title: "Art Therapy",
     description: "Creative expression as a pathway to healing.",
     gradient: "from-navy-900 to-orange-500",
+    image: "/photos/discipline-art-therapy.png",
   },
   {
     tags: ["All ages", "Creative"],
     title: "Music Therapy",
     description: "Using music to support emotional and social growth.",
     gradient: "from-peach-200 to-navy-700",
+    image: "/photos/discipline-music-therapy.png",
   },
   {
     tags: ["All ages", "PBS"],
     title: "Specialist Behaviour Support",
     description: "Positive support that reduces restrictive practices.",
     gradient: "from-orange-600 to-navy-950",
+    image: "/photos/discipline-specialist-behaviour-support.png",
   },
 ];
 
@@ -101,7 +117,7 @@ export default function Disciplines() {
             <button
               type="button"
               onClick={() => scrollByCard(-1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
+              className="bounce-transition flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-300 hover:scale-110 hover:bg-white/10"
               aria-label="Scroll left"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -109,7 +125,7 @@ export default function Disciplines() {
             <button
               type="button"
               onClick={() => scrollByCard(1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
+              className="bounce-transition flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-300 hover:scale-110 hover:bg-white/10"
               aria-label="Scroll right"
             >
               <ChevronRight className="h-5 w-5" />
@@ -122,14 +138,16 @@ export default function Disciplines() {
         ref={trackRef}
         className="carousel-track no-scrollbar mt-12 flex gap-6 overflow-x-auto scroll-smooth pb-2 snap-x snap-mandatory"
       >
-        {DISCIPLINES.map(({ tags, title, description, gradient }) => (
+        {DISCIPLINES.map(({ tags, title, description, gradient, image }, index) => (
             <div
               key={title}
               data-card
-              className="flex w-[300px] shrink-0 snap-start flex-col overflow-hidden rounded-3xl bg-white shadow-sm sm:w-[340px]"
+              className={`bounce-transition group flex w-[300px] shrink-0 snap-start flex-col overflow-hidden rounded-3xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:rotate-0 hover:shadow-2xl sm:w-[340px] ${
+                index % 2 === 0 ? "hover:-rotate-1" : "hover:rotate-1"
+              }`}
             >
               <div className="relative bg-peach-100 p-6">
-                <span className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-white">
+                <span className="blob-shape absolute right-5 top-5 flex h-8 w-8 items-center justify-center bg-orange-500 text-white group-hover:animate-wiggle">
                   <Check className="h-4 w-4" />
                 </span>
                 <div className="flex flex-wrap gap-2 pr-9">
@@ -151,11 +169,21 @@ export default function Disciplines() {
               </div>
 
               <div
-                className={`relative min-h-[300px] flex-1 bg-gradient-to-br ${gradient}`}
+                className={`relative min-h-[300px] flex-1 overflow-hidden bg-gradient-to-br ${gradient}`}
               >
+                {image && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={image}
+                    alt=""
+                    aria-hidden
+                    className="absolute inset-0 h-full w-full object-cover object-top"
+                  />
+                )}
+
                 <a
                   href="#services"
-                  className="absolute bottom-5 left-5 inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-md"
+                  className="bounce-transition absolute bottom-5 left-5 inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-md transition-transform duration-300 hover:scale-105 hover:-rotate-2 active:scale-95"
                 >
                   Read More
                   <ArrowRight className="h-4 w-4" />

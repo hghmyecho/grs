@@ -63,9 +63,11 @@ export default function Faq() {
         <div className="mt-10 divide-y divide-slate-200 border-y border-slate-200">
           {FAQS.map((faq) => (
             <details key={faq.question} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-navy-950">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-navy-950 transition-colors hover:text-orange-700">
                 {faq.question}
-                <Plus className="h-5 w-5 shrink-0 text-orange-700 transition-transform group-open:rotate-45" />
+                <span className="bounce-transition blob-shape flex h-8 w-8 shrink-0 items-center justify-center bg-orange-100 text-orange-700 transition-transform duration-300 group-open:rotate-45 group-open:bg-orange-500 group-open:text-white">
+                  <Plus className="h-4 w-4" />
+                </span>
               </summary>
               <p className="mt-3 text-sm leading-relaxed text-slate-700">
                 {faq.answer}

@@ -4,11 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   BookOpen,
-  Briefcase,
   Calculator,
   ChevronDown,
   FileText,
-  GraduationCap,
   Layers,
   MapPin,
   Menu,
@@ -16,7 +14,6 @@ import {
   Phone,
   ShieldCheck,
   Stethoscope,
-  UserCheck,
   Users,
   Wallet,
   X,
@@ -72,30 +69,6 @@ const NAV_LINKS = [
     ],
   },
   {
-    label: "Join Us",
-    href: "#",
-    items: [
-      {
-        label: "Supervision",
-        description: "Clinical supervision for early-career clinicians",
-        href: "#",
-        icon: UserCheck,
-      },
-      {
-        label: "Development Programs",
-        description: "Structured growth pathways for our team",
-        href: "#",
-        icon: GraduationCap,
-      },
-      {
-        label: "Current Positions",
-        description: "Open roles across NSW & QLD",
-        href: "#",
-        icon: Briefcase,
-      },
-    ],
-  },
-  {
     label: "Locations",
     href: "#locations",
     items: [
@@ -141,12 +114,6 @@ const NAV_LINKS = [
         href: "/feedback-and-complaint",
         icon: MessageSquare,
       },
-      {
-        label: "COVID-19 Safety",
-        description: "Our current safety protocols",
-        href: "#contact",
-        icon: ShieldCheck,
-      },
     ],
   },
 ];
@@ -158,7 +125,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 py-5 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 lg:px-8">
+      <div className="flex items-center justify-between gap-4 px-6 lg:px-8">
         <Link href="/" prefetch={false} className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

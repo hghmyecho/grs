@@ -36,7 +36,7 @@ export default function Locations() {
           </div>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-navy-900/20 px-5 py-2.5 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-900 hover:text-white"
+            className="bounce-transition inline-flex items-center gap-2 rounded-full border border-navy-900/20 px-5 py-2.5 text-sm font-semibold text-navy-900 transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-navy-900 hover:text-white"
           >
             <Calculator className="h-4 w-4" />
             Travel Fees Calculator
@@ -44,10 +44,12 @@ export default function Locations() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
-          {LOCATIONS.map(({ city, state, address, gradient }) => (
+          {LOCATIONS.map(({ city, state, address, gradient }, index) => (
             <div
               key={city}
-              className="flex flex-col overflow-hidden rounded-2xl border border-slate-200"
+              className={`bounce-transition flex flex-col overflow-hidden rounded-2xl border border-slate-200 transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0 hover:border-transparent hover:shadow-xl ${
+                index % 2 === 0 ? "hover:-rotate-1" : "hover:rotate-1"
+              }`}
             >
               <div className="p-8">
                 <h3 className="font-display text-xl font-bold text-navy-950">
