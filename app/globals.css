@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #101828;
+
+  /* GRS brand palette */
+  --color-navy-950: #001433;
+  --color-navy-900: #002766;
+  --color-navy-700: #0a3a85;
+  --color-navy-500: #2f5aa8;
+  --color-orange-600: #d97706;
+  --color-orange-500: #fa8c16;
+  --color-orange-400: #ffa940;
+  --color-peach-200: #fdd8b0;
+  --color-peach-100: #fef3e5;
+  --color-slate-200: #e2e2e2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-display: var(--font-poppins);
+
+  --color-navy-950: var(--color-navy-950);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-700: var(--color-navy-700);
+  --color-navy-500: var(--color-navy-500);
+  --color-orange-600: var(--color-orange-600);
+  --color-orange-500: var(--color-orange-500);
+  --color-orange-400: var(--color-orange-400);
+  --color-peach-200: var(--color-peach-200);
+  --color-peach-100: var(--color-peach-100);
+  --color-slate-200: var(--color-slate-200);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+ * scroll-padding-left (not just padding-left) is required: with
+ * scroll-snap-type: mandatory, the browser always rests on a snap point,
+ * and plain padding isn't part of the snap calculation — it gets scrolled
+ * past on load. scroll-padding tells the snap algorithm to treat the
+ * container's edge as inset by the same amount, so the resting position
+ * lines up with the visual padding instead of skipping it.
+ */
+.carousel-track {
+  padding-left: 1.5rem;
+  scroll-padding-left: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .carousel-track {
+    padding-left: max(2rem, calc((100vw - 1280px) / 2 + 2rem));
+    scroll-padding-left: max(2rem, calc((100vw - 1280px) / 2 + 2rem));
+  }
+}
