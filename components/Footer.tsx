@@ -22,7 +22,7 @@ const FOOTER_LINKS = [
   { label: "Join Us", href: "#" },
   { label: "Locations", href: "#locations" },
   { label: "Contact Us", href: "/contact-us" },
-  { label: "Privacy Policy", href: "#" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 export default function Footer() {

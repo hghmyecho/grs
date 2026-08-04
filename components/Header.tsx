@@ -27,19 +27,19 @@ const NAV_LINKS = [
       {
         label: "Our Story",
         description: "How GRS started and where we're headed",
-        href: "#about",
+        href: "/our-story",
         icon: BookOpen,
       },
       {
         label: "Our Team",
         description: "Meet the clinicians behind your care",
-        href: "#about",
+        href: "/our-team",
         icon: Users,
       },
       {
         label: "Governance",
         description: "Clinical governance and quality standards",
-        href: "#about",
+        href: "/our-governance",
         icon: ShieldCheck,
       },
     ],
@@ -63,7 +63,7 @@ const NAV_LINKS = [
       {
         label: "Funding Streams",
         description: "NDIS, Medicare, and private funding options",
-        href: "#services",
+        href: "/funding-stream",
         icon: Wallet,
       },
     ],
