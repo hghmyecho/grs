@@ -2,73 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ArrowRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
-
-interface Discipline {
-  tags: string[];
-  title: string;
-  description: string;
-  gradient: string;
-  image?: string;
-}
-
-const DISCIPLINES: Discipline[] = [
-  {
-    tags: ["All ages", "Daily living"],
-    title: "Occupational Therapy",
-    description: "Building skills for independence in everyday life.",
-    gradient: "from-navy-700 to-navy-950",
-    image: "/photos/discipline-occupational-therapy.png",
-  },
-  {
-    tags: ["All ages", "Mobility"],
-    title: "Physiotherapy",
-    description: "Movement-focused care to build strength and function.",
-    gradient: "from-orange-400 to-orange-600",
-    image: "/photos/discipline-physiotherapy.png",
-  },
-  {
-    tags: ["All ages", "Communication"],
-    title: "Speech Pathology",
-    description: "Support for communication, language, and swallowing.",
-    gradient: "from-peach-200 to-orange-400",
-    image: "/photos/discipline-speech-pathology.png",
-  },
-  {
-    tags: ["Adults", "Mental health"],
-    title: "Psychology",
-    description: "Evidence-based therapy for mental health and wellbeing.",
-    gradient: "from-navy-500 to-navy-900",
-    image: "/photos/discipline-psychology.png",
-  },
-  {
-    tags: ["All ages", "Nutrition"],
-    title: "Dietetics",
-    description: "Personalised nutrition support for better health.",
-    gradient: "from-orange-500 to-navy-900",
-    image: "/photos/discipline-dietetics.png",
-  },
-  {
-    tags: ["All ages", "Creative"],
-    title: "Art Therapy",
-    description: "Creative expression as a pathway to healing.",
-    gradient: "from-navy-900 to-orange-500",
-    image: "/photos/discipline-art-therapy.png",
-  },
-  {
-    tags: ["All ages", "Creative"],
-    title: "Music Therapy",
-    description: "Using music to support emotional and social growth.",
-    gradient: "from-peach-200 to-navy-700",
-    image: "/photos/discipline-music-therapy.png",
-  },
-  {
-    tags: ["All ages", "PBS"],
-    title: "Specialist Behaviour Support",
-    description: "Positive support that reduces restrictive practices.",
-    gradient: "from-orange-600 to-navy-950",
-    image: "/photos/discipline-specialist-behaviour-support.png",
-  },
-];
+import { DISCIPLINES } from "@/lib/content/disciplines";
 
 export default function Disciplines() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -138,7 +72,7 @@ export default function Disciplines() {
         ref={trackRef}
         className="carousel-track no-scrollbar mt-12 flex gap-6 overflow-x-auto scroll-smooth pb-2 snap-x snap-mandatory"
       >
-        {DISCIPLINES.map(({ tags, title, description, gradient, image }, index) => (
+        {DISCIPLINES.map(({ slug, tags, title, description, gradient, image }, index) => (
             <div
               key={title}
               data-card
@@ -182,7 +116,7 @@ export default function Disciplines() {
                 )}
 
                 <a
-                  href="#services"
+                  href={`/${slug}`}
                   className="bounce-transition absolute bottom-5 left-5 inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-md transition-transform duration-300 hover:scale-105 hover:-rotate-2 active:scale-95"
                 >
                   Read More

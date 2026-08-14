@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   BookOpen,
+  Briefcase,
   Calculator,
   ChevronDown,
   FileText,
@@ -13,6 +14,7 @@ import {
   MessageSquare,
   Phone,
   ShieldCheck,
+  Sparkles,
   Stethoscope,
   Users,
   Wallet,
@@ -75,26 +77,56 @@ const NAV_LINKS = [
       {
         label: "Sydney",
         description: "Our founding clinic, NSW",
-        href: "#locations",
+        href: "/sydney",
         icon: MapPin,
       },
       {
         label: "Brisbane",
         description: "South East Queensland",
-        href: "#locations",
+        href: "/brisbane",
         icon: MapPin,
       },
       {
         label: "Gold Coast",
         description: "Community & clinic-based support",
-        href: "#locations",
+        href: "/goldcoast",
+        icon: MapPin,
+      },
+      {
+        label: "Orange",
+        description: "Central West NSW",
+        href: "/orange",
         icon: MapPin,
       },
       {
         label: "Travel Fees Calculator",
         description: "Estimate community visit costs",
-        href: "#locations",
+        href: "/calculator",
         icon: Calculator,
+      },
+    ],
+  },
+  {
+    label: "Careers",
+    href: "/join-us",
+    items: [
+      {
+        label: "Join Us",
+        description: "Career development at GRS",
+        href: "/join-us",
+        icon: Sparkles,
+      },
+      {
+        label: "Career Path",
+        description: "Transparent roles and progression",
+        href: "/career-path",
+        icon: Briefcase,
+      },
+      {
+        label: "Current Positions",
+        description: "See what's open right now",
+        href: "/currrent-advertised-positions",
+        icon: FileText,
       },
     ],
   },

@@ -1,73 +1,13 @@
-import { Accessibility, Baby, Brain, HeartHandshake, type LucideIcon } from "lucide-react";
-
-interface Stream {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  panelBg: string;
-  panelImage?: string;
-  panelText: string;
-  badgeBg: string;
-  badgeText: string;
-  ringColor: string;
-}
-
-const STREAMS: Stream[] = [
-  {
-    icon: Accessibility,
-    title: "Physical Disability",
-    description:
-      "Support for people navigating limits on movement, self-care, and independent daily living.",
-    panelBg: "bg-navy-950",
-    panelText: "text-white",
-    badgeBg: "bg-white/15",
-    badgeText: "text-white",
-    ringColor: "text-orange-400/40",
-  },
-  {
-    icon: Baby,
-    title: "Paediatrics",
-    description:
-      "Helping kids build skills to learn, play, move, communicate, and connect with others.",
-    panelBg: "bg-orange-500",
-    panelImage: "/backgrounds/paediatrics-blob.png",
-    panelText: "text-white",
-    badgeBg: "bg-white/20",
-    badgeText: "text-white",
-    ringColor: "text-white/40",
-  },
-  {
-    icon: Brain,
-    title: "Psychosocial Disability",
-    description:
-      "Care for communication, social participation, learning, and everyday self-management.",
-    panelBg: "bg-peach-200",
-    panelImage: "/backgrounds/psychosocial-disability-blob.png",
-    panelText: "text-navy-950",
-    badgeBg: "bg-navy-950/10",
-    badgeText: "text-navy-900",
-    ringColor: "text-navy-900/25",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Specialist Behavioural Support",
-    description:
-      "Positive, evidence-based support for safety, wellbeing, and cognitive-social adaptation.",
-    panelBg: "bg-navy-700",
-    panelImage: "/backgrounds/specialist-behavioural-support-blob.png",
-    panelText: "text-white",
-    badgeBg: "bg-white/15",
-    badgeText: "text-white",
-    ringColor: "text-peach-200/40",
-  },
-];
+import { ArrowRight } from "lucide-react";
+import { STREAMS, type Stream } from "@/lib/content/streams";
 
 function TextPanel({ stream }: { stream: Stream }) {
-  const { title, description, panelBg, panelImage, panelText } = stream;
+  const { slug, title, description, panelBg, panelImage, panelText } = stream;
 
   return (
-    <div
-      className={`group relative flex min-h-[220px] flex-col justify-end overflow-hidden p-7 lg:min-h-[280px] ${panelBg} ${panelText}`}
+    <a
+      href={`/${slug}`}
+      className={`group relative flex min-h-[220px] flex-col justify-end overflow-hidden p-7 transition-opacity duration-300 hover:opacity-90 lg:min-h-[280px] ${panelBg} ${panelText}`}
     >
       {panelImage && (
         // eslint-disable-next-line @next/next/no-img-element
@@ -84,8 +24,12 @@ function TextPanel({ stream }: { stream: Stream }) {
           {title}
         </h3>
         <p className="mt-2 text-sm leading-relaxed opacity-80">{description}</p>
+        <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold">
+          Learn more
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </span>
       </div>
-    </div>
+    </a>
   );
 }
 
