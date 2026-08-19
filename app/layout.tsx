@@ -64,6 +64,13 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} h-full antialiased`}
     >
+      <head>
+        {/* Self-serve brand color overrides — see app/theme.css/route.ts
+            and lib/theme/. Kept as a separate linked stylesheet (not read
+            here in the layout) so every page's static prerendering stays
+            untouched. */}
+        <link rel="stylesheet" href="/theme.css" />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-navy-950">
         <StructuredData />
         <Header />
