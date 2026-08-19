@@ -1,8 +1,9 @@
-// The 7 career-development sub-pages linked from the /join-us hub (see
+// The 5 career-development sub-pages linked from the /join-us hub (see
 // app/join-us/page.tsx) — see lib/content/disciplines.ts for the same
-// registry pattern. None of this existed anywhere in the redesign before
-// this pass; content ported verbatim (lightly tidied) from the live
-// grs.health career pages, Aug 2026.
+// registry pattern. Content ported verbatim (lightly tidied) from the live
+// grs.health career pages, Aug 2026. Clinical Educators and the AHA/AHT/
+// Novice Therapist Program were removed a few days later — GRS no longer
+// has those roles/programs built into its service.
 export interface CareerSection {
   heading?: string;
   items: string[];
@@ -57,32 +58,6 @@ export const CAREERS: CareerPage[] = [
     ],
   },
   {
-    slug: "clinical-educators",
-    title: "Clinical Educators",
-    tagline:
-      "The power centre for our standards of excellence and clinical support through evidence-based practice.",
-    overview:
-      'Our clinical educator teams consist of experienced clinicians across the multi-disciplinary team and clinical streams, working toward a shared mission: helping clinicians reach their potential through clinical support and resources that build competency with current evidence-based approaches.',
-    sections: [
-      {
-        heading: "Clinical Excellence",
-        items: [
-          "Clinical resource development — internal practice guidelines, templates, and physical resources",
-          "Identifying current clinical needs and organising internal/external training sessions",
-          "Direct clinical supervision to junior clinicians, and facilitating supervision relationships among other clinicians",
-        ],
-      },
-      {
-        heading: "Group Clinical Policy Development & Consultation",
-        items: [
-          "Reviewing and identifying clinical workflow improvement strategies",
-          "Leading updates to group policies related to clinical practice",
-          "Conducting regular internal audits of clinical practice and consulting with team leaders on ongoing clinical team development",
-        ],
-      },
-    ],
-  },
-  {
     slug: "clinical-rotations",
     title: "Clinical Rotations",
     tagline:
@@ -131,34 +106,6 @@ export const CAREERS: CareerPage[] = [
           "Paediatric Occupational Therapist – Team Lead — NSW (Sydney), full-time",
           "Occupational Therapist — NSW (Sydney), full-time",
           "Administrative Officer — NSW (Sydney)",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "aha-aht-novice-therapist-program",
-    title: "AHA/AHT/Novice Therapist Program",
-    tagline: "Building an innovative framework for our next generation of great clinicians.",
-    overview:
-      'Our Queensland team is reforming its support system for allied health assistants and trainees, based on feedback from previous participants and new graduate therapists — building "a sustainable, supportive & feasible framework to help our new generation of clinicians to grow."',
-    sections: [
-      {
-        heading: "Key Areas of Change",
-        items: [
-          "Progressive role and task adjustments based on trainee experience and availability",
-          "Assignment of primary supervisors for regular supervision and support",
-          "Rotational caseload exposure across physical, psychosocial, and paediatric areas",
-          "AHA/AHT participation in professional development and quality improvement",
-          "Loyalty and performance rewards for successful transitions to graduate/novice clinician roles",
-        ],
-      },
-      {
-        heading: "Employment Tiers",
-        items: [
-          "AHA (01) — Casual, for undergraduates/early postgraduates; case-based supervision with program implementation duties",
-          "AHA (02) — Block days during placement breaks; increased assessment participation under supervision",
-          "AHT (03) — Full-time; supervised autonomy in assessments/therapy with rotational caseload",
-          "AHT-Candidate (04) — Full-time new graduate role with higher autonomy and coordination development opportunities",
         ],
       },
     ],

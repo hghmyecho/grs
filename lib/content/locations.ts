@@ -1,10 +1,8 @@
-// Shared source of truth for all 4 location pages (Sydney, Brisbane, Gold
-// Coast, Orange) — see lib/content/disciplines.ts for the same pattern.
-// Orange is NEW: it's a real live-site location (grs.health/orange) that
-// was missing entirely from the redesign's homepage Locations component
-// until this pass — added here and wired into components/Locations.tsx.
-// Content ported verbatim (lightly tidied) from the live grs.health
-// location pages, Aug 2026.
+// Shared source of truth for all 3 location pages (Sydney, Brisbane, Gold
+// Coast) — see lib/content/disciplines.ts for the same pattern. Content
+// ported verbatim (lightly tidied) from the live grs.health location
+// pages, Aug 2026. Orange was added during the Aug 14 2026 pass, then
+// removed a few days later — GRS no longer operates that outpost.
 export interface Location {
   slug: string;
   city: string;
@@ -89,24 +87,6 @@ export const LOCATIONS: Location[] = [
       "Nerang St Station is accessible by bus or light rail, a 5-minute walk behind the clinic on Nerang Street.",
     parking:
       "2 hours of free customer parking onsite, 2-hour street parking on Little High Street, and Athol Patterson Park Car Park nearby (from $2/hour, up to $6/day).",
-  },
-  {
-    slug: "orange",
-    city: "Orange",
-    state: "NSW",
-    address: "113 Moulder Street, Orange NSW 2800",
-    gradient: "from-navy-500 to-orange-500",
-    phone: "1300 066 716",
-    serviceArea:
-      "Home-based and clinic services for Greater Orange residents, including adult and paediatric therapeutic support.",
-    servicesOffered: [
-      "Occupational Therapy",
-      "Speech Pathology (including Early Childhood Intervention)",
-    ],
-    clinicNote: "Co-located with the Kids HQ clinic.",
-    transport:
-      "About a 4-minute walk from the nearby bus & train station (Orange Station) — journey planning available via the NSW Transport Planner.",
-    parking: "2 hours' free street parking available at Moulder Street.",
   },
 ];
 

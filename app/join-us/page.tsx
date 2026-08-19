@@ -22,8 +22,6 @@ const ICONS: Record<string, typeof Users> = {
   "clinical-supervison": ShieldCheck,
   "career-path": Briefcase,
   "continued-professional-development": GraduationCap,
-  "aha-aht-novice-therapist-program": Sparkles,
-  "clinical-educators": Users,
   "clinical-rotations": Repeat,
   "currrent-advertised-positions": BookOpen,
 };

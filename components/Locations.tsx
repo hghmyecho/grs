@@ -11,7 +11,7 @@ export default function Locations() {
               Where We Work
             </span>
             <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-navy-950 sm:text-4xl">
-              Four cities, one standard of care
+              Three cities, one standard of care
             </h2>
           </div>
           <a
@@ -23,7 +23,7 @@ export default function Locations() {
           </a>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {LOCATIONS.map(({ slug, city, state, address, gradient, image }, index) => (
             <div
               key={city}

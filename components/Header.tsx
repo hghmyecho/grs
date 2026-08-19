@@ -93,12 +93,6 @@ const NAV_LINKS = [
         icon: MapPin,
       },
       {
-        label: "Orange",
-        description: "Central West NSW",
-        href: "/orange",
-        icon: MapPin,
-      },
-      {
         label: "Travel Fees Calculator",
         description: "Estimate community visit costs",
         href: "/calculator",
