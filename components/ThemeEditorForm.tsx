@@ -22,8 +22,13 @@ export default function ThemeEditorForm({ initialSeeds }: { initialSeeds: ThemeS
     setStatus("saving");
     setError(null);
     try {
-      await saveThemeAction(seeds);
-      setStatus("saved");
+      const result = await saveThemeAction(seeds);
+      if (result.ok) {
+        setStatus("saved");
+      } else {
+        setStatus("error");
+        setError(result.error);
+      }
     } catch (e) {
       setStatus("error");
       setError(e instanceof Error ? e.message : "Something went wrong — please try again.");

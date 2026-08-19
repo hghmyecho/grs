@@ -62,6 +62,26 @@ export async function saveThemeSeeds(seeds: ThemeSeeds): Promise<void> {
 
   if (!res.ok) {
     const body = await res.text().catch(() => "");
-    throw new Error(`Failed to save theme (${res.status}): ${body.slice(0, 300)}`);
+    // TEMPORARY diagnostics: both create and update failing identically
+    // suggests something more basic than the operation verb is wrong
+    // (store/team resolution, not the item). Cross-check with a plain
+    // GET on the same store so the next failure's message shows exactly
+    // what is/isn't resolving, instead of digging through Runtime Logs
+    // each time. Remove once the write path is confirmed working.
+    const metaRes = await fetch(
+      `https://api.vercel.com/v1/global-config/${STORE_ID}?teamId=${TEAM_ID}`,
+      { headers: { Authorization: `Bearer ${token}` } },
+    );
+    const metaBody = await metaRes.text().catch(() => "");
+    const itemsRes = await fetch(
+      `https://api.vercel.com/v1/global-config/${STORE_ID}/items?teamId=${TEAM_ID}`,
+      { headers: { Authorization: `Bearer ${token}` } },
+    );
+    const itemsBody = await itemsRes.text().catch(() => "");
+    throw new Error(
+      `Failed to save theme (${res.status}): ${body.slice(0, 200)} ` +
+        `| GET store meta (${metaRes.status}): ${metaBody.slice(0, 200)} ` +
+        `| GET items (${itemsRes.status}): ${itemsBody.slice(0, 200)}`,
+    );
   }
 }
