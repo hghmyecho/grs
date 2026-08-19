@@ -2,6 +2,7 @@ import { get } from "@vercel/global-config";
 import { DEFAULT_THEME_SEEDS, type ThemeSeeds } from "./palette";
 
 const STORE_ID = "ecfg_k1egbhzvvzfsfp7vznpccja2ggva"; // grs-global-config — not a secret, just an id
+const TEAM_ID = "team_xE1N4uADuwEeLf4nvJ7UZdAm"; // myecho — required since the store is team-scoped
 const ITEM_KEY = "themeSeeds";
 
 /**
@@ -34,7 +35,7 @@ export async function saveThemeSeeds(seeds: ThemeSeeds): Promise<void> {
   }
 
   const res = await fetch(
-    `https://api.vercel.com/v1/edge-config/${STORE_ID}/items`,
+    `https://api.vercel.com/v1/global-config/${STORE_ID}/items?teamId=${TEAM_ID}`,
     {
       method: "PATCH",
       headers: {
