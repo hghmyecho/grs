@@ -77,7 +77,8 @@ export default function ThemeEditorForm({ initialSeeds }: { initialSeeds: ThemeS
         {status === "saved" && (
           <p className="flex items-center gap-1.5 text-sm font-medium text-emerald-700">
             <CheckCircle2 className="h-4 w-4" />
-            Saved — the site will update within moments.
+            Saved — the site is rebuilding now and will update within about
+            a minute.
           </p>
         )}
         {status === "error" && <p className="text-sm text-red-600">{error}</p>}

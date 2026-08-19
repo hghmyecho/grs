@@ -4,15 +4,20 @@ import { getThemeSeeds } from "@/lib/theme/store";
 // Served as a real <link rel="stylesheet"> from the root layout, NOT
 // fetched via client JS and NOT read inside the layout's render tree.
 // That's deliberate: it keeps every other page's static prerendering
-// completely untouched (no Cache Components / PPR needed here — this
-// project doesn't have cacheComponents enabled) while still reflecting
-// a saved theme change within seconds, since the browser re-requests
-// this resource on every navigation like any other stylesheet.
+// completely untouched — no Cache Components / PPR needed here (this
+// project doesn't have cacheComponents enabled).
+//
+// Colors are read from lib/theme/seeds.json, a value baked into this
+// deployment's build (saving from /theme-editor commits a new value and
+// triggers a fresh deploy — see lib/theme/store.ts for why this isn't
+// Vercel Global Config). No dynamic APIs are used here, so Next.js
+// statically generates this route once at build time, same as any other
+// static asset — exactly right, since the value can only change via a
+// new build anyway.
 //
 // `!important` on every property, rather than relying on this
 // stylesheet loading after app/globals.css in the document, guarantees
 // the override wins regardless of Next.js's internal <head> ordering.
-export const dynamic = "force-dynamic";
 
 export async function GET() {
   const seeds = await getThemeSeeds();
@@ -23,13 +28,6 @@ export async function GET() {
     .join("\n")}\n}\n`;
 
   return new Response(css, {
-    headers: {
-      "Content-Type": "text/css; charset=utf-8",
-      // No caching: a saved color change should reach every visitor on
-      // their next navigation, not wait out a stale-while-revalidate
-      // window. Global Config's own reads are already edge-fast, so
-      // there's no real cost to skipping HTTP caching here.
-      "Cache-Control": "no-store",
-    },
+    headers: { "Content-Type": "text/css; charset=utf-8" },
   });
 }

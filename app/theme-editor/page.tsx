@@ -70,7 +70,7 @@ export default async function ThemeEditorPage({
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-slate-700">
           Pick your 3 brand colors below — the preview updates instantly.
-          Save publishes them across the whole site within moments.
+          Save publishes them across the whole site within about a minute.
         </p>
       </div>
       <ThemeEditorForm initialSeeds={seeds} />
