@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -120,6 +121,7 @@ function StaffList({ title, people }: { title: string; people: string[] }) {
 export default function OurTeamPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Our Team", href: "/our-team" }]} />
       <section className="bg-navy-950 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">

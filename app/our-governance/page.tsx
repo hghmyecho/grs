@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ClipboardList, FileCheck, ShieldCheck } from "lucide-react";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Our Governance",
@@ -53,6 +54,7 @@ const COMMITTEES = [
 export default function OurGovernancePage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Our Governance", href: "/our-governance" }]} />
       <section className="bg-navy-950 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">

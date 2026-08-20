@@ -1,11 +1,25 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import type { CareerPage as CareerPageContent } from "@/lib/content/careers";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import FaqSection from "@/components/FaqSection";
+import JsonLd from "@/components/JsonLd";
+import { faqSchema, schemaGraph } from "@/lib/schema";
 
 export default function CareerPage({ career }: { career: CareerPageContent }) {
-  const { title, tagline, overview, sections } = career;
+  const { slug, title, tagline, overview, approach, sections, faqs } = career;
+
+  const breadcrumbItems = [
+    { name: "Home", href: "/" },
+    { name: "Join Us", href: "/join-us" },
+    { name: title, href: `/${slug}` },
+  ];
 
   return (
     <>
+      <JsonLd data={schemaGraph(faqSchema(faqs))} />
+      <Breadcrumbs items={breadcrumbItems} />
+
       <section className="bg-navy-950 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">
@@ -21,6 +35,13 @@ export default function CareerPage({ career }: { career: CareerPageContent }) {
       <section className="bg-white px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
           <p className="text-sm leading-relaxed text-slate-700">{overview}</p>
+
+          <div className="mt-12">
+            <h2 className="font-display text-lg font-bold text-navy-950">
+              Our Approach
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-700">{approach}</p>
+          </div>
 
           {sections.length > 0 && (
             <div className="mt-12 space-y-10">
@@ -47,21 +68,23 @@ export default function CareerPage({ career }: { career: CareerPageContent }) {
             </div>
           )}
 
+          <FaqSection faqs={faqs} />
+
           <div className="mt-16 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-peach-100 p-8">
-            <a
+            <Link
               href="/join-us"
               className="inline-flex items-center gap-2 text-sm font-semibold text-navy-900 hover:underline"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Join Us
-            </a>
-            <a
+            </Link>
+            <Link
               href="/currrent-advertised-positions"
               className="bounce-transition inline-flex items-center gap-2 rounded-full bg-orange-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-orange-800"
             >
               See Open Positions
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

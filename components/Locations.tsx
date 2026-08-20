@@ -1,4 +1,5 @@
 import { ArrowRight, Calculator } from "lucide-react";
+import Image from "next/image";
 import { LOCATIONS } from "@/lib/content/locations";
 
 export default function Locations() {
@@ -55,11 +56,12 @@ export default function Locations() {
                 className={`relative h-52 overflow-hidden bg-gradient-to-br ${gradient}`}
               >
                 {image && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={image}
                     alt={`${city} clinic`}
-                    className="absolute inset-0 h-full w-full object-cover"
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
                   />
                 )}
               </div>

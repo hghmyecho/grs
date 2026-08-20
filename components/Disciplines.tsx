@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ArrowRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { DISCIPLINES } from "@/lib/content/disciplines";
 
 export default function Disciplines() {
@@ -31,7 +32,7 @@ export default function Disciplines() {
   };
 
   return (
-    <section className="overflow-hidden bg-navy-950 py-20 lg:py-28">
+    <section id="disciplines" className="overflow-hidden bg-navy-950 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
@@ -106,12 +107,13 @@ export default function Disciplines() {
                 className={`relative min-h-[300px] flex-1 overflow-hidden bg-gradient-to-br ${gradient}`}
               >
                 {image && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={image}
                     alt=""
                     aria-hidden
-                    className="absolute inset-0 h-full w-full object-cover object-top"
+                    fill
+                    sizes="340px"
+                    className="object-cover object-top"
                   />
                 )}
 

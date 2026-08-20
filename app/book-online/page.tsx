@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowRight, FileText, Phone } from "lucide-react";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Book Online",
@@ -13,7 +14,9 @@ export const metadata: Metadata = {
 // next step (referral or phone) instead.
 export default function BookOnlinePage() {
   return (
-    <section className="bg-navy-950 py-24 lg:py-32">
+    <>
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Book Online", href: "/book-online" }]} />
+      <section className="bg-navy-950 py-24 lg:py-32">
       <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
         <h1 className="font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
           Nothing to book right now
@@ -40,6 +43,7 @@ export default function BookOnlinePage() {
           </a>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

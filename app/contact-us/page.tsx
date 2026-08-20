@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -36,6 +37,7 @@ const CONTACT_METHODS = [
 export default function ContactUsPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Contact Us", href: "/contact-us" }]} />
       <section className="bg-navy-950 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">

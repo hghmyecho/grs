@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FeedbackForm from "@/components/FeedbackForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Feedback & Complaints",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function FeedbackAndComplaintPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Feedback & Complaints", href: "/feedback-and-complaint" }]} />
       <section className="bg-navy-950 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">

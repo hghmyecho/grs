@@ -1,5 +1,8 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { STREAMS, type Stream } from "@/lib/content/streams";
+
+const PANEL_SIZES = "(min-width: 1024px) 25vw, 50vw";
 
 function TextPanel({ stream }: { stream: Stream }) {
   const { slug, title, description, panelBg, panelImage, panelText } = stream;
@@ -10,12 +13,13 @@ function TextPanel({ stream }: { stream: Stream }) {
       className={`group relative flex min-h-[220px] flex-col justify-end overflow-hidden p-7 transition-opacity duration-300 hover:opacity-90 lg:min-h-[280px] ${panelBg} ${panelText}`}
     >
       {panelImage && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
           src={panelImage}
           alt=""
           aria-hidden
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          sizes={PANEL_SIZES}
+          className="object-cover"
         />
       )}
 
@@ -37,11 +41,12 @@ function PhotoPanel({ index, image, alt }: { index: number; image?: string; alt?
   if (image) {
     return (
       <div className="relative min-h-[220px] overflow-hidden bg-white lg:min-h-[280px]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={image}
           alt={alt ?? ""}
-          className="absolute inset-0 h-full w-full object-cover object-top"
+          fill
+          sizes={PANEL_SIZES}
+          className="object-cover object-top"
         />
       </div>
     );

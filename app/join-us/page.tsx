@@ -10,6 +10,7 @@ import {
   Users,
 } from "lucide-react";
 import { CAREERS } from "@/lib/content/careers";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Join Us",
@@ -29,6 +30,7 @@ const ICONS: Record<string, typeof Users> = {
 export default function JoinUsPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Join Us", href: "/join-us" }]} />
       <section className="bg-navy-950 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">

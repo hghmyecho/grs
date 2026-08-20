@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { DISCIPLINES } from "@/lib/content/disciplines";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Disciplinary Summary",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function DisciplinarySummaryPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Disciplinary Summary", href: "/disciplinary-summary" }]} />
       <section className="bg-navy-950 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <h1 className="font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
