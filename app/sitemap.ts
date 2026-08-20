@@ -21,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/join-us", priority: 0.6, changeFrequency: "monthly" as const },
     { path: "/book-online", priority: 0.5, changeFrequency: "monthly" as const },
     { path: "/calculator", priority: 0.5, changeFrequency: "monthly" as const },
-    { path: "/covid-19-safety", priority: 0.3, changeFrequency: "yearly" as const },
     { path: "/disciplinary-summary", priority: 0.4, changeFrequency: "monthly" as const },
     ...DISCIPLINES.map((d) => ({
       path: `/${d.slug}`,
