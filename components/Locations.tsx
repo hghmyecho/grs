@@ -45,6 +45,7 @@ export default function Locations() {
 
                 <a
                   href={`/${slug}`}
+                  aria-label={`More info about GRS ${city}`}
                   className="mt-6 inline-flex items-center gap-1.5 self-start rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-900 hover:text-white"
                 >
                   More Info

@@ -119,6 +119,7 @@ export default function Disciplines() {
 
                 <a
                   href={`/${slug}`}
+                  aria-label={`Read more about ${title}`}
                   className="bounce-transition absolute bottom-5 left-5 inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-md transition-transform duration-300 hover:scale-105 hover:-rotate-2 active:scale-95"
                 >
                   Read More
