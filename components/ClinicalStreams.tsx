@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { STREAMS, type Stream } from "@/lib/content/streams";
 
-const PANEL_SIZES = "(min-width: 1024px) 33vw, 50vw";
+const PANEL_SIZES = "(min-width: 1024px) 25vw, 50vw";
 
 function TextPanel({ stream }: { stream: Stream }) {
   const { slug, title, description, panelBg, panelImage, panelText } = stream;
@@ -57,11 +57,6 @@ function PhotoPanel({ href, image, alt }: { href: string; image: string; alt: st
 }
 
 export default function ClinicalStreams() {
-  // 3-column x 2-row grid — each of the 3 streams shown gets one text panel
-  // and one photo panel, paired diagonally so a stream's own photo never
-  // sits directly under its own text (matches the approved grid design,
-  // Aug 2026). Paediatrics is represented by its photo only (no text
-  // panel in this particular grid) but still links through to its page.
   return (
     <section id="services" className="bg-[#f5f5f5] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -79,14 +74,19 @@ export default function ClinicalStreams() {
         </div>
 
         <div className="mt-12 overflow-hidden rounded-[2rem]">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4">
             <TextPanel stream={STREAMS[0]} />
             <PhotoPanel
               href="/physical-disability"
               image="/photos/clinical-physical-disability.png"
               alt="Portrait of a client supported through our Physical Disability stream"
             />
-            <TextPanel stream={STREAMS[3]} />
+            <TextPanel stream={STREAMS[1]} />
+            <PhotoPanel
+              href="/paediatrics"
+              image="/photos/clinical-paediatrics.png"
+              alt="Portrait of a child supported through our Paediatrics stream"
+            />
             <PhotoPanel
               href="/psychosocial-disability"
               image="/photos/clinical-psychosocial-disability.png"
@@ -94,10 +94,11 @@ export default function ClinicalStreams() {
             />
             <TextPanel stream={STREAMS[2]} />
             <PhotoPanel
-              href="/paediatrics"
-              image="/photos/clinical-paediatrics.png"
-              alt="Portrait of a child supported through our Paediatrics stream"
+              href="/specialist-behaviour-support-stream"
+              image="/photos/clinical-specialist-behavioural-support.png"
+              alt="Portrait of a client supported through our Specialist Behavioural Support stream"
             />
+            <TextPanel stream={STREAMS[3]} />
           </div>
         </div>
       </div>

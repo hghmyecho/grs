@@ -32,12 +32,12 @@ export const STREAMS: Stream[] = [
     title: "Physical Disability",
     description:
       "Support for people navigating limits on movement, self-care, and independent daily living.",
-    panelBg: "bg-orange-500",
+    panelBg: "bg-navy-950",
     panelImage: "/backgrounds/physical-disability-blob.png",
-    panelText: "text-navy-950",
-    badgeBg: "bg-navy-950/10",
-    badgeText: "text-navy-900",
-    ringColor: "text-navy-900/25",
+    panelText: "text-white",
+    badgeBg: "bg-white/15",
+    badgeText: "text-white",
+    ringColor: "text-orange-400/40",
     overview:
       "Physical disability affects the way a person moves, cares for themselves, and manages daily tasks, and it can arise from a wide range of neurological and physical conditions, from acquired brain injury and spinal cord injury to conditions like multiple sclerosis, cerebral palsy, or limb amputation. For many people, the impact reaches beyond mobility, touching independence, confidence, and participation in everyday life, work, and community. GRS is an NDIS-registered provider supporting people of all ages living with physical disability, working alongside participants, families, and support networks to build practical, achievable pathways toward greater independence. Our multidisciplinary team, including occupational therapists, physiotherapists, speech pathologists, psychologists, dietitians, and allied health assistants, draws on each discipline's expertise to address the physical, functional, and personal goals that matter most to each participant. Support is person-centred and tailored to the individual's diagnosis, environment, and stage of life, whether that means building strength and mobility, adapting a home or equipment, developing self-care routines, or supporting participation in study, work, or community activities. GRS works within each participant's NDIS plan, coordinating care across disciplines so that therapy remains consistent, relevant, and aligned with their broader goals.",
     approach:
@@ -116,10 +116,10 @@ export const STREAMS: Stream[] = [
       "Helping kids build skills to learn, play, move, communicate, and connect with others.",
     panelBg: "bg-orange-500",
     panelImage: "/backgrounds/paediatrics-blob.png",
-    panelText: "text-white",
-    badgeBg: "bg-white/20",
-    badgeText: "text-white",
-    ringColor: "text-white/40",
+    panelText: "text-navy-950",
+    badgeBg: "bg-navy-950/10",
+    badgeText: "text-navy-900",
+    ringColor: "text-navy-900/25",
     overview:
       "Paediatrics at GRS covers support for children and young people under 18 who experience delays or difficulties in their physical, cognitive, social, or emotional development. This can include children accessing Early Childhood Early Intervention (ECEI) support from birth to age seven, as well as school-aged children and adolescents navigating conditions such as autism, ADHD, learning or intellectual disability, or difficulties linked to anxiety, depression, or past trauma. These challenges can affect a child's ability to learn, play, move, communicate, care for themselves, and build relationships with family, peers, and the wider community. GRS is an NDIS-registered provider delivering multidisciplinary paediatric support, bringing together occupational therapists, speech pathologists, physiotherapists, psychologists, and behaviour support practitioners as relevant to each child. Support is family-centred, recognising that parents, carers, and educators play a central role in a child's progress, and that therapy works best when it is woven into everyday routines at home, at school, and in the community. GRS works closely with families to understand each child's strengths, needs, and NDIS plan, shaping support that helps children build the skills and confidence to participate fully in childhood and everyday life.",
     approach:
