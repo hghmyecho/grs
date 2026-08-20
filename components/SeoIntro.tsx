@@ -1,12 +1,19 @@
 import Link from "next/link";
 
-// Long-form SEO/informational block for the homepage, sitting between the
-// FAQ/CTA sections and the footer. Deliberately lower visual weight (small
-// type, muted background) than the rest of the homepage's marketing
-// sections — this exists for search engines and researching families, not
-// as a primary visual section. Internal links are anchored on their first
+// Long-form SEO/informational block for the homepage, sitting directly
+// under the FAQ section. Deliberately lower visual weight (small type,
+// muted background) than the rest of the homepage's marketing sections —
+// this exists for search engines and researching families, not as a
+// primary visual section. Internal links are anchored on their first
 // natural mention only (not every repeat occurrence) to keep anchor text
 // looking editorial rather than keyword-stuffed.
+//
+// The bulk of the copy sits behind a native <details>/<summary> toggle
+// (same pattern as components/FaqSection.tsx) so the page stays compact
+// by default. This is safe for SEO: Google has confirmed content inside
+// native disclosure widgets is fully indexed and weighted the same as
+// visible content, since it's present in the server-rendered HTML from
+// first load — nothing is injected only after the click.
 const linkCls =
   "font-medium text-orange-700 underline decoration-orange-300 underline-offset-2 hover:text-orange-800";
 
@@ -77,6 +84,18 @@ export default function SeoIntro() {
           around the needs of NDIS participants and their families.
         </p>
 
+        <details className="group mt-5">
+          <summary className="flex cursor-pointer list-none items-center gap-1.5 text-sm font-semibold text-navy-900 marker:content-none">
+            Read more about GRS and NDIS allied health support
+            <span
+              aria-hidden
+              className="text-lg leading-none text-orange-700 transition-transform duration-200 group-open:rotate-45"
+            >
+              +
+            </span>
+          </summary>
+
+          <div className="mt-4">
         <p className="mt-4">
           Unlike many larger providers, GRS was founded and continues to be
           directed by practising clinicians who understand what genuinely
@@ -285,6 +304,8 @@ export default function SeoIntro() {
           NDIS-funded allied health support with confidence, across Sydney,
           Brisbane, and the Gold Coast.
         </p>
+          </div>
+        </details>
       </div>
     </section>
   );

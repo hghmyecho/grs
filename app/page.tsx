@@ -16,8 +16,8 @@ export default function Home() {
       <Values />
       <Locations />
       <Faq />
-      <CtaBanner />
       <SeoIntro />
+      <CtaBanner />
     </>
   );
 }
