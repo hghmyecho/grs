@@ -32,11 +32,12 @@ export const STREAMS: Stream[] = [
     title: "Physical Disability",
     description:
       "Support for people navigating limits on movement, self-care, and independent daily living.",
-    panelBg: "bg-navy-950",
-    panelText: "text-white",
-    badgeBg: "bg-white/15",
-    badgeText: "text-white",
-    ringColor: "text-orange-400/40",
+    panelBg: "bg-orange-500",
+    panelImage: "/backgrounds/physical-disability-blob.png",
+    panelText: "text-navy-950",
+    badgeBg: "bg-navy-950/10",
+    badgeText: "text-navy-900",
+    ringColor: "text-navy-900/25",
     overview:
       "Physical disability affects the way a person moves, cares for themselves, and manages daily tasks, and it can arise from a wide range of neurological and physical conditions, from acquired brain injury and spinal cord injury to conditions like multiple sclerosis, cerebral palsy, or limb amputation. For many people, the impact reaches beyond mobility, touching independence, confidence, and participation in everyday life, work, and community. GRS is an NDIS-registered provider supporting people of all ages living with physical disability, working alongside participants, families, and support networks to build practical, achievable pathways toward greater independence. Our multidisciplinary team, including occupational therapists, physiotherapists, speech pathologists, psychologists, dietitians, and allied health assistants, draws on each discipline's expertise to address the physical, functional, and personal goals that matter most to each participant. Support is person-centred and tailored to the individual's diagnosis, environment, and stage of life, whether that means building strength and mobility, adapting a home or equipment, developing self-care routines, or supporting participation in study, work, or community activities. GRS works within each participant's NDIS plan, coordinating care across disciplines so that therapy remains consistent, relevant, and aligned with their broader goals.",
     approach:

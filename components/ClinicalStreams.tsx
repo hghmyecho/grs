@@ -1,8 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { STREAMS, type Stream } from "@/lib/content/streams";
 
-const PANEL_SIZES = "(min-width: 1024px) 25vw, 50vw";
+const PANEL_SIZES = "(min-width: 1024px) 33vw, 50vw";
 
 function TextPanel({ stream }: { stream: Stream }) {
   const { slug, title, description, panelBg, panelImage, panelText } = stream;
@@ -37,67 +38,30 @@ function TextPanel({ stream }: { stream: Stream }) {
   );
 }
 
-function PhotoPanel({ index, image, alt }: { index: number; image?: string; alt?: string }) {
-  if (image) {
-    return (
-      <div className="relative min-h-[220px] overflow-hidden bg-white lg:min-h-[280px]">
-        <Image
-          src={image}
-          alt={alt ?? ""}
-          fill
-          sizes={PANEL_SIZES}
-          className="object-cover object-top"
-        />
-      </div>
-    );
-  }
-
+function PhotoPanel({ href, image, alt }: { href: string; image: string; alt: string }) {
   return (
-    <div className="relative min-h-[220px] overflow-hidden bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500 lg:min-h-[280px]">
-      <div
-        className={`absolute inset-0 mix-blend-color ${
-          index % 2 === 0 ? "bg-orange-500/40" : "bg-navy-900/40"
-        }`}
+    <Link
+      href={href}
+      prefetch={false}
+      className="group relative block min-h-[220px] overflow-hidden bg-white lg:min-h-[280px]"
+    >
+      <Image
+        src={image}
+        alt={alt}
+        fill
+        sizes={PANEL_SIZES}
+        className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
       />
-      <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-white/80">
-        Photography placeholder
-      </div>
-    </div>
+    </Link>
   );
 }
 
 export default function ClinicalStreams() {
-  const cells = [
-    { type: "text" as const, stream: STREAMS[0] },
-    {
-      type: "photo" as const,
-      index: 0,
-      image: "/photos/clinical-physical-disability.png",
-      alt: "Portrait of a client supported through our Physical Disability stream",
-    },
-    { type: "text" as const, stream: STREAMS[1] },
-    {
-      type: "photo" as const,
-      index: 1,
-      image: "/photos/clinical-paediatrics.png",
-      alt: "Portrait of a client supported through our Paediatrics stream",
-    },
-    {
-      type: "photo" as const,
-      index: 2,
-      image: "/photos/clinical-psychosocial-disability.png",
-      alt: "Portrait of a client supported through our Psychosocial Disability stream",
-    },
-    { type: "text" as const, stream: STREAMS[2] },
-    {
-      type: "photo" as const,
-      index: 3,
-      image: "/photos/clinical-specialist-behavioural-support.png",
-      alt: "Portrait of a parent and child supported through our Specialist Behavioural Support stream",
-    },
-    { type: "text" as const, stream: STREAMS[3] },
-  ];
-
+  // 3-column x 2-row grid — each of the 3 streams shown gets one text panel
+  // and one photo panel, paired diagonally so a stream's own photo never
+  // sits directly under its own text (matches the approved grid design,
+  // Aug 2026). Paediatrics is represented by its photo only (no text
+  // panel in this particular grid) but still links through to its page.
   return (
     <section id="services" className="bg-[#f5f5f5] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -115,19 +79,25 @@ export default function ClinicalStreams() {
         </div>
 
         <div className="mt-12 overflow-hidden rounded-[2rem]">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4">
-            {cells.map((cell, i) =>
-              cell.type === "text" ? (
-                <TextPanel key={cell.stream.title} stream={cell.stream} />
-              ) : (
-                <PhotoPanel
-                  key={`photo-${i}`}
-                  index={cell.index}
-                  image={cell.image}
-                  alt={cell.alt}
-                />
-              )
-            )}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+            <TextPanel stream={STREAMS[0]} />
+            <PhotoPanel
+              href="/physical-disability"
+              image="/photos/clinical-physical-disability.png"
+              alt="Portrait of a client supported through our Physical Disability stream"
+            />
+            <TextPanel stream={STREAMS[3]} />
+            <PhotoPanel
+              href="/psychosocial-disability"
+              image="/photos/clinical-psychosocial-disability.png"
+              alt="Portrait of clients supported through our Psychosocial Disability stream"
+            />
+            <TextPanel stream={STREAMS[2]} />
+            <PhotoPanel
+              href="/paediatrics"
+              image="/photos/clinical-paediatrics.png"
+              alt="Portrait of a child supported through our Paediatrics stream"
+            />
           </div>
         </div>
       </div>
