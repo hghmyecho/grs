@@ -1,3 +1,21 @@
+function NdisBadge() {
+  return (
+    <div className="flex items-center gap-3">
+      <div className="flex h-10 w-10 shrink-0 flex-col items-center justify-center rounded-full bg-[#5c2d6d] leading-none text-white">
+        <span className="text-[9px] font-semibold tracking-wide">we</span>
+        <svg viewBox="0 0 24 24" fill="#a3e635" className="my-0.5 h-2.5 w-2.5">
+          <path d="M12 21s-7.5-4.6-10-9.2C.4 8.6 2 5 5.6 5c2 0 3.4 1 4.4 2.4C11 6 12.4 5 14.4 5 18 5 19.6 8.6 22 11.8 19.5 16.4 12 21 12 21Z" />
+        </svg>
+        <span className="text-[9px] font-semibold tracking-wide">ndis</span>
+      </div>
+      <div className="text-xs leading-tight">
+        <p className="font-medium text-white/90">Registered NDIS Provider</p>
+        <p className="text-white/50">No. : 4-FZ477GD</p>
+      </div>
+    </div>
+  );
+}
+
 function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -79,8 +97,11 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 text-xs">
-          <p>Copyright © Global Rehabilitation Service ABN 51626759019 - All Rights Reserved</p>
+        <div className="mt-12 flex flex-col gap-6 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <NdisBadge />
+          <p className="text-xs">
+            Copyright © Global Rehabilitation Service ABN 51626759019 - All Rights Reserved
+          </p>
         </div>
       </div>
     </footer>
