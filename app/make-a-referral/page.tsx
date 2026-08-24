@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Phone } from "lucide-react";
-import ReferralForm from "@/components/ReferralForm";
+import FormBuilderEmbed from "@/components/FormBuilderEmbed";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function MakeAReferralPage() {
       </section>
 
       <section className="bg-peach-100 px-6 py-16 lg:px-8 lg:py-24">
-        <ReferralForm />
+        <FormBuilderEmbed formId="3241612" title="GRS Online Referral Form" height={2200} />
       </section>
     </>
   );

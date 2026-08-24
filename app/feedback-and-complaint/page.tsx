@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import FeedbackForm from "@/components/FeedbackForm";
+import FormBuilderEmbed from "@/components/FormBuilderEmbed";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function FeedbackAndComplaintPage() {
       </section>
 
       <section className="bg-peach-100 px-6 py-16 lg:px-8 lg:py-24">
-        <FeedbackForm />
+        <FormBuilderEmbed formId="6364113" title="GRS Feedback & Complaints Form" />
       </section>
     </>
   );
