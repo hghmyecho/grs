@@ -114,3 +114,12 @@ body {
 .bounce-transition {
   transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
