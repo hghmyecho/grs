@@ -161,7 +161,7 @@ export default function TravelFeeCalculator() {
         type="button"
         onClick={handleCalculate}
         disabled={!locationKey || !address || loading}
-        className="bounce-transition mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-700 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-orange-800 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400 disabled:hover:scale-100 disabled:hover:rotate-0"
+        className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-700 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-orange-800 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400"
       >
         {loading ? (
           <>
