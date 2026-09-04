@@ -4,16 +4,16 @@ export default function CtaBanner() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-navy-800 py-20 lg:py-24"
+      className="relative overflow-hidden bg-tan py-20 lg:py-24"
     >
       <div className="blob-float pointer-events-none absolute -left-10 -top-10 h-56 w-56 bg-flame/15 blur-3xl" />
-      <div className="blob-shape pointer-events-none absolute -bottom-16 right-0 h-64 w-64 bg-peach-200/10 blur-3xl [animation-delay:-3s]" />
+      <div className="blob-shape pointer-events-none absolute -bottom-16 right-0 h-64 w-64 bg-honey/10 blur-3xl [animation-delay:-3s]" />
 
       <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
-        <h2 className="font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
+        <h2 className="font-display text-3xl font-extrabold leading-tight text-charcoal sm:text-4xl">
           Ready to start the referral process?
         </h2>
-        <p className="mt-4 text-white/70">
+        <p className="mt-4 text-charcoal/70">
           Our team responds to every referral personally — no call centres,
           no waiting in the dark.
         </p>
@@ -28,7 +28,7 @@ export default function CtaBanner() {
           </a>
           <a
             href="#footer-contact"
-            className="bounce-transition group inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:rotate-1 hover:scale-105 hover:bg-white/10 active:scale-95 sm:w-auto"
+            className="bounce-transition group inline-flex w-full items-center justify-center gap-2 rounded-full border border-charcoal/30 px-6 py-3.5 text-sm font-semibold text-charcoal transition-all duration-300 hover:-translate-y-1 hover:rotate-1 hover:scale-105 hover:bg-charcoal/10 active:scale-95 sm:w-auto"
           >
             <Mail className="h-4 w-4" />
             Email Referrals
