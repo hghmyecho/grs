@@ -1,81 +1,27 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { ArrowRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import Image from "next/image";
 import { DISCIPLINES } from "@/lib/content/disciplines";
 
 export default function Disciplines() {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const handleWheel = (event: WheelEvent) => {
-      if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
-        event.preventDefault();
-        window.scrollBy(0, event.deltaY);
-      }
-    };
-
-    track.addEventListener("wheel", handleWheel, { passive: false });
-    return () => track.removeEventListener("wheel", handleWheel);
-  }, []);
-
-  const scrollByCard = (direction: 1 | -1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const card = track.querySelector<HTMLElement>("[data-card]");
-    const amount = (card?.offsetWidth ?? 300) + 24;
-    track.scrollBy({ left: direction * amount, behavior: "smooth" });
-  };
-
   return (
-    <section id="disciplines" className="overflow-hidden bg-navy-800 py-20 lg:py-28">
+    <section id="disciplines" className="bg-navy-800 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <span className="eyebrow-script">Our Disciplines</span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-cream sm:text-4xl">
-              One team, eight ways to support you
-            </h2>
-            <p className="mt-4 text-cream/60">
-              Clinicians across every discipline collaborate on shared goals,
-              so care never feels fragmented.
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => scrollByCard(-1)}
-              className="bounce-transition flex h-11 w-11 items-center justify-center rounded-full bg-rust text-white transition-all duration-300 hover:scale-110 hover:brightness-110"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollByCard(1)}
-              className="bounce-transition flex h-11 w-11 items-center justify-center rounded-full bg-rust text-white transition-all duration-300 hover:scale-110 hover:brightness-110"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
+        <div className="max-w-2xl">
+          <span className="eyebrow-script">Our Disciplines</span>
+          <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-cream sm:text-4xl">
+            One team, eight ways to support you
+          </h2>
+          <p className="mt-4 text-cream/60">
+            Clinicians across every discipline collaborate on shared goals,
+            so care never feels fragmented.
+          </p>
         </div>
-      </div>
 
-      <div
-        ref={trackRef}
-        className="carousel-track no-scrollbar mt-12 flex gap-6 overflow-x-auto scroll-smooth pb-2 snap-x snap-mandatory"
-      >
-        {DISCIPLINES.map(({ slug, tags, title, description, gradient, image }, index) => (
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {DISCIPLINES.map(({ slug, tags, title, description, gradient, image }, index) => (
             <div
               key={title}
-              data-card
-              className={`bounce-transition group relative flex w-[300px] shrink-0 snap-start flex-col transition-all duration-300 hover:-translate-y-2 hover:rotate-0 sm:w-[340px] ${
+              className={`bounce-transition group relative flex flex-col transition-all duration-300 hover:-translate-y-2 hover:rotate-0 ${
                 index % 2 === 0 ? "hover:-rotate-1" : "hover:rotate-1"
               }`}
             >
@@ -115,7 +61,7 @@ export default function Disciplines() {
                       alt=""
                       aria-hidden
                       fill
-                      sizes="340px"
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover object-top"
                     />
                   )}
@@ -133,7 +79,7 @@ export default function Disciplines() {
               </div>
             </div>
           ))}
-        <div aria-hidden className="w-px shrink-0" />
+        </div>
       </div>
     </section>
   );
