@@ -17,7 +17,7 @@ export default function Disciplines() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           {DISCIPLINES.map(({ slug, tags, title, description, gradient, image }, index) => (
             <div
               key={title}
@@ -30,11 +30,11 @@ export default function Disciplines() {
                 className="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded-[20px] bg-honey"
               />
               <div className="relative flex flex-col overflow-hidden rounded-[20px] border-2 border-honey bg-cream">
-                <div className="relative p-5">
-                  <span className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-lg bg-honey text-white group-hover:animate-wiggle">
+                <div className="relative p-4 sm:p-5">
+                  <span className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg bg-honey text-white group-hover:animate-wiggle sm:right-5 sm:top-5">
                     <Check className="h-4 w-4" />
                   </span>
-                  <div className="flex flex-nowrap gap-1.5 pr-9">
+                  <div className="flex flex-wrap gap-1.5 pr-9 sm:flex-nowrap">
                     {tags.map((tag) => (
                       <span
                         key={tag}
@@ -44,7 +44,7 @@ export default function Disciplines() {
                       </span>
                     ))}
                   </div>
-                  <h3 className="mt-4 min-h-[3.25rem] font-display text-xl font-bold leading-snug text-charcoal">
+                  <h3 className="mt-4 min-h-[3rem] font-display text-lg font-bold leading-snug text-charcoal sm:min-h-[3.25rem] sm:text-xl">
                     {title}
                   </h3>
                   <p className="mt-1.5 line-clamp-2 min-h-[2.75rem] text-sm leading-relaxed text-charcoal/80">
