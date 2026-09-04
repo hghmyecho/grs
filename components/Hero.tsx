@@ -52,13 +52,13 @@ export default function Hero() {
         </div>
 
         {/* Right: team photo panel */}
-        <div className="relative min-h-[420px] overflow-hidden lg:min-h-0">
+        <div className="relative min-h-[420px] overflow-hidden bg-navy-800 p-6 lg:min-h-0">
           <Image
             src="/photos/hero-team-2026.png"
             alt="The GRS team"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover object-top"
+            className="object-contain"
             priority
           />
         </div>
