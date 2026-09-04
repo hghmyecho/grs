@@ -52,32 +52,15 @@ export default function Hero() {
         </div>
 
         {/* Right: team photo panel */}
-        <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden bg-gradient-to-br from-orange-400 via-orange-500 to-peach-200 p-8 lg:min-h-0">
-          <div className="blob-float pointer-events-none absolute -right-10 -top-10 h-40 w-40 bg-white/15" />
-          <div className="blob-shape pointer-events-none absolute -bottom-16 left-4 h-48 w-48 bg-navy-900/10 [animation-delay:-4s]" />
-
-          {/* Polaroid-style team photo */}
-          <div className="relative w-full max-w-md -rotate-3">
-            <div className="absolute inset-0 translate-x-2 translate-y-2 rotate-2 rounded-2xl bg-honey" />
-            <div className="relative rounded-2xl border border-navy-800/70 bg-cream p-3 pb-10 shadow-xl">
-              <div className="relative aspect-4/3 overflow-hidden rounded-xl">
-                <Image
-                  src="/photos/hero-team-2026.png"
-                  alt="The GRS team"
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 90vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <p
-                className="mt-3 -rotate-1 text-right text-xl text-charcoal"
-                style={{ fontFamily: "var(--font-caption)" }}
-              >
-                GRS Team - 2026
-              </p>
-            </div>
-          </div>
+        <div className="relative min-h-[420px] overflow-hidden lg:min-h-0">
+          <Image
+            src="/photos/hero-team-2026.png"
+            alt="The GRS team"
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+            priority
+          />
         </div>
       </div>
     </section>
