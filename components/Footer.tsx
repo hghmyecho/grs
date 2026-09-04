@@ -11,6 +11,7 @@ function NdisBadge() {
       <div className="text-xs leading-tight">
         <p className="font-medium text-white/90">Registered NDIS Provider</p>
         <p className="text-white/50">No. : 4-FZ477GD</p>
+        <p className="text-white/50">No. : 4050083180</p>
       </div>
     </div>
   );
