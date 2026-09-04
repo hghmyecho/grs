@@ -41,7 +41,7 @@ export default function Header() {
 
               {openMenu === link.label && (
                 <div className="absolute left-0 top-full pt-3">
-                  <div className="w-80 rounded-2xl bg-white p-3 shadow-xl ring-1 ring-slate-200">
+                  <div className="w-80 rounded-2xl bg-white p-3 shadow-xl ring-1 ring-honey/20">
                     {link.items.map((item) => (
                       <a
                         key={item.label}
@@ -55,7 +55,7 @@ export default function Header() {
                           <span className="block text-sm font-semibold text-charcoal">
                             {item.label}
                           </span>
-                          <span className="block text-xs leading-relaxed text-slate-700">
+                          <span className="block text-xs leading-relaxed text-charcoal/80">
                             {item.description}
                           </span>
                         </span>
@@ -96,10 +96,10 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="mt-4 max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-slate-200 bg-white px-6 py-4 lg:hidden">
+        <div className="mt-4 max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-honey/20 bg-white px-6 py-4 lg:hidden">
           <nav className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
-              <div key={link.label} className="border-b border-slate-100 py-2">
+              <div key={link.label} className="border-b border-honey/20 py-2">
                 <button
                   type="button"
                   onClick={() =>
@@ -133,7 +133,7 @@ export default function Header() {
                           <span className="block text-sm font-medium text-charcoal">
                             {item.label}
                           </span>
-                          <span className="block text-xs text-slate-700">
+                          <span className="block text-xs text-charcoal/80">
                             {item.description}
                           </span>
                         </span>

@@ -25,7 +25,7 @@ import {
 // note.
 
 const inputStyles =
-  "w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-navy-950 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/15 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400";
+  "w-full rounded-xl border border-honey/20 bg-white px-4 py-2.5 text-sm text-charcoal placeholder:text-slate-400 focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/15 disabled:cursor-not-allowed disabled:bg-cream disabled:text-slate-400";
 
 let mapsScriptPromise: Promise<void> | null = null;
 
@@ -125,8 +125,8 @@ export default function TravelFeeCalculator() {
 
   return (
     <div className="rounded-3xl bg-white p-8 shadow-sm sm:p-10">
-      <label className="block text-sm font-medium text-navy-900">
-        Service Location <span className="text-orange-600">*</span>
+      <label className="block text-sm font-medium text-charcoal">
+        Service Location <span className="text-honey">*</span>
         <select
           value={locationKey}
           onChange={(event) => {
@@ -146,7 +146,7 @@ export default function TravelFeeCalculator() {
         </select>
       </label>
 
-      <label className="mt-6 block text-sm font-medium text-navy-900">
+      <label className="mt-6 block text-sm font-medium text-charcoal">
         Your Address
         <input
           ref={addressInputRef}
@@ -161,7 +161,7 @@ export default function TravelFeeCalculator() {
         type="button"
         onClick={handleCalculate}
         disabled={!locationKey || !address || loading}
-        className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-700 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-orange-800 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400"
+        className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-rust px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors duration-300 hover:brightness-110 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400"
       >
         {loading ? (
           <>
@@ -179,23 +179,23 @@ export default function TravelFeeCalculator() {
       {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
 
       {result && (
-        <div className="mt-8 border-t border-slate-200 pt-6">
-          <h2 className="font-display text-lg font-bold text-navy-950">Distance and Fee</h2>
+        <div className="mt-8 border-t border-honey/20 pt-6">
+          <h2 className="font-display text-lg font-bold text-charcoal">Distance and Fee</h2>
           <dl className="mt-4 space-y-2 text-sm">
             <div className="flex justify-between gap-4">
-              <dt className="text-slate-500">Distance</dt>
-              <dd className="font-semibold text-navy-950">{result.distanceKm} km</dd>
+              <dt className="text-charcoal/60">Distance</dt>
+              <dd className="font-semibold text-charcoal">{result.distanceKm} km</dd>
             </div>
             <div className="flex justify-between gap-4">
-              <dt className="text-slate-500">Zone</dt>
-              <dd className="text-right font-semibold text-navy-950">{result.zoneName}</dd>
+              <dt className="text-charcoal/60">Zone</dt>
+              <dd className="text-right font-semibold text-charcoal">{result.zoneName}</dd>
             </div>
             <div className="flex justify-between gap-4">
-              <dt className="text-slate-500">Travel Fee (labour based travel time)</dt>
-              <dd className="text-right font-semibold text-navy-950">{result.travelFee}</dd>
+              <dt className="text-charcoal/60">Travel Fee (labour based travel time)</dt>
+              <dd className="text-right font-semibold text-charcoal">{result.travelFee}</dd>
             </div>
           </dl>
-          <p className="mt-4 text-xs leading-relaxed text-slate-500">
+          <p className="mt-4 text-xs leading-relaxed text-charcoal/60">
             At GRS, we follow the Pricing Arrangement approved by the NDIS to determine travel
             fees you are charged. These may include a combination of labour based fees for the
             clinician&apos;s time spent travelling to you + a kilometre allowance to cover

@@ -13,7 +13,7 @@ export default function CalculatorPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Travel Fees Calculator", href: "/calculator" }]} />
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white">
             <Calculator className="h-6 w-6" />
@@ -28,7 +28,7 @@ export default function CalculatorPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-2xl">
           <TravelFeeCalculator />
         </div>

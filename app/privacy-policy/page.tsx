@@ -19,10 +19,10 @@ function Section({
 }) {
   return (
     <div>
-      <h2 className="font-display text-xl font-bold text-navy-950">
+      <h2 className="font-display text-xl font-bold text-charcoal">
         {number}. {title}
       </h2>
-      <div className="mt-3 space-y-4 text-sm leading-relaxed text-slate-700">
+      <div className="mt-3 space-y-4 text-sm leading-relaxed text-charcoal/80">
         {children}
       </div>
     </div>
@@ -40,10 +40,10 @@ function SubSection({
 }) {
   return (
     <div>
-      <h3 className="font-display text-base font-semibold text-navy-950">
+      <h3 className="font-display text-base font-semibold text-charcoal">
         {number} {title}
       </h3>
-      <div className="mt-2 space-y-3 text-sm leading-relaxed text-slate-700">
+      <div className="mt-2 space-y-3 text-sm leading-relaxed text-charcoal/80">
         {children}
       </div>
     </div>
@@ -54,9 +54,9 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Privacy Policy", href: "/privacy-policy" }]} />
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">
+          <span className="eyebrow-script">
             Privacy Policy
           </span>
           <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl space-y-14">
           <Section number="1" title="Introduction">
             <p>
@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <div>
-              <p className="font-semibold text-navy-950">
+              <p className="font-semibold text-charcoal">
                 Who should read this Privacy Policy?
               </p>
               <p className="mt-1">You should read this policy if you are:</p>
@@ -566,7 +566,7 @@ export default function PrivacyPolicyPage() {
                   Email:{" "}
                   <a
                     href="mailto:admin@grs.health"
-                    className="font-semibold text-orange-700 hover:text-orange-800"
+                    className="font-semibold text-rust hover:text-honey"
                   >
                     admin@grs.health
                   </a>
@@ -575,7 +575,7 @@ export default function PrivacyPolicyPage() {
                   Telephone:{" "}
                   <a
                     href="tel:1300066716"
-                    className="font-semibold text-orange-700 hover:text-orange-800"
+                    className="font-semibold text-rust hover:text-honey"
                   >
                     1300 066 716
                   </a>
@@ -594,7 +594,7 @@ export default function PrivacyPolicyPage() {
                   Email (NSW):{" "}
                   <a
                     href="mailto:info.nsw@grs.health"
-                    className="font-semibold text-orange-700 hover:text-orange-800"
+                    className="font-semibold text-rust hover:text-honey"
                   >
                     info.nsw@grs.health
                   </a>
@@ -603,7 +603,7 @@ export default function PrivacyPolicyPage() {
                   Email (QLD):{" "}
                   <a
                     href="mailto:info.qld@grs.health"
-                    className="font-semibold text-orange-700 hover:text-orange-800"
+                    className="font-semibold text-rust hover:text-honey"
                   >
                     info.qld@grs.health
                   </a>
@@ -612,7 +612,7 @@ export default function PrivacyPolicyPage() {
                   Online feedback/complaint form:{" "}
                   <a
                     href="/feedback-and-complaint"
-                    className="font-semibold text-orange-700 hover:text-orange-800"
+                    className="font-semibold text-rust hover:text-honey"
                   >
                     grs.health/feedback-and-complaint
                   </a>
@@ -629,7 +629,7 @@ export default function PrivacyPolicyPage() {
             </SubSection>
           </Section>
 
-          <div className="border-t border-slate-200 pt-6 text-xs text-slate-500">
+          <div className="border-t border-honey/20 pt-6 text-xs text-charcoal/60">
             <p>Global Rehabilitation Service Pty. Ltd. · ABN 51626759019</p>
             <p className="mt-1">Approved by the Board on 01/07/2023 · Scheduled review 02/05/2025</p>
           </div>

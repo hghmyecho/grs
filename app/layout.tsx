@@ -88,7 +88,7 @@ export default function RootLayout({
             untouched. */}
         <link rel="stylesheet" href="/theme.css" />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-navy-950">
+      <body className="min-h-full flex flex-col bg-white text-charcoal">
         <StructuredData />
         <Header />
         <main className="flex-1">{children}</main>

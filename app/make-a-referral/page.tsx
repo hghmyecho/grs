@@ -14,9 +14,9 @@ export default function MakeAReferralPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Make a Referral", href: "/make-a-referral" }]} />
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">
+          <span className="eyebrow-script">
             Make a Referral
           </span>
           <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
@@ -29,7 +29,7 @@ export default function MakeAReferralPage() {
           </p>
           <a
             href="tel:1300066716"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-navy-900 shadow-lg transition-transform hover:-translate-y-0.5"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-charcoal shadow-lg transition-transform hover:-translate-y-0.5"
           >
             <Phone className="h-4 w-4" />
             1300 066 716
@@ -37,7 +37,7 @@ export default function MakeAReferralPage() {
         </div>
       </section>
 
-      <section className="bg-peach-100 px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-tan px-6 py-16 lg:px-8 lg:py-24">
         <FormBuilderEmbed formId="3241612" title="GRS Online Referral Form" height={2200} />
       </section>
     </>

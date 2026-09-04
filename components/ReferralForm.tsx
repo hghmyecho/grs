@@ -71,7 +71,7 @@ const HEAR_ABOUT = [
 ];
 
 const inputStyles =
-  "w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-navy-950 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/15";
+  "w-full rounded-xl border border-honey/20 bg-white px-4 py-2.5 text-sm text-charcoal placeholder:text-slate-400 focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/15";
 
 function Section({
   eyebrow,
@@ -83,11 +83,11 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <div className="border-t border-slate-100 pt-10 first:mt-0 first:border-t-0 first:pt-0">
-      <span className="text-xs font-semibold uppercase tracking-wide text-orange-600">
+    <div className="border-t border-honey/20 pt-10 first:mt-0 first:border-t-0 first:pt-0">
+      <span className="text-xs font-semibold uppercase tracking-wide text-honey">
         {eyebrow}
       </span>
-      <h2 className="mt-1 font-display text-xl font-bold text-navy-950">
+      <h2 className="mt-1 font-display text-xl font-bold text-charcoal">
         {title}
       </h2>
       <div className="mt-6 grid gap-6 sm:grid-cols-2">{children}</div>
@@ -110,11 +110,11 @@ function Field({
 }) {
   return (
     <div className={full ? "sm:col-span-2" : undefined}>
-      <p className="text-sm font-medium text-navy-900">
+      <p className="text-sm font-medium text-charcoal">
         {label}
-        {required && <span className="text-orange-600"> *</span>}
+        {required && <span className="text-honey"> *</span>}
       </p>
-      {hint && <p className="mt-0.5 text-xs text-slate-500">{hint}</p>}
+      {hint && <p className="mt-0.5 text-xs text-charcoal/60">{hint}</p>}
       <div className="mt-2">{children}</div>
     </div>
   );
@@ -140,14 +140,14 @@ function PillOptions({
       {options.map((option) => (
         <label
           key={option}
-          className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm text-navy-900 transition-colors has-[:checked]:border-orange-500 has-[:checked]:bg-peach-100"
+          className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-honey/20 px-3.5 py-2.5 text-sm text-charcoal transition-colors has-[:checked]:border-honey has-[:checked]:bg-tan"
         >
           <input
             type={type}
             name={name}
             value={option}
             required={type === "radio" ? required : undefined}
-            className="h-4 w-4 accent-orange-600"
+            className="h-4 w-4 accent-honey"
           />
           {option}
         </label>
@@ -223,13 +223,13 @@ export default function ReferralForm() {
   if (submitted) {
     return (
       <div className="mx-auto max-w-2xl rounded-3xl bg-white p-10 text-center shadow-sm sm:p-14">
-        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-peach-100 text-orange-600">
+        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tan text-honey">
           <CheckCircle2 className="h-7 w-7" />
         </span>
-        <h2 className="mt-5 font-display text-2xl font-bold text-navy-950">
+        <h2 className="mt-5 font-display text-2xl font-bold text-charcoal">
           Referral received
         </h2>
-        <p className="mt-3 text-slate-700">
+        <p className="mt-3 text-charcoal/80">
           Thank you — a member of our intake team will review the details and
           be in touch shortly.
         </p>
@@ -244,7 +244,7 @@ export default function ReferralForm() {
       className="mx-auto max-w-4xl rounded-3xl bg-white p-8 shadow-sm sm:p-10 lg:p-12"
     >
       {(restored || justSaved) && (
-        <div className="mb-8 flex items-center justify-between gap-3 rounded-xl bg-peach-100 px-4 py-3 text-sm text-navy-900">
+        <div className="mb-8 flex items-center justify-between gap-3 rounded-xl bg-tan px-4 py-3 text-sm text-charcoal">
           <span>
             {justSaved
               ? "Draft saved on this device — you can safely close this page and finish later."
@@ -254,7 +254,7 @@ export default function ReferralForm() {
             <button
               type="button"
               onClick={clearDraft}
-              className="flex shrink-0 items-center gap-1 text-xs font-semibold text-orange-700 hover:text-orange-800"
+              className="flex shrink-0 items-center gap-1 text-xs font-semibold text-rust hover:text-honey"
             >
               <X className="h-3.5 w-3.5" />
               Clear
@@ -478,7 +478,7 @@ export default function ReferralForm() {
             full
             hint="Previous medical summaries, assessments, or treatment records."
           >
-            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-slate-300 px-4 py-8 text-sm text-slate-500 transition-colors hover:border-orange-400 hover:text-orange-600">
+            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-slate-300 px-4 py-8 text-sm text-charcoal/60 transition-colors hover:border-honey hover:text-honey">
               <Paperclip className="h-4 w-4" />
               Choose a file or drag it here
               <input type="file" name="attachment" className="hidden" />
@@ -490,14 +490,14 @@ export default function ReferralForm() {
       <div className="mt-10 flex flex-col gap-3 sm:flex-row">
         <button
           type="submit"
-          className="flex-1 rounded-full bg-orange-700 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-800"
+          className="flex-1 rounded-full bg-rust px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:brightness-110"
         >
           Submit Referral Form
         </button>
         <button
           type="button"
           onClick={handleSaveForLater}
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 px-6 py-3.5 text-sm font-semibold text-navy-900 transition-colors hover:bg-slate-50"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-honey/20 px-6 py-3.5 text-sm font-semibold text-charcoal transition-colors hover:bg-cream"
         >
           <Save className="h-4 w-4" />
           Save for Later

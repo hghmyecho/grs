@@ -100,15 +100,15 @@ const ADMIN_TEAM = [
 function StaffList({ title, people }: { title: string; people: string[] }) {
   return (
     <div>
-      <h2 className="font-display text-xl font-bold text-navy-950">
+      <h2 className="font-display text-xl font-bold text-charcoal">
         {title}
       </h2>
-      <ul className="mt-5 grid gap-x-8 gap-y-3 text-sm text-slate-700 sm:grid-cols-2">
+      <ul className="mt-5 grid gap-x-8 gap-y-3 text-sm text-charcoal/80 sm:grid-cols-2">
         {people.map((person) => {
           const [name, role] = person.split(" — ");
           return (
             <li key={person} className="leading-relaxed">
-              <span className="font-semibold text-navy-950">{name}</span>
+              <span className="font-semibold text-charcoal">{name}</span>
               {role ? <span> — {role}</span> : null}
             </li>
           );
@@ -122,9 +122,9 @@ export default function OurTeamPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Our Team", href: "/our-team" }]} />
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">
+          <span className="eyebrow-script">
             Our Team
           </span>
           <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
@@ -139,13 +139,13 @@ export default function OurTeamPage() {
         </div>
       </section>
 
-      <section className="bg-peach-100 px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-tan px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
-            <span className="text-sm font-semibold uppercase tracking-wide text-orange-700">
+            <span className="eyebrow-script">
               Leadership
             </span>
-            <h2 className="mt-3 font-display text-2xl font-bold text-navy-950 sm:text-3xl">
+            <h2 className="mt-3 font-display text-2xl font-bold text-charcoal sm:text-3xl">
               Management clinicians
             </h2>
           </div>
@@ -158,10 +158,10 @@ export default function OurTeamPage() {
               >
                 <div className={`h-32 bg-gradient-to-br ${gradient}`} />
                 <div className="p-6">
-                  <h3 className="font-display text-base font-bold text-navy-950">
+                  <h3 className="font-display text-base font-bold text-charcoal">
                     {name}
                   </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-700">
+                  <p className="mt-1 text-xs leading-relaxed text-charcoal/80">
                     {role}
                   </p>
                 </div>
@@ -171,7 +171,7 @@ export default function OurTeamPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-4xl space-y-14">
           <StaffList title="Senior Clinicians" people={SENIOR_CLINICIANS} />
           <StaffList title="General Clinicians" people={GENERAL_CLINICIANS} />
@@ -180,17 +180,17 @@ export default function OurTeamPage() {
             people={ADMIN_TEAM}
           />
 
-          <div className="rounded-2xl bg-peach-100 p-8 text-center">
-            <h2 className="font-display text-xl font-bold text-navy-950">
+          <div className="rounded-2xl bg-tan p-8 text-center">
+            <h2 className="font-display text-xl font-bold text-charcoal">
               Interested in joining GRS?
             </h2>
-            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-slate-700">
+            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-charcoal/80">
               We&apos;re always looking for clinicians who share our
               commitment to quality, evidence-based, client-directed care.
             </p>
             <a
               href="mailto:info@grs.health"
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-orange-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-800"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-rust px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:brightness-110"
             >
               Get in touch
             </a>

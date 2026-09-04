@@ -31,9 +31,9 @@ export default function JoinUsPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Join Us", href: "/join-us" }]} />
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">
+          <span className="eyebrow-script">
             Careers
           </span>
           <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
@@ -47,7 +47,7 @@ export default function JoinUsPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-6 sm:grid-cols-2">
             {CAREERS.map(({ slug, title, tagline }, index) => {
@@ -56,20 +56,20 @@ export default function JoinUsPage() {
                 <a
                   key={slug}
                   href={`/${slug}`}
-                  className={`bounce-transition group flex flex-col rounded-2xl border border-slate-200 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                  className={`bounce-transition group flex flex-col rounded-2xl border border-honey/20 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                     index % 2 === 0 ? "hover:-rotate-1" : "hover:rotate-1"
                   }`}
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-navy-900 text-white transition-transform duration-300 group-hover:scale-110">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-honey text-white transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h2 className="mt-5 font-display text-lg font-bold text-navy-950">
+                  <h2 className="mt-5 font-display text-lg font-bold text-charcoal">
                     {title}
                   </h2>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-700">
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal/80">
                     {tagline}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-orange-700">
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-rust">
                     Learn more
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
@@ -79,12 +79,12 @@ export default function JoinUsPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-sm text-slate-700">
+            <p className="text-sm text-charcoal/80">
               Ready to see what&apos;s open right now?
             </p>
             <a
               href="/currrent-advertised-positions"
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-orange-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-800"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-rust px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:brightness-110"
             >
               Current Advertised Positions
               <ArrowRight className="h-4 w-4" />

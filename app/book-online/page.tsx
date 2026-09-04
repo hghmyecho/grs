@@ -19,9 +19,9 @@ export default function BookOnlinePage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Book Online", href: "/book-online" }]} />
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">
+          <span className="eyebrow-script">
             Book Online
           </span>
           <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
@@ -35,16 +35,16 @@ export default function BookOnlinePage() {
         </div>
       </section>
 
-      <section className="bg-peach-100 px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-tan px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2">
           <div className="flex flex-col rounded-3xl bg-white p-8 shadow-sm sm:p-10">
-            <span className="blob-shape flex h-14 w-14 items-center justify-center bg-navy-900 text-white">
+            <span className="blob-shape flex h-14 w-14 items-center justify-center bg-honey text-white">
               <HelpCircle className="h-6 w-6" />
             </span>
-            <h2 className="mt-5 font-display text-xl font-bold text-navy-950">
+            <h2 className="mt-5 font-display text-xl font-bold text-charcoal">
               Not sure if we&apos;re the right fit?
             </h2>
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-700">
+            <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal/80">
               Give our team a call or send a quick online inquiry — no
               referral needed. We&apos;re happy to talk through your needs
               and how GRS can help before you commit to anything.
@@ -52,14 +52,14 @@ export default function BookOnlinePage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href="tel:1300066716"
-                className="bounce-transition inline-flex items-center gap-2 rounded-full border border-navy-900/15 px-5 py-2.5 text-sm font-semibold text-navy-900 transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-peach-100"
+                className="bounce-transition inline-flex items-center gap-2 rounded-full border border-charcoal/15 px-5 py-2.5 text-sm font-semibold text-charcoal transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-tan"
               >
                 <Phone className="h-4 w-4" />
                 1300 066 716
               </a>
               <Link
                 href="/contact-us"
-                className="bounce-transition group inline-flex items-center gap-2 rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-navy-950"
+                className="bounce-transition group inline-flex items-center gap-2 rounded-full bg-honey px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-navy-800"
               >
                 Send an Inquiry
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -67,8 +67,8 @@ export default function BookOnlinePage() {
             </div>
           </div>
 
-          <div className="flex flex-col rounded-3xl bg-navy-950 p-8 shadow-sm sm:p-10">
-            <span className="blob-shape flex h-14 w-14 items-center justify-center bg-orange-500 text-white">
+          <div className="flex flex-col rounded-3xl bg-navy-800 p-8 shadow-sm sm:p-10">
+            <span className="blob-shape flex h-14 w-14 items-center justify-center bg-honey text-white">
               <FileText className="h-6 w-6" />
             </span>
             <h2 className="mt-5 font-display text-xl font-bold text-white">
@@ -82,7 +82,7 @@ export default function BookOnlinePage() {
             <div className="mt-6">
               <Link
                 href="/make-a-referral"
-                className="bounce-transition group inline-flex items-center gap-2 rounded-full bg-orange-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-orange-800"
+                className="bounce-transition group inline-flex items-center gap-2 rounded-full bg-rust px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:brightness-110"
               >
                 Make a Referral
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

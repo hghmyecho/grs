@@ -14,7 +14,7 @@ export default function DisciplinarySummaryPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Disciplinary Summary", href: "/disciplinary-summary" }]} />
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <h1 className="font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
             Disciplinary Summary
@@ -27,23 +27,23 @@ export default function DisciplinarySummaryPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-16 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-3xl divide-y divide-slate-200">
+      <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-3xl divide-y divide-honey/20">
           {DISCIPLINES.map(({ slug, title, description }) => (
             <a
               key={slug}
               href={`/${slug}`}
-              className="group flex items-center justify-between gap-4 py-5 transition-colors hover:bg-peach-100/50"
+              className="group flex items-center justify-between gap-4 py-5 transition-colors hover:bg-tan/50"
             >
               <div>
-                <h2 className="font-display text-base font-bold text-navy-950">
+                <h2 className="font-display text-base font-bold text-charcoal">
                   {title}
                 </h2>
-                <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                <p className="mt-1 text-sm leading-relaxed text-charcoal/80">
                   {description}
                 </p>
               </div>
-              <ArrowRight className="h-4 w-4 shrink-0 text-navy-900 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 shrink-0 text-charcoal transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           ))}
         </div>

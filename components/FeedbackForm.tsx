@@ -4,7 +4,7 @@ import { useState, type FormEvent, type ReactNode } from "react";
 import { CheckCircle2 } from "lucide-react";
 
 const inputStyles =
-  "w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-navy-950 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/15";
+  "w-full rounded-xl border border-honey/20 bg-white px-4 py-2.5 text-sm text-charcoal placeholder:text-slate-400 focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/15";
 
 function Section({
   title,
@@ -14,8 +14,8 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <div className="border-t border-slate-100 pt-10 first:mt-0 first:border-t-0 first:pt-0">
-      <h2 className="font-display text-xl font-bold text-navy-950">{title}</h2>
+    <div className="border-t border-honey/20 pt-10 first:mt-0 first:border-t-0 first:pt-0">
+      <h2 className="font-display text-xl font-bold text-charcoal">{title}</h2>
       <div className="mt-6 grid gap-6 sm:grid-cols-2">{children}</div>
     </div>
   );
@@ -36,11 +36,11 @@ function Field({
 }) {
   return (
     <div className={full ? "sm:col-span-2" : undefined}>
-      <p className="text-sm font-medium text-navy-900">
+      <p className="text-sm font-medium text-charcoal">
         {label}
-        {required && <span className="text-orange-600"> *</span>}
+        {required && <span className="text-honey"> *</span>}
       </p>
-      {hint && <p className="mt-0.5 text-xs text-slate-500">{hint}</p>}
+      {hint && <p className="mt-0.5 text-xs text-charcoal/60">{hint}</p>}
       <div className="mt-2">{children}</div>
     </div>
   );
@@ -64,7 +64,7 @@ function PillOptions({
       {options.map((option) => (
         <label
           key={option}
-          className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm text-navy-900 transition-colors has-[:checked]:border-orange-500 has-[:checked]:bg-peach-100"
+          className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-honey/20 px-3.5 py-2.5 text-sm text-charcoal transition-colors has-[:checked]:border-honey has-[:checked]:bg-tan"
         >
           <input
             type="radio"
@@ -73,7 +73,7 @@ function PillOptions({
             required={required}
             checked={value !== undefined ? value === option : undefined}
             onChange={() => onChange?.(option)}
-            className="h-4 w-4 accent-orange-600"
+            className="h-4 w-4 accent-honey"
           />
           {option}
         </label>
@@ -98,13 +98,13 @@ export default function FeedbackForm() {
   if (submitted) {
     return (
       <div className="mx-auto max-w-2xl rounded-3xl bg-white p-10 text-center shadow-sm sm:p-14">
-        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-peach-100 text-orange-600">
+        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tan text-honey">
           <CheckCircle2 className="h-7 w-7" />
         </span>
-        <h2 className="mt-5 font-display text-2xl font-bold text-navy-950">
+        <h2 className="mt-5 font-display text-2xl font-bold text-charcoal">
           Thank you for your feedback
         </h2>
-        <p className="mt-3 text-slate-700">
+        <p className="mt-3 text-charcoal/80">
           Your submission has been received. Our team reviews every
           compliment, complaint, and piece of feedback personally.
         </p>
@@ -231,7 +231,7 @@ export default function FeedbackForm() {
         </Section>
 
         <Section title="Section 5: Privacy">
-          <div className="space-y-3 text-sm leading-relaxed text-slate-700 sm:col-span-2">
+          <div className="space-y-3 text-sm leading-relaxed text-charcoal/80 sm:col-span-2">
             <p>
               GRS is committed to protecting your privacy. We collect and
               handle personal information that you provide on this feedback
@@ -283,7 +283,7 @@ export default function FeedbackForm() {
 
       <button
         type="submit"
-        className="mt-10 w-full rounded-full bg-orange-700 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-800"
+        className="mt-10 w-full rounded-full bg-rust px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:brightness-110"
       >
         Submit
       </button>

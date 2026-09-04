@@ -13,9 +13,9 @@ export default function FeedbackAndComplaintPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Feedback & Complaints", href: "/feedback-and-complaint" }]} />
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">
+          <span className="eyebrow-script">
             Feedback &amp; Complaints
           </span>
           <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
@@ -30,7 +30,7 @@ export default function FeedbackAndComplaintPage() {
         </div>
       </section>
 
-      <section className="bg-peach-100 px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-tan px-6 py-16 lg:px-8 lg:py-24">
         <FormBuilderEmbed formId="4633083" title="GRS Feedback & Complaints Form" />
       </section>
     </>

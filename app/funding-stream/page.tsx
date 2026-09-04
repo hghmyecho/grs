@@ -40,9 +40,9 @@ export default function FundingStreamPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Funding Streams", href: "/funding-stream" }]} />
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-wide text-orange-400">
+          <span className="eyebrow-script">
             Funding Streams
           </span>
           <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
@@ -54,7 +54,7 @@ export default function FundingStreamPage() {
         </div>
       </section>
 
-      <section className="bg-peach-100 px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-tan px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 sm:grid-cols-2">
             {FUNDING_STREAMS.map(({ icon: Icon, title, description }) => (
@@ -62,14 +62,14 @@ export default function FundingStreamPage() {
                 key={title}
                 className="flex items-start gap-4 rounded-2xl bg-white p-8 shadow-sm"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy-900 text-white">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-honey text-white">
                   <Icon className="h-5 w-5" />
                 </span>
                 <div>
-                  <h2 className="font-display text-lg font-bold text-navy-950">
+                  <h2 className="font-display text-lg font-bold text-charcoal">
                     {title}
                   </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-700">
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal/80">
                     {description}
                   </p>
                 </div>
@@ -77,7 +77,7 @@ export default function FundingStreamPage() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-2xl bg-navy-950 p-8 text-center sm:p-12">
+          <div className="mt-12 rounded-2xl bg-navy-800 p-8 text-center sm:p-12">
             <h2 className="font-display text-xl font-bold text-white">
               Not sure which funding stream applies to you?
             </h2>
@@ -88,7 +88,7 @@ export default function FundingStreamPage() {
             </p>
             <a
               href="/make-a-referral"
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-navy-900 shadow-sm transition-transform hover:-translate-y-0.5"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-charcoal shadow-sm transition-transform hover:-translate-y-0.5"
             >
               Make a Referral
             </a>
