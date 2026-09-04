@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="bg-cream">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:gap-8 lg:py-24 lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-8 pt-16 lg:grid-cols-2 lg:gap-8 lg:pb-12 lg:pt-24 lg:px-8">
         {/* Left: copy panel */}
         <div>
           <span className="relative inline-flex -rotate-2 items-center gap-1.5 rounded-full bg-honey/15 px-3.5 py-1.5 text-sm font-semibold uppercase tracking-wide text-rust">
@@ -57,7 +57,7 @@ export default function Hero() {
         </div>
 
         {/* Right: team photo */}
-        <div className="relative mx-auto aspect-square w-full max-w-lg">
+        <div className="relative mx-auto aspect-square w-full max-w-2xl">
           <Image
             src="/photos/hero-team-2026.png"
             alt="The GRS team"
