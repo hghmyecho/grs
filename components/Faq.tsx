@@ -43,7 +43,7 @@ const faqSchema = {
 
 export default function Faq() {
   return (
-    <section className="bg-cream py-20 lg:py-28">
+    <section className="bg-cream pb-20 pt-10 lg:pb-28 lg:pt-14">
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
