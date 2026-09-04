@@ -17,10 +17,13 @@ import Link from "next/link";
 const linkCls =
   "font-medium text-rust underline decoration-honey/50 underline-offset-2 hover:text-honey";
 
+// Renders as a sub-block inside components/Faq.tsx's <section> — no
+// section/background of its own, so it reads as one continuous FAQ+SEO
+// block sharing the FAQ section's cream background, per client request
+// to merge the two rather than have them look like two stacked sections.
 export default function SeoIntro() {
   return (
-    <section className="border-t border-honey/20 bg-tan py-14 lg:py-16">
-      <div className="mx-auto max-w-7xl px-6 text-sm leading-relaxed text-charcoal/80 lg:px-8">
+    <div className="mx-auto mt-14 max-w-7xl border-t border-honey/20 px-6 pt-10 text-sm leading-relaxed text-charcoal/80 lg:px-8">
         <h2 className="font-display text-lg font-bold text-charcoal sm:text-xl">
           Trusted NDIS Allied Health Support Across NSW and QLD
         </h2>
@@ -306,7 +309,6 @@ export default function SeoIntro() {
         </p>
           </div>
         </details>
-      </div>
-    </section>
+    </div>
   );
 }

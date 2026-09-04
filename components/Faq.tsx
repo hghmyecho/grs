@@ -1,4 +1,5 @@
 import { Plus } from "lucide-react";
+import SeoIntro from "@/components/SeoIntro";
 
 const FAQS = [
   {
@@ -74,6 +75,8 @@ export default function Faq() {
           ))}
         </div>
       </div>
+
+      <SeoIntro />
     </section>
   );
 }

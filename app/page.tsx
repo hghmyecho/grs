@@ -6,7 +6,6 @@ import Values from "@/components/Values";
 import Locations from "@/components/Locations";
 import Faq from "@/components/Faq";
 import CtaBanner from "@/components/CtaBanner";
-import SeoIntro from "@/components/SeoIntro";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
       <Values />
       <Locations />
       <Faq />
-      <SeoIntro />
       <CtaBanner />
     </>
   );
