@@ -46,7 +46,7 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer id="footer-contact" className="bg-navy-950 text-white/70">
+    <footer id="footer-contact" className="bg-navy-800 text-white/70">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div>
@@ -68,14 +68,14 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-orange-500"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-rust"
               >
                 <FacebookIcon className="h-4 w-4" />
               </a>
               <a
                 href="#"
                 aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-orange-500"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-rust"
               >
                 <InstagramIcon className="h-4 w-4" />
               </a>
@@ -88,7 +88,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm font-medium transition-colors hover:text-orange-400"
+                    className="text-sm font-medium transition-colors hover:text-honey"
                   >
                     {link.label}
                   </a>

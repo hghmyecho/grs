@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Bad_Script, Poppins, Seaweed_Script } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,6 +9,23 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+});
+
+// Cursive eyebrow-label font from the Sept 2026 homepage redesign (see
+// components/Hero.tsx etc. — every section label like "Our Disciplines"
+// uses this instead of the old uppercase-tracked style).
+const seaweedScript = Seaweed_Script({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+// Handwritten photo-caption font (e.g. "GRS Team - 2026" under the hero
+// polaroid) — distinct from the eyebrow-label script above.
+const badScript = Bad_Script({
+  variable: "--font-caption",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const siteUrl = "https://grs-nu.vercel.app";
@@ -62,7 +79,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} h-full antialiased`}
+      className={`${poppins.variable} ${seaweedScript.variable} ${badScript.variable} h-full antialiased`}
     >
       <head>
         {/* Self-serve brand color overrides — see app/theme.css/route.ts

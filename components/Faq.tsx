@@ -43,7 +43,7 @@ const faqSchema = {
 
 export default function Faq() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-cream py-20 lg:py-28">
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
@@ -52,24 +52,22 @@ export default function Faq() {
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="text-center">
-          <span className="text-sm font-semibold uppercase tracking-wide text-orange-700">
-            FAQs
-          </span>
-          <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-navy-950 sm:text-4xl">
+          <span className="eyebrow-script">FAQs</span>
+          <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-charcoal sm:text-4xl">
             Common questions, answered
           </h2>
         </div>
 
-        <div className="mt-10 divide-y divide-slate-200 border-y border-slate-200">
+        <div className="mt-10 divide-y divide-honey/30 border-y border-honey/30">
           {FAQS.map((faq) => (
             <details key={faq.question} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-navy-950 transition-colors hover:text-orange-700">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-charcoal transition-colors hover:text-rust">
                 {faq.question}
-                <span className="bounce-transition blob-shape flex h-8 w-8 shrink-0 items-center justify-center bg-orange-100 text-orange-700 transition-transform duration-300 group-open:rotate-45 group-open:bg-orange-500 group-open:text-white">
+                <span className="bounce-transition flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-honey text-white transition-transform duration-300 group-open:rotate-45 group-open:bg-rust">
                   <Plus className="h-4 w-4" />
                 </span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-slate-700">
+              <p className="mt-3 text-sm leading-relaxed text-charcoal/80">
                 {faq.answer}
               </p>
             </details>

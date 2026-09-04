@@ -58,16 +58,16 @@ function PhotoPanel({ href, image, alt }: { href: string; image: string; alt: st
 
 export default function ClinicalStreams() {
   return (
-    <section id="services" className="bg-[#f5f5f5] py-20 lg:py-28">
+    <section id="services" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
-          <span className="text-sm font-semibold uppercase tracking-wide text-orange-700">
+          <span className="font-display text-[28px] font-extrabold leading-none text-honey sm:text-[32px]">
             Our Clinical Streams
           </span>
-          <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-navy-950 sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-charcoal sm:text-4xl">
             Care organised around the people we support
           </h2>
-          <p className="mt-4 text-slate-700">
+          <p className="mt-4 text-charcoal/80">
             Every stream is led by clinicians who specialise in that area of
             need, working as one team around each participant.
           </p>

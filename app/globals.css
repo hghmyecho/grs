@@ -15,6 +15,19 @@
   --color-peach-200: #fdd8b0;
   --color-peach-100: #fef3e5;
   --color-slate-200: #e2e2e2;
+
+  /* Sept 2026 homepage redesign palette (from Figma) — kept as separate
+     fixed tokens rather than folded into the navy/orange/peach seed system
+     above, since they don't derive cleanly from 3 seeds. Not wired into
+     the self-serve theme editor (see lib/theme/palette.ts) by design. */
+  --color-navy-800: #14304f;
+  --color-charcoal: #3a322b;
+  --color-cream: #faf6ef;
+  --color-tan: #f1e4d3;
+  --color-honey: #f7941d;
+  --color-flame: #ff5012;
+  --color-rust: #c1592e;
+  --color-teal: #17bebb;
 }
 
 @theme inline {
@@ -34,6 +47,17 @@
   --color-peach-100: var(--color-peach-100);
   --color-slate-200: var(--color-slate-200);
 
+  --color-navy-800: var(--color-navy-800);
+  --color-charcoal: var(--color-charcoal);
+  --color-cream: var(--color-cream);
+  --color-tan: var(--color-tan);
+  --color-honey: var(--color-honey);
+  --color-flame: var(--color-flame);
+  --color-rust: var(--color-rust);
+  --color-teal: var(--color-teal);
+  --font-script: var(--font-script);
+  --font-caption: var(--font-caption);
+
   --animate-wiggle: wiggle 0.5s ease-in-out;
 }
 
@@ -41,6 +65,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Cursive eyebrow label used above every homepage section heading since
+   the Sept 2026 redesign (e.g. "Our Disciplines", "Where We Work"). */
+.eyebrow-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-honey);
+}
+
+@media (min-width: 640px) {
+  .eyebrow-script {
+    font-size: 2rem;
+  }
 }
 
 .no-scrollbar {

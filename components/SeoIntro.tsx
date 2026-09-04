@@ -15,13 +15,13 @@ import Link from "next/link";
 // visible content, since it's present in the server-rendered HTML from
 // first load — nothing is injected only after the click.
 const linkCls =
-  "font-medium text-orange-700 underline decoration-orange-300 underline-offset-2 hover:text-orange-800";
+  "font-medium text-rust underline decoration-honey/50 underline-offset-2 hover:text-honey";
 
 export default function SeoIntro() {
   return (
-    <section className="border-t border-slate-100 bg-slate-50 py-14 lg:py-16">
-      <div className="mx-auto max-w-7xl px-6 text-sm leading-relaxed text-slate-600 lg:px-8">
-        <h2 className="font-display text-lg font-bold text-navy-950 sm:text-xl">
+    <section className="border-t border-honey/20 bg-tan py-14 lg:py-16">
+      <div className="mx-auto max-w-7xl px-6 text-sm leading-relaxed text-charcoal/80 lg:px-8">
+        <h2 className="font-display text-lg font-bold text-charcoal sm:text-xl">
           Trusted NDIS Allied Health Support Across NSW and QLD
         </h2>
 
@@ -85,11 +85,11 @@ export default function SeoIntro() {
         </p>
 
         <details className="group mt-5">
-          <summary className="flex cursor-pointer list-none items-center gap-1.5 text-sm font-semibold text-navy-900 marker:content-none">
+          <summary className="flex cursor-pointer list-none items-center gap-1.5 text-sm font-semibold text-charcoal marker:content-none">
             Read more about GRS and NDIS allied health support
             <span
               aria-hidden
-              className="text-lg leading-none text-orange-700 transition-transform duration-200 group-open:rotate-45"
+              className="text-lg leading-none text-rust transition-transform duration-200 group-open:rotate-45"
             >
               +
             </span>
@@ -108,7 +108,7 @@ export default function SeoIntro() {
           clinicians, for clinicians and clients alike.
         </p>
 
-        <h3 className="mt-8 font-display text-base font-bold text-navy-950">
+        <h3 className="mt-8 font-display text-base font-bold text-charcoal">
           Support for Every Stage and Every Need
         </h3>
         <p className="mt-3">
@@ -153,7 +153,7 @@ export default function SeoIntro() {
           participants.
         </p>
 
-        <h3 className="mt-8 font-display text-base font-bold text-navy-950">
+        <h3 className="mt-8 font-display text-base font-bold text-charcoal">
           Allied Health Services We Provide
         </h3>
         <p className="mt-3">
@@ -221,7 +221,7 @@ export default function SeoIntro() {
           effective.
         </p>
 
-        <h3 className="mt-8 font-display text-base font-bold text-navy-950">
+        <h3 className="mt-8 font-display text-base font-bold text-charcoal">
           Local Teams in Sydney, Brisbane, and the Gold Coast
         </h3>
         <p className="mt-3">
@@ -237,7 +237,7 @@ export default function SeoIntro() {
           arrangements work under your NDIS plan.
         </p>
 
-        <h3 className="mt-8 font-display text-base font-bold text-navy-950">
+        <h3 className="mt-8 font-display text-base font-bold text-charcoal">
           How NDIS Funding Works With GRS
         </h3>
         <p className="mt-3">
@@ -254,7 +254,7 @@ export default function SeoIntro() {
           categories, so you can refer with confidence.
         </p>
 
-        <h3 className="mt-8 font-display text-base font-bold text-navy-950">
+        <h3 className="mt-8 font-display text-base font-bold text-charcoal">
           Why Families and Coordinators Choose GRS
         </h3>
         <p className="mt-3">
@@ -275,7 +275,7 @@ export default function SeoIntro() {
           their file number.
         </p>
 
-        <h3 className="mt-8 font-display text-base font-bold text-navy-950">
+        <h3 className="mt-8 font-display text-base font-bold text-charcoal">
           Making a Referral
         </h3>
         <p className="mt-3">

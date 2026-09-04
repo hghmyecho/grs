@@ -4,9 +4,9 @@ export default function CtaBanner() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-navy-900 py-20 lg:py-24"
+      className="relative overflow-hidden bg-navy-800 py-20 lg:py-24"
     >
-      <div className="blob-float pointer-events-none absolute -left-10 -top-10 h-56 w-56 bg-orange-500/15 blur-3xl" />
+      <div className="blob-float pointer-events-none absolute -left-10 -top-10 h-56 w-56 bg-flame/15 blur-3xl" />
       <div className="blob-shape pointer-events-none absolute -bottom-16 right-0 h-64 w-64 bg-peach-200/10 blur-3xl [animation-delay:-3s]" />
 
       <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
@@ -21,7 +21,7 @@ export default function CtaBanner() {
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="tel:1300066716"
-            className="bounce-transition inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-700 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:-translate-y-1 hover:-rotate-1 hover:scale-105 hover:bg-orange-800 active:scale-95 sm:w-auto"
+            className="bounce-transition inline-flex w-full items-center justify-center gap-2 rounded-full bg-rust px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rust/20 transition-all duration-300 hover:-translate-y-1 hover:-rotate-1 hover:scale-105 hover:brightness-110 active:scale-95 sm:w-auto"
           >
             <Phone className="h-4 w-4" />
             Call 1300 066 716

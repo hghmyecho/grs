@@ -1,15 +1,16 @@
 import { ArrowRight, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="pt-2">
       <div className="relative grid overflow-hidden lg:grid-cols-2">
         {/* Left: copy panel */}
-        <div className="relative overflow-hidden bg-navy-900 px-8 py-14 sm:px-12 lg:py-20">
-          <div className="blob-float pointer-events-none absolute -left-16 -top-16 h-64 w-64 bg-orange-500/25 blur-3xl" />
+        <div className="relative overflow-hidden bg-navy-800 px-8 py-14 sm:px-12 lg:py-20">
+          <div className="blob-float pointer-events-none absolute -left-16 -top-16 h-64 w-64 bg-flame/25 blur-3xl" />
           <div className="blob-shape pointer-events-none absolute -bottom-20 right-0 h-56 w-56 bg-peach-200/10 blur-2xl [animation-delay:-3s]" />
 
-          <span className="relative inline-flex -rotate-2 items-center gap-1.5 rounded-full bg-orange-500/15 px-3.5 py-1.5 text-sm font-semibold uppercase tracking-wide text-orange-400">
+          <span className="relative inline-flex -rotate-2 items-center gap-1.5 rounded-full bg-flame/15 px-3.5 py-1.5 text-sm font-semibold uppercase tracking-wide text-honey">
             <Sparkles className="h-3.5 w-3.5" />
             Global Rehabilitation Service
           </span>
@@ -21,7 +22,7 @@ export default function Hero() {
               <svg
                 aria-hidden
                 viewBox="0 0 200 16"
-                className="absolute -bottom-2 left-0 h-3 w-full text-orange-400"
+                className="absolute -bottom-2 left-0 h-3 w-full text-honey"
                 preserveAspectRatio="none"
               >
                 <path
@@ -43,19 +44,39 @@ export default function Hero() {
 
           <a
             href="/make-a-referral"
-            className="bounce-transition group relative mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-navy-900 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:rotate-1 hover:scale-105 active:scale-95"
+            className="bounce-transition group relative mt-8 inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3.5 text-sm font-semibold text-navy-800 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:rotate-1 hover:scale-105 active:scale-95"
           >
             Make a Referral
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
 
-        {/* Right: photo panel (placeholder) */}
-        <div className="relative min-h-[280px] overflow-hidden bg-gradient-to-br from-orange-400 via-orange-500 to-peach-200 lg:min-h-0">
+        {/* Right: team photo panel */}
+        <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden bg-gradient-to-br from-orange-400 via-orange-500 to-peach-200 p-8 lg:min-h-0">
           <div className="blob-float pointer-events-none absolute -right-10 -top-10 h-40 w-40 bg-white/15" />
           <div className="blob-shape pointer-events-none absolute -bottom-16 left-4 h-48 w-48 bg-navy-900/10 [animation-delay:-4s]" />
-          <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-white/70">
-            Photography placeholder
+
+          {/* Polaroid-style team photo */}
+          <div className="relative w-full max-w-md -rotate-3">
+            <div className="absolute inset-0 translate-x-2 translate-y-2 rotate-2 rounded-2xl bg-honey" />
+            <div className="relative rounded-2xl border border-navy-800/70 bg-cream p-3 pb-10 shadow-xl">
+              <div className="relative aspect-4/3 overflow-hidden rounded-xl">
+                <Image
+                  src="/photos/hero-team-2026.png"
+                  alt="The GRS team"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 90vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <p
+                className="mt-3 -rotate-1 text-right text-xl text-charcoal"
+                style={{ fontFamily: "var(--font-caption)" }}
+              >
+                GRS Team - 2026
+              </p>
+            </div>
           </div>
         </div>
       </div>

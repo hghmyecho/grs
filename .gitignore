@@ -42,3 +42,6 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# scratch Figma API dumps + fetch scripts used while pulling design specs
+.figma-cache/

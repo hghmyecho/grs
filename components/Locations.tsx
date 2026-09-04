@@ -4,20 +4,18 @@ import { LOCATIONS } from "@/lib/content/locations";
 
 export default function Locations() {
   return (
-    <section id="locations" className="bg-white py-20 lg:py-28">
+    <section id="locations" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <span className="text-sm font-semibold uppercase tracking-wide text-orange-700">
-              Where We Work
-            </span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-navy-950 sm:text-4xl">
+            <span className="eyebrow-script">Where We Work</span>
+            <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-charcoal sm:text-4xl">
               Three cities, one standard of care
             </h2>
           </div>
           <a
             href="/calculator"
-            className="bounce-transition inline-flex items-center gap-2 rounded-full border border-navy-900/20 px-5 py-2.5 text-sm font-semibold text-navy-900 transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-navy-900 hover:text-white"
+            className="bounce-transition inline-flex items-center gap-2 rounded-full border border-honey px-5 py-2.5 text-sm font-semibold text-charcoal transition-all duration-300 hover:-rotate-1 hover:scale-105 hover:bg-honey hover:text-white"
           >
             <Calculator className="h-4 w-4" />
             Travel Fees Calculator
@@ -28,25 +26,25 @@ export default function Locations() {
           {LOCATIONS.map(({ slug, city, state, address, gradient, image }, index) => (
             <div
               key={city}
-              className={`bounce-transition flex flex-col overflow-hidden rounded-2xl border border-slate-200 transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0 hover:border-transparent hover:shadow-xl ${
+              className={`bounce-transition flex flex-col overflow-hidden rounded-2xl border-2 border-honey bg-cream transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0 hover:shadow-xl ${
                 index % 2 === 0 ? "hover:-rotate-1" : "hover:rotate-1"
               }`}
             >
               <div className="p-8">
-                <h3 className="font-display text-xl font-bold text-navy-950">
+                <h3 className="font-display text-xl font-bold text-charcoal">
                   {city}
-                  <span className="ml-2 text-sm font-medium text-orange-700">
+                  <span className="ml-2 text-sm font-medium text-honey">
                     {state}
                   </span>
                 </h3>
-                <p className="mt-3 min-h-[46px] text-sm leading-relaxed text-slate-700">
+                <p className="mt-3 min-h-[46px] text-sm leading-relaxed text-charcoal/80">
                   {address}
                 </p>
 
                 <a
                   href={`/${slug}`}
                   aria-label={`More info about GRS ${city}`}
-                  className="mt-6 inline-flex items-center gap-1.5 self-start rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-900 hover:text-white"
+                  className="mt-6 inline-flex items-center gap-1.5 self-start rounded-full bg-rust px-4 py-2 text-sm font-semibold text-white transition-colors hover:brightness-110"
                 >
                   More Info
                   <span className="sr-only"> about GRS {city}</span>

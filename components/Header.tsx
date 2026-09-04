@@ -164,7 +164,7 @@ export default function Header() {
         </Link>
 
         <nav
-          className="hidden items-center gap-1 rounded-full bg-peach-100 p-1.5 lg:flex"
+          className="hidden items-center gap-1 rounded-full bg-cream p-1.5 lg:flex"
           onMouseLeave={() => setOpenMenu(null)}
         >
           {NAV_LINKS.map((link) => (
@@ -172,7 +172,7 @@ export default function Header() {
               <a
                 href={link.href}
                 onMouseEnter={() => setOpenMenu(link.label)}
-                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-navy-900/80 transition-colors hover:bg-white hover:text-navy-900"
+                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-charcoal/80 transition-colors hover:bg-white hover:text-charcoal"
               >
                 {link.label}
                 <ChevronDown className="h-3.5 w-3.5" />
@@ -185,13 +185,13 @@ export default function Header() {
                       <a
                         key={item.label}
                         href={item.href}
-                        className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-peach-100/60"
+                        className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-cream/60"
                       >
-                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-peach-100 text-orange-600">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cream text-honey">
                           <item.icon className="h-4 w-4" />
                         </span>
                         <span>
-                          <span className="block text-sm font-semibold text-navy-950">
+                          <span className="block text-sm font-semibold text-charcoal">
                             {item.label}
                           </span>
                           <span className="block text-xs leading-relaxed text-slate-700">
@@ -210,14 +210,14 @@ export default function Header() {
         <div className="hidden items-center gap-5 lg:flex">
           <a
             href="tel:1300066716"
-            className="flex items-center gap-2 text-sm font-semibold text-navy-900"
+            className="flex items-center gap-2 text-sm font-semibold text-charcoal"
           >
-            <Phone className="h-4 w-4 text-orange-700" />
+            <Phone className="h-4 w-4 text-rust" />
             1300 066 716
           </a>
           <a
             href="/make-a-referral"
-            className="rounded-full bg-orange-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-800"
+            className="rounded-full bg-rust px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:brightness-110"
           >
             Make a Referral
           </a>
@@ -226,7 +226,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-navy-900 lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full text-charcoal lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
@@ -246,7 +246,7 @@ export default function Header() {
                       v === link.label ? null : link.label
                     )
                   }
-                  className="flex w-full items-center justify-between py-1 text-sm font-medium text-navy-900"
+                  className="flex w-full items-center justify-between py-1 text-sm font-medium text-charcoal"
                 >
                   {link.label}
                   <ChevronDown
@@ -265,11 +265,11 @@ export default function Header() {
                         onClick={() => setOpen(false)}
                         className="flex items-start gap-3"
                       >
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-peach-100 text-orange-600">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cream text-honey">
                           <item.icon className="h-4 w-4" />
                         </span>
                         <span>
-                          <span className="block text-sm font-medium text-navy-900">
+                          <span className="block text-sm font-medium text-charcoal">
                             {item.label}
                           </span>
                           <span className="block text-xs text-slate-700">
@@ -285,15 +285,15 @@ export default function Header() {
 
             <a
               href="tel:1300066716"
-              className="mt-3 flex items-center gap-2 text-sm font-semibold text-navy-900"
+              className="mt-3 flex items-center gap-2 text-sm font-semibold text-charcoal"
             >
-              <Phone className="h-4 w-4 text-orange-700" />
+              <Phone className="h-4 w-4 text-rust" />
               1300 066 716
             </a>
             <a
               href="/make-a-referral"
               onClick={() => setOpen(false)}
-              className="mt-3 rounded-full bg-orange-700 px-5 py-2.5 text-center text-sm font-semibold text-white"
+              className="mt-3 rounded-full bg-rust px-5 py-2.5 text-center text-sm font-semibold text-white"
             >
               Make a Referral
             </a>
