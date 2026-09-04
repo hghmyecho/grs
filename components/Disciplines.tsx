@@ -29,8 +29,8 @@ export default function Disciplines() {
                 aria-hidden
                 className="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded-[20px] bg-honey"
               />
-              <div className="relative flex flex-1 flex-col overflow-hidden rounded-[20px] border-2 border-honey bg-cream">
-                <div className="relative p-6">
+              <div className="relative flex flex-col overflow-hidden rounded-[20px] border-2 border-honey bg-cream">
+                <div className="relative p-5">
                   <span className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-lg bg-honey text-white group-hover:animate-wiggle">
                     <Check className="h-4 w-4" />
                   </span>
@@ -38,22 +38,22 @@ export default function Disciplines() {
                     {tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-honey"
+                        className="rounded-full bg-white px-3.5 py-1 text-xs font-semibold text-honey"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h3 className="mt-5 font-display text-2xl font-bold leading-snug text-charcoal">
+                  <h3 className="mt-4 min-h-[3.25rem] font-display text-xl font-bold leading-snug text-charcoal">
                     {title}
                   </h3>
-                  <p className="mt-2 text-base leading-relaxed text-charcoal/80">
+                  <p className="mt-1.5 line-clamp-2 min-h-[2.75rem] text-sm leading-relaxed text-charcoal/80">
                     {description}
                   </p>
                 </div>
 
                 <div
-                  className={`relative min-h-[300px] flex-1 overflow-hidden bg-gradient-to-br ${gradient}`}
+                  className={`relative h-44 overflow-hidden bg-gradient-to-br ${gradient}`}
                 >
                   {image && (
                     <Image
@@ -69,7 +69,7 @@ export default function Disciplines() {
                   <a
                     href={`/${slug}`}
                     aria-label={`Read more about ${title}`}
-                    className="bounce-transition absolute bottom-5 left-5 inline-flex items-center gap-1.5 rounded-full bg-rust px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-transform duration-300 hover:scale-105 hover:-rotate-2 hover:brightness-110 active:scale-95"
+                    className="bounce-transition absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-rust px-4 py-2 text-sm font-semibold text-white shadow-md transition-transform duration-300 hover:scale-105 hover:-rotate-2 hover:brightness-110 active:scale-95"
                   >
                     Read More
                     <span className="sr-only"> about {title}</span>
