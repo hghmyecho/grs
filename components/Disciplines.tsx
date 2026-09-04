@@ -34,11 +34,11 @@ export default function Disciplines() {
                   <span className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-lg bg-honey text-white group-hover:animate-wiggle">
                     <Check className="h-4 w-4" />
                   </span>
-                  <div className="flex flex-wrap gap-2 pr-9">
+                  <div className="flex flex-nowrap gap-1.5 pr-9">
                     {tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-white px-3.5 py-1 text-xs font-semibold text-honey"
+                        className="whitespace-nowrap rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-honey"
                       >
                         {tag}
                       </span>
