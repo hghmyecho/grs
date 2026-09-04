@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="pt-2">
       <div className="relative grid overflow-hidden lg:grid-cols-2">
         {/* Left: copy panel */}
-        <div className="relative flex flex-col justify-center overflow-hidden bg-navy-800 px-8 py-14 sm:px-12 lg:py-20">
+        <div className="relative flex flex-col items-start justify-center overflow-hidden bg-navy-800 px-8 py-14 sm:px-12 lg:py-20">
           <div className="blob-float pointer-events-none absolute -left-16 -top-16 h-64 w-64 bg-flame/25 blur-3xl" />
           <div className="blob-shape pointer-events-none absolute -bottom-20 right-0 h-56 w-56 bg-peach-200/10 blur-2xl [animation-delay:-3s]" />
 
