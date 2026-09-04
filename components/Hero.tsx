@@ -6,13 +6,16 @@ export default function Hero() {
     <section className="bg-cream">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-8 pt-16 lg:grid-cols-2 lg:gap-8 lg:pb-12 lg:pt-24 lg:px-8">
         {/* Left: copy panel */}
-        <div>
-          <span className="relative inline-flex -rotate-2 items-center gap-1.5 rounded-full bg-honey/15 px-3.5 py-1.5 text-sm font-semibold uppercase tracking-wide text-rust">
+        <div className="relative overflow-hidden rounded-3xl bg-navy-800 p-8 sm:p-10 lg:p-12">
+          <div className="blob-float pointer-events-none absolute -left-16 -top-16 h-64 w-64 bg-flame/25 blur-3xl" />
+          <div className="blob-shape pointer-events-none absolute -bottom-20 right-0 h-56 w-56 bg-peach-200/10 blur-2xl [animation-delay:-3s]" />
+
+          <span className="relative inline-flex -rotate-2 items-center gap-1.5 rounded-full bg-flame/15 px-3.5 py-1.5 text-sm font-semibold uppercase tracking-wide text-honey">
             <Sparkles className="h-3.5 w-3.5" />
             Global Rehabilitation Service
           </span>
 
-          <h1 className="mt-5 font-display text-4xl font-extrabold leading-tight text-charcoal sm:text-5xl">
+          <h1 className="relative mt-5 font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl">
             Holistic care, built around your{" "}
             <span className="relative inline-block">
               whole story
@@ -34,22 +37,22 @@ export default function Hero() {
             .
           </h1>
 
-          <p className="mt-5 max-w-md text-base leading-relaxed text-charcoal/70">
+          <p className="relative mt-5 max-w-md text-base leading-relaxed text-white/75">
             Multidisciplinary allied health delivered in our clinics, at
             home, and in the community — across NSW &amp; QLD.
           </p>
 
-          <div className="mt-8 flex items-center gap-3">
+          <div className="relative mt-8 flex items-center gap-3">
             <a
               href="/make-a-referral"
-              className="bounce-transition inline-flex items-center rounded-full bg-charcoal px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:scale-105 active:scale-95"
+              className="bounce-transition inline-flex items-center rounded-full bg-teal px-6 py-3.5 text-sm font-semibold text-navy-800 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:scale-105 active:scale-95"
             >
               Make a Referral
             </a>
             <a
               href="/make-a-referral"
               aria-label="Make a Referral"
-              className="bounce-transition group flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-charcoal/20 text-charcoal transition-all duration-300 hover:-translate-y-1 hover:rotate-1 hover:scale-105 hover:bg-charcoal hover:text-white active:scale-95"
+              className="bounce-transition group flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/30 text-white transition-all duration-300 hover:-translate-y-1 hover:rotate-1 hover:scale-105 hover:bg-white hover:text-navy-800 active:scale-95"
             >
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
