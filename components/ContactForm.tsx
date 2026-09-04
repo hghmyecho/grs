@@ -11,6 +11,8 @@ const TOPICS = [
   "Other",
 ];
 
+const BRANCHES = ["Sydney", "Gold Coast", "Brisbane"];
+
 const inputStyles =
   "w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-navy-950 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/15";
 
@@ -75,6 +77,20 @@ export default function ContactForm() {
         <label className="block text-sm font-medium text-navy-900">
           Phone
           <input type="tel" name="phone" className={`mt-2 ${inputStyles}`} />
+        </label>
+        <label className="block text-sm font-medium text-navy-900 sm:col-span-2">
+          Which branch would you like to contact?{" "}
+          <span className="text-orange-600">*</span>
+          <select
+            name="branch"
+            required
+            defaultValue={BRANCHES[0]}
+            className={`mt-2 ${inputStyles}`}
+          >
+            {BRANCHES.map((branch) => (
+              <option key={branch}>{branch}</option>
+            ))}
+          </select>
         </label>
         <label className="block text-sm font-medium text-navy-900 sm:col-span-2">
           What's this about? <span className="text-orange-600">*</span>
