@@ -13,18 +13,21 @@ const ASSESSMENTS = [
     title: "Functional Capacity Assessments",
     description:
       "Independent evaluations of a person's function and support needs, delivered by experienced OTs to inform NDIS plans and reviews.",
+    slug: "functional-capacity-assessments",
   },
   {
     icon: Puzzle,
     title: "Autism Diagnostic Assessments",
     description:
       "ADOS-based diagnostic assessments led by our psychology team, with practical reports to guide next steps and support planning.",
+    slug: "autism-diagnostic-assessments",
   },
   {
     icon: Home,
     title: "Home Modification & Assistive Technology Assessments",
     description:
       "On-site evaluations of home and equipment needs, backed by our physical disability team's experience recommending practical solutions.",
+    slug: "home-modification-assistive-technology-assessments",
   },
 ];
 
@@ -76,10 +79,10 @@ export default function SpecialistAssessments() {
             </span>
           </Link>
 
-          {REST.map(({ icon: Icon, title, description }, index) => (
+          {REST.map(({ icon: Icon, title, description, slug }, index) => (
             <Link
               key={title}
-              href="/make-a-referral"
+              href={`/${slug}`}
               className={`bounce-transition group relative flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0 ${
                 index % 2 === 0 ? "hover:-rotate-1" : "hover:rotate-1"
               }`}
@@ -99,7 +102,7 @@ export default function SpecialistAssessments() {
                   {description}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-rust">
-                  Enquire now
+                  Learn more
                   <span className="sr-only"> about {title}</span>
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>

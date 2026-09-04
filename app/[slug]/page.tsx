@@ -12,10 +12,12 @@ import { DISCIPLINES, getDiscipline } from "@/lib/content/disciplines";
 import { STREAMS, getStream } from "@/lib/content/streams";
 import { LOCATIONS, getLocation } from "@/lib/content/locations";
 import { CAREERS, getCareer } from "@/lib/content/careers";
+import { ASSESSMENTS, getAssessment } from "@/lib/content/assessments";
 import DisciplinePage from "@/components/templates/DisciplinePage";
 import StreamPage from "@/components/templates/StreamPage";
 import LocationPage from "@/components/templates/LocationPage";
 import CareerPage from "@/components/templates/CareerPage";
+import AssessmentPage from "@/components/templates/AssessmentPage";
 
 export function generateStaticParams() {
   return [
@@ -23,6 +25,7 @@ export function generateStaticParams() {
     ...STREAMS.map((s) => ({ slug: s.slug })),
     ...LOCATIONS.map((l) => ({ slug: l.slug })),
     ...CAREERS.map((c) => ({ slug: c.slug })),
+    ...ASSESSMENTS.map((a) => ({ slug: a.slug })),
   ];
 }
 
@@ -69,6 +72,15 @@ export async function generateMetadata({
     };
   }
 
+  const assessment = getAssessment(slug);
+  if (assessment) {
+    return {
+      title: assessment.title,
+      description: assessment.description,
+      alternates: { canonical: `/${slug}` },
+    };
+  }
+
   return {};
 }
 
@@ -90,6 +102,9 @@ export default async function ContentSlugPage({
 
   const career = getCareer(slug);
   if (career) return <CareerPage career={career} />;
+
+  const assessment = getAssessment(slug);
+  if (assessment) return <AssessmentPage assessment={assessment} />;
 
   notFound();
 }
