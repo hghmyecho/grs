@@ -61,9 +61,7 @@ export default function ClinicalStreams() {
     <section id="services" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
-          <span className="font-display text-[28px] font-extrabold leading-none text-honey sm:text-[32px]">
-            Our Clinical Streams
-          </span>
+          <span className="eyebrow-script">Our Clinical Streams</span>
           <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-charcoal sm:text-4xl">
             Care organised around the people we support
           </h2>
