@@ -1,7 +1,9 @@
+import { NAV_LINKS } from "@/lib/content/nav";
+
 function NdisBadge() {
   return (
     <div className="flex items-center gap-3">
-      <div className="flex h-10 w-10 shrink-0 flex-col items-center justify-center rounded-full bg-[#5c2d6d] leading-none text-white">
+      <div className="flex h-9 w-9 shrink-0 flex-col items-center justify-center rounded-full bg-[#5c2d6d] leading-none text-white">
         <span className="text-[9px] font-semibold tracking-wide">we</span>
         <svg viewBox="0 0 24 24" fill="#a3e635" className="my-0.5 h-2.5 w-2.5">
           <path d="M12 21s-7.5-4.6-10-9.2C.4 8.6 2 5 5.6 5c2 0 3.4 1 4.4 2.4C11 6 12.4 5 14.4 5 18 5 19.6 8.6 22 11.8 19.5 16.4 12 21 12 21Z" />
@@ -35,74 +37,75 @@ function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-const FOOTER_LINKS = [
-  { label: "About Us", href: "#about" },
-  { label: "Our Services", href: "#services" },
-  { label: "Join Us", href: "#" },
-  { label: "Locations", href: "#locations" },
-  { label: "Contact Us", href: "/contact-us" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-];
-
 export default function Footer() {
   return (
     <footer id="footer-contact" className="bg-navy-800 text-white/70">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          <div>
-            <span className="inline-flex rounded-xl bg-white p-3">
+      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+        <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
+          <div className="lg:max-w-[220px] lg:shrink-0">
+            <span className="inline-flex rounded-xl bg-white p-2.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/grs-logo.svg"
                 alt="Global Rehabilitation Service"
                 width={265}
                 height={80}
-                className="h-9 w-auto"
+                className="h-8 w-auto"
               />
             </span>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed">
+            <p className="mt-3 text-sm leading-relaxed">
               Global Rehabilitation Service — multidisciplinary allied health
               across NSW &amp; QLD.
             </p>
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-3 flex items-center gap-3">
               <a
                 href="#"
                 aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-rust"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-rust"
               >
                 <FacebookIcon className="h-4 w-4" />
               </a>
               <a
                 href="#"
                 aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-rust"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-rust"
               >
                 <InstagramIcon className="h-4 w-4" />
               </a>
             </div>
           </div>
 
-          <nav aria-label="Footer">
-            <ul className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-3">
-              {FOOTER_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm font-medium transition-colors hover:text-honey"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:flex-1 lg:grid-cols-5">
+            {NAV_LINKS.map((group) => (
+              <div key={group.label}>
+                <p className="text-sm font-semibold text-white">{group.label}</p>
+                <ul className="mt-3 flex flex-col gap-2">
+                  {group.items.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-sm transition-colors hover:text-honey"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col gap-6 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
           <NdisBadge />
-          <p className="text-xs">
-            Copyright © Global Rehabilitation Service ABN 51626759019 - All Rights Reserved
-          </p>
+          <div className="flex flex-col gap-2 text-xs sm:flex-row sm:items-center sm:gap-4">
+            <a href="/privacy-policy" className="transition-colors hover:text-honey">
+              Privacy Policy
+            </a>
+            <p>
+              Copyright © Global Rehabilitation Service ABN 51626759019 - All Rights Reserved
+            </p>
+          </div>
         </div>
       </div>
     </footer>
