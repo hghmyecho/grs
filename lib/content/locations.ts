@@ -160,7 +160,7 @@ export const LOCATIONS: Location[] = [
     slug: "goldcoast",
     city: "Gold Coast",
     state: "QLD",
-    address: "1C/34 High Street, Southport QLD 4215",
+    address: "1203/56 Scarborough Street, Southport QLD 4215",
     gradient: "from-peach-200 to-orange-400",
     image: "/photos/location-goldcoast.jpg",
     phone: "1300 066 716",

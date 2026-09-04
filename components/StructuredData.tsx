@@ -48,7 +48,7 @@ const organizationSchema = {
       telephone: "1300066716",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "1C/34 High Street",
+        streetAddress: "1203/56 Scarborough Street",
         addressLocality: "Southport",
         addressRegion: "QLD",
         postalCode: "4215",

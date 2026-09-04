@@ -90,9 +90,8 @@ export const TRAVEL_FEE_LOCATIONS: TravelFeeLocation[] = [
     key: "southport",
     label: "Southport - Gold Coast",
     state: "QLD",
-    address: "1c/34 High Street, Southport QLD",
-    placeId:
-      "EiwxYy8zNCBIaWdoIFN0LCBTb3V0aHBvcnQgUUxEIDQyMTUsIEF1c3RyYWxpYSJYGlYKUBJOCjQKMgnvWELb8w-RaxEKXifLm2qn_RoeCxDuwe6hARoUChIJqTF3pgEQkWsRsD_XJ16jAhwMECIqFAoSCSmjLHTuD5FrEUqovxX_IB0BEgIxYw",
+    address: "1203/56 Scarborough Street, Southport QLD",
+    placeId: "ChIJWY4g2fIPkWsRk5l9wlleuWw",
     zones: [
       { name: "QLD Zone 1", minDistance: 0, maxDistance: 15, travelFee: "15 mins" },
       { name: "QLD Zone 2", minDistance: 15, maxDistance: 25, travelFee: "22.50 mins" },
