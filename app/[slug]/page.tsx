@@ -13,11 +13,13 @@ import { STREAMS, getStream } from "@/lib/content/streams";
 import { LOCATIONS, getLocation } from "@/lib/content/locations";
 import { CAREERS, getCareer } from "@/lib/content/careers";
 import { ASSESSMENTS, getAssessment } from "@/lib/content/assessments";
+import { STAFF, getStaffMember } from "@/lib/content/staff";
 import DisciplinePage from "@/components/templates/DisciplinePage";
 import StreamPage from "@/components/templates/StreamPage";
 import LocationPage from "@/components/templates/LocationPage";
 import CareerPage from "@/components/templates/CareerPage";
 import AssessmentPage from "@/components/templates/AssessmentPage";
+import StaffProfilePage from "@/components/templates/StaffProfilePage";
 
 export function generateStaticParams() {
   return [
@@ -26,6 +28,7 @@ export function generateStaticParams() {
     ...LOCATIONS.map((l) => ({ slug: l.slug })),
     ...CAREERS.map((c) => ({ slug: c.slug })),
     ...ASSESSMENTS.map((a) => ({ slug: a.slug })),
+    ...STAFF.map((s) => ({ slug: s.slug })),
   ];
 }
 
@@ -81,6 +84,15 @@ export async function generateMetadata({
     };
   }
 
+  const staff = getStaffMember(slug);
+  if (staff) {
+    return {
+      title: staff.name,
+      description: `${staff.name} — ${staff.role} at Global Rehabilitation Service.`,
+      alternates: { canonical: `/${slug}` },
+    };
+  }
+
   return {};
 }
 
@@ -105,6 +117,9 @@ export default async function ContentSlugPage({
 
   const assessment = getAssessment(slug);
   if (assessment) return <AssessmentPage assessment={assessment} />;
+
+  const staff = getStaffMember(slug);
+  if (staff) return <StaffProfilePage staff={staff} />;
 
   notFound();
 }

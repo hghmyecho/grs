@@ -4,6 +4,7 @@ import { STREAMS } from "@/lib/content/streams";
 import { LOCATIONS } from "@/lib/content/locations";
 import { CAREERS } from "@/lib/content/careers";
 import { ASSESSMENTS } from "@/lib/content/assessments";
+import { STAFF } from "@/lib/content/staff";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = "https://grs-nu.vercel.app";
@@ -46,6 +47,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...ASSESSMENTS.map((a) => ({
       path: `/${a.slug}`,
       priority: 0.6,
+      changeFrequency: "monthly" as const,
+    })),
+    ...STAFF.map((s) => ({
+      path: `/${s.slug}`,
+      priority: 0.4,
       changeFrequency: "monthly" as const,
     })),
   ];

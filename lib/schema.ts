@@ -109,6 +109,31 @@ export function medicalClinicSchema({
   };
 }
 
+// Used for individual staff profile pages (components/templates/StaffProfilePage.tsx).
+// jobTitle is kept as the free-text role line rather than parsed into
+// separate credentials, since that's how it's supplied per person.
+export function personSchema({
+  name,
+  jobTitle,
+  url,
+}: {
+  name: string;
+  jobTitle: string;
+  url: string;
+}) {
+  return {
+    "@type": "Person",
+    name,
+    jobTitle,
+    url: `${SITE_URL}${url}`,
+    worksFor: {
+      "@type": "MedicalBusiness",
+      name: "Global Rehabilitation Service",
+      url: SITE_URL,
+    },
+  };
+}
+
 // Wraps multiple schema objects into a single @graph so each page emits one
 // <script> tag rather than several.
 export function schemaGraph(...schemas: object[]) {

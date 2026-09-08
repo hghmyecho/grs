@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/our-team" },
 };
 
-const LEADERSHIP = [
+const LEADERSHIP: { name: string; role: string; gradient: string; slug?: string }[] = [
   {
     name: "Haozhi (Nick) Jiang",
     role: "Founder, Business Development Manager, Occupational Therapist",
@@ -48,6 +49,9 @@ const LEADERSHIP = [
     name: "Bronwyn Wright",
     role: "QLD Psychology Team Leader, Psychologist",
     gradient: "from-orange-400 to-navy-950",
+    // Only leadership member with a live profile page so far — see
+    // lib/content/staff.ts's header comment on why the rest stay unlinked.
+    slug: "bronwyn-wright",
   },
 ];
 
@@ -151,22 +155,34 @@ export default function OurTeamPage() {
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {LEADERSHIP.map(({ name, role, gradient }) => (
-              <div
-                key={name}
-                className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm"
-              >
-                <div className={`h-32 bg-gradient-to-br ${gradient}`} />
-                <div className="p-6">
-                  <h3 className="font-display text-base font-bold text-charcoal">
-                    {name}
-                  </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-charcoal/80">
-                    {role}
-                  </p>
+            {LEADERSHIP.map(({ name, role, gradient, slug }) => {
+              const card = (
+                <>
+                  <div className={`h-32 bg-gradient-to-br ${gradient}`} />
+                  <div className="p-6">
+                    <h3 className="font-display text-base font-bold text-charcoal">
+                      {name}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-charcoal/80">
+                      {role}
+                    </p>
+                  </div>
+                </>
+              );
+
+              const className =
+                "flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm";
+
+              return slug ? (
+                <Link key={name} href={`/${slug}`} className={`${className} transition-shadow hover:shadow-md`}>
+                  {card}
+                </Link>
+              ) : (
+                <div key={name} className={className}>
+                  {card}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
