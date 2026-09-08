@@ -13,7 +13,7 @@ import { STREAMS, getStream } from "@/lib/content/streams";
 import { LOCATIONS, getLocation } from "@/lib/content/locations";
 import { CAREERS, getCareer } from "@/lib/content/careers";
 import { ASSESSMENTS, getAssessment } from "@/lib/content/assessments";
-import { STAFF, getStaffMember } from "@/lib/content/staff";
+import { TEAM, getStaffProfile } from "@/lib/content/team";
 import DisciplinePage from "@/components/templates/DisciplinePage";
 import StreamPage from "@/components/templates/StreamPage";
 import LocationPage from "@/components/templates/LocationPage";
@@ -28,7 +28,7 @@ export function generateStaticParams() {
     ...LOCATIONS.map((l) => ({ slug: l.slug })),
     ...CAREERS.map((c) => ({ slug: c.slug })),
     ...ASSESSMENTS.map((a) => ({ slug: a.slug })),
-    ...STAFF.map((s) => ({ slug: s.slug })),
+    ...TEAM.filter((m) => m.hasProfile).map((m) => ({ slug: m.slug })),
   ];
 }
 
@@ -84,7 +84,7 @@ export async function generateMetadata({
     };
   }
 
-  const staff = getStaffMember(slug);
+  const staff = getStaffProfile(slug);
   if (staff) {
     return {
       title: staff.name,
@@ -118,7 +118,7 @@ export default async function ContentSlugPage({
   const assessment = getAssessment(slug);
   if (assessment) return <AssessmentPage assessment={assessment} />;
 
-  const staff = getStaffMember(slug);
+  const staff = getStaffProfile(slug);
   if (staff) return <StaffProfilePage staff={staff} />;
 
   notFound();

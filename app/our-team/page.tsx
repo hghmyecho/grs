@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { GROUP_LABELS, getTeamByGroup, type TeamMember } from "@/lib/content/team";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -9,120 +10,68 @@ export const metadata: Metadata = {
   alternates: { canonical: "/our-team" },
 };
 
-const LEADERSHIP: { name: string; role: string; gradient: string; slug?: string }[] = [
-  {
-    name: "Haozhi (Nick) Jiang",
-    role: "Founder, Business Development Manager, Occupational Therapist",
-    gradient: "from-navy-700 to-navy-950",
-  },
-  {
-    name: "Howard Law",
-    role: "Co-Founder, NSW Service Manager, Occupational Therapist",
-    gradient: "from-orange-400 to-orange-600",
-  },
-  {
-    name: "Dan Bock",
-    role: "QLD Service Manager, Occupational Therapist",
-    gradient: "from-peach-200 to-orange-400",
-  },
-  {
-    name: "Marco Chan",
-    role: "NSW OT Team Lead — Psychosocial",
-    gradient: "from-navy-500 to-navy-900",
-  },
-  {
-    name: "Kristin McConkey",
-    role: "QLD Assistant Service Manager, Speech Pathology Team Leader",
-    gradient: "from-orange-500 to-navy-700",
-  },
-  {
-    name: "Rachael Truong",
-    role: "NSW Physiotherapy Team Leader",
-    gradient: "from-navy-950 to-orange-600",
-  },
-  {
-    name: "Lorie Koll",
-    role: "NSW SLP Team Lead & Clinical Educator",
-    gradient: "from-peach-200 to-navy-700",
-  },
-  {
-    name: "Bronwyn Wright",
-    role: "QLD Psychology Team Leader, Psychologist",
-    gradient: "from-orange-400 to-navy-950",
-    // Only leadership member with a live profile page so far — see
-    // lib/content/staff.ts's header comment on why the rest stay unlinked.
-    slug: "bronwyn-wright",
-  },
-];
+function LeadershipGrid({ people }: { people: TeamMember[] }) {
+  return (
+    <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {people.map(({ slug, name, role, gradient, hasProfile }) => {
+        const card = (
+          <>
+            <div className={`h-32 bg-gradient-to-br ${gradient}`} />
+            <div className="p-6">
+              <h3 className="font-display text-base font-bold text-charcoal">{name}</h3>
+              <p className="mt-1 text-xs leading-relaxed text-charcoal/80">{role}</p>
+            </div>
+          </>
+        );
 
-const SENIOR_CLINICIANS = [
-  "Tarryn Kleinert — Senior Occupational Therapist, Physical",
-  "Vinod Kanthan — Senior Physiotherapist",
-  "Macarena Zamorano — Senior Occupational Therapist, Psychosocial",
-  "Ryan Ip — Senior Occupational Therapist",
-  "Skye Kembery — Senior Occupational Therapist, Psychosocial",
-  "Priscilla Ho — Senior Occupational Therapy Team Clinical Educator",
-  "Yogeshni Rao — Senior Speech Pathologist",
-  "Joy Liu — NSW Occupational Therapy Clinical Lead, Paediatrics",
-  "Minami Nakaseko — Senior Speech Pathologist",
-  "Hong Bi — Senior Occupational Therapist, Paediatric",
-  "Clement Tang — Senior Occupational Therapist, Driving Assessor",
-];
+        const className = "flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm";
 
-const GENERAL_CLINICIANS = [
-  "Laura Tran — Exercise Physiologist",
-  "Hannah Pascoe — Dietitian",
-  "Jasmine Lee — Speech Pathologist",
-  "Sophia Dwyer — Speech Pathologist",
-  "Amelia Dinjar — Occupational Therapist",
-  "Jaimison Simpson — Occupational Therapist",
-  "Ellie Gibson — Occupational Therapist",
-  "Mimi McCauley — Occupational Therapist",
-  "Georgia Prichard — Speech Pathologist",
-  "Shane Trevorrow — Occupational Therapist",
-  "Ashley Glennie — Registered Psychologist",
-  "Emily Williams — Registered Psychologist",
-  "Teri Gallivan — Registered Psychologist",
-  "Mark Hellmrick — Music Therapist",
-  "Daisy Leung — Occupational Therapist",
-  "Wendy Dolan — Registered Psychologist",
-  "Chantel Preston — Occupational Therapist",
-  "Karina Lai — Speech Pathologist",
-  "Laura Neufeld — Speech Pathologist",
-  "Latisha Branch — Speech Pathologist",
-  "Monica Nguyen — Speech Pathologist",
-  "Kevin Lim — Physiotherapist",
-];
+        return hasProfile ? (
+          <Link
+            key={slug}
+            href={`/${slug}`}
+            className={`${className} transition-shadow hover:shadow-md`}
+          >
+            {card}
+          </Link>
+        ) : (
+          <div key={slug} className={className}>
+            {card}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
-const ADMIN_TEAM = [
-  "Nina Papadopoulos — Senior Administrative Officer",
-  "Molly Trost — Senior Administrative Officer",
-  "Leticia Shirai Mendes — Administration Officer",
-  "Mia Bock — Administrative Officer",
-];
-
-function StaffList({ title, people }: { title: string; people: string[] }) {
+function StaffList({ title, people }: { title: string; people: TeamMember[] }) {
   return (
     <div>
-      <h2 className="font-display text-xl font-bold text-charcoal">
-        {title}
-      </h2>
+      <h2 className="font-display text-xl font-bold text-charcoal">{title}</h2>
       <ul className="mt-5 grid gap-x-8 gap-y-3 text-sm text-charcoal/80 sm:grid-cols-2">
-        {people.map((person) => {
-          const [name, role] = person.split(" — ");
-          return (
-            <li key={person} className="leading-relaxed">
+        {people.map(({ slug, name, role, hasProfile }) => (
+          <li key={slug} className="leading-relaxed">
+            {hasProfile ? (
+              <Link href={`/${slug}`} className="font-semibold text-charcoal hover:underline">
+                {name}
+              </Link>
+            ) : (
               <span className="font-semibold text-charcoal">{name}</span>
-              {role ? <span> — {role}</span> : null}
-            </li>
-          );
-        })}
+            )}
+            {role ? <span> — {role}</span> : null}
+          </li>
+        ))}
       </ul>
     </div>
   );
 }
 
 export default function OurTeamPage() {
+  const leadership = getTeamByGroup("leadership");
+  const senior = getTeamByGroup("senior");
+  const general = getTeamByGroup("general");
+  const admin = getTeamByGroup("admin");
+
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Our Team", href: "/our-team" }]} />
@@ -154,47 +103,15 @@ export default function OurTeamPage() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {LEADERSHIP.map(({ name, role, gradient, slug }) => {
-              const card = (
-                <>
-                  <div className={`h-32 bg-gradient-to-br ${gradient}`} />
-                  <div className="p-6">
-                    <h3 className="font-display text-base font-bold text-charcoal">
-                      {name}
-                    </h3>
-                    <p className="mt-1 text-xs leading-relaxed text-charcoal/80">
-                      {role}
-                    </p>
-                  </div>
-                </>
-              );
-
-              const className =
-                "flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm";
-
-              return slug ? (
-                <Link key={name} href={`/${slug}`} className={`${className} transition-shadow hover:shadow-md`}>
-                  {card}
-                </Link>
-              ) : (
-                <div key={name} className={className}>
-                  {card}
-                </div>
-              );
-            })}
-          </div>
+          <LeadershipGrid people={leadership} />
         </div>
       </section>
 
       <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-4xl space-y-14">
-          <StaffList title="Senior Clinicians" people={SENIOR_CLINICIANS} />
-          <StaffList title="General Clinicians" people={GENERAL_CLINICIANS} />
-          <StaffList
-            title="Administration & Accounting Team"
-            people={ADMIN_TEAM}
-          />
+          <StaffList title={GROUP_LABELS.senior} people={senior} />
+          <StaffList title={GROUP_LABELS.general} people={general} />
+          <StaffList title={GROUP_LABELS.admin} people={admin} />
 
           <div className="rounded-2xl bg-tan p-8 text-center">
             <h2 className="font-display text-xl font-bold text-charcoal">

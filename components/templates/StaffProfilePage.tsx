@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import type { StaffMember } from "@/lib/content/staff";
+import type { StaffPageContent } from "@/lib/content/team";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { personSchema, schemaGraph } from "@/lib/schema";
@@ -12,7 +12,7 @@ import { personSchema, schemaGraph } from "@/lib/schema";
 // the sitewide .eyebrow-script treatment full-size (as in the Figma) —
 // elsewhere that class is a small label above a bold h1/h2, but here it
 // *is* the heading.
-export default function StaffProfilePage({ staff }: { staff: StaffMember }) {
+export default function StaffProfilePage({ staff }: { staff: StaffPageContent }) {
   const { slug, name, role, badges, gradient, about, trainingApproaches, qualifications, previousRoles } =
     staff;
   const firstName = name.split(" ")[0];
