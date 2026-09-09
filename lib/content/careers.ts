@@ -13,12 +13,22 @@ export interface CareerSection {
   items: string[];
 }
 
+/** Short "Our Approach" summary card — matches the pattern in
+ * lib/content/disciplines.ts. Only populated where the Figma design
+ * shows it (currently just Career Path); template renders it only
+ * when present. Icon per card is assigned in the template, keyed by slug. */
+export interface CareerHighlight {
+  title: string;
+  description: string;
+}
+
 export interface CareerPage {
   slug: string;
   title: string;
   tagline: string;
   overview: string;
   approach: string;
+  highlights?: CareerHighlight[];
   sections: CareerSection[];
   faqs: FaqItem[];
 }
@@ -32,6 +42,20 @@ export const CAREERS: CareerPage[] = [
       "At GRS, career progression is treated as something built with you rather than handed down as a fixed ladder. GRS assists clinicians in pursuing their professional objectives by recognising individual strengths and developing customised roles, so a clinician's path can reflect their actual interests, whether that leans towards direct clinical work, leadership, or business development. All positions are based on the Health Professional Award (2022) framework, establishing transparent role definitions and progression pathways, which means clinicians always know what a role involves and what the next step looks like, rather than progression feeling ad hoc or dependent on who you know. This structure also underpins equitable compensation assessments grounded in competencies and contributions, not just years of service or job title. It means two clinicians doing genuinely different work are assessed against genuinely different, clearly documented expectations. To keep this fair and current over time, GRS uses a Performance Appraisal & Development Plan (PADP) tool to formally evaluate performance and create structured development plans, giving clinicians a documented, regularly revisited record of their growth and a real say in shaping where their career goes next within the organisation, rather than leaving progression to chance or informal conversation.",
     approach:
       "In practice, role customisation starts with an honest conversation about what you're good at and what you want more of. A clinician with a strong interest in paediatrics and an emerging interest in team leadership, for example, might build a role that blends clinical caseload with mentoring newer staff, rather than being forced to choose one path over the other. Progression isn't limited to a single clinical or management track — the three streams of clinical specialty, team leadership, and business or project development can be combined or moved between as interests evolve. Because everything sits on the Health Professional Award (2022) framework, clinicians can see exactly what's expected at each level before committing to a change of direction, and PADP reviews give a structured point to raise new interests, flag a stretch goal, or ask for support to build a skill. It's a model that suits clinicians who want their career to genuinely reflect their strengths, rather than fitting themselves into a role description written for someone else.",
+    highlights: [
+      {
+        title: "Clinical Specialty",
+        description: "Go deep in an area like paediatrics or behaviour support.",
+      },
+      {
+        title: "Team Leadership",
+        description: "Move into supervision, education, or people management.",
+      },
+      {
+        title: "Business / Project Dev",
+        description: "Shape quality, workflow, and project work across GRS.",
+      },
+    ],
     sections: [
       {
         heading: "Clinical Specialty",

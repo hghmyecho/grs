@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Briefcase, User, Users } from "lucide-react";
 import Link from "next/link";
 import type { CareerPage as CareerPageContent } from "@/lib/content/careers";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -6,8 +6,12 @@ import FaqSection from "@/components/FaqSection";
 import JsonLd from "@/components/JsonLd";
 import { faqSchema, schemaGraph } from "@/lib/schema";
 
+/** Icons for the optional "Our Approach" highlight row, assigned by
+ * position (see CareerHighlight in lib/content/careers.ts). */
+const HIGHLIGHT_ICONS = [User, Users, Briefcase];
+
 export default function CareerPage({ career }: { career: CareerPageContent }) {
-  const { slug, title, tagline, overview, approach, sections, faqs } = career;
+  const { slug, title, tagline, overview, approach, highlights, sections, faqs } = career;
 
   const breadcrumbItems = [
     { name: "Home", href: "/" },
@@ -43,26 +47,45 @@ export default function CareerPage({ career }: { career: CareerPageContent }) {
             <p className="mt-4 text-sm leading-relaxed text-charcoal/80">{approach}</p>
           </div>
 
+          {highlights && highlights.length > 0 && (
+            <div className="mt-12">
+              <h2 className="text-center font-display text-xl font-bold text-charcoal">
+                Our Approach
+              </h2>
+              <div className="mt-8 grid gap-6 sm:grid-cols-3">
+                {highlights.map(({ title: hTitle, description: hDescription }, i) => {
+                  const Icon = HIGHLIGHT_ICONS[i] ?? User;
+                  return (
+                    <div
+                      key={hTitle}
+                      className="rounded-2xl border border-honey/20 bg-white p-6 text-center shadow-sm"
+                    >
+                      <Icon className="mx-auto h-8 w-8 text-rust" strokeWidth={1.5} />
+                      <h3 className="mt-3 font-display text-sm font-bold text-charcoal">
+                        {hTitle}
+                      </h3>
+                      <p className="mt-1.5 text-xs leading-relaxed text-charcoal/80">
+                        {hDescription}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           {sections.length > 0 && (
-            <div className="mt-12 space-y-10">
+            <div className="mt-12 divide-y divide-honey/20">
               {sections.map((section, i) => (
-                <div key={section.heading ?? i}>
+                <div key={section.heading ?? i} className="py-5 first:pt-0 last:pb-0">
                   {section.heading && (
-                    <h2 className="font-display text-lg font-bold text-charcoal">
+                    <h2 className="font-display text-base font-bold text-rust">
                       {section.heading}
                     </h2>
                   )}
-                  <ul className="mt-4 space-y-2.5">
-                    {section.items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 text-sm leading-relaxed text-charcoal/80"
-                      >
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-honey" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal/80">
+                    {section.items.join(" · ")}
+                  </p>
                 </div>
               ))}
             </div>
