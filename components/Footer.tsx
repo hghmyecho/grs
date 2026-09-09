@@ -1,4 +1,10 @@
-import { NAV_LINKS } from "@/lib/content/nav";
+import { Mail, Phone } from "lucide-react";
+import { LOCATIONS } from "@/lib/content/locations";
+
+const STATE_CONTACTS = [
+  { state: "NSW", email: "info.nsw@grs.health" },
+  { state: "QLD", email: "admin.qld@grs.health" },
+];
 
 function NdisBadge() {
   return (
@@ -33,6 +39,14 @@ function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
       <rect x="3" y="3" width="18" height="18" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.12 1 2.49 1s2.49 1.12 2.49 2.5ZM.24 8.25h4.5V23H.24V8.25ZM8.25 8.25h4.31v2.01h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V23h-4.5v-6.75c0-1.61-.03-3.68-2.24-3.68-2.25 0-2.6 1.75-2.6 3.56V23h-4.5V8.25Z" />
     </svg>
   );
 }
@@ -72,28 +86,56 @@ export default function Footer() {
               >
                 <InstagramIcon className="h-4 w-4" />
               </a>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-rust"
+              >
+                <LinkedinIcon className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:flex-1 lg:grid-cols-5">
-            {NAV_LINKS.map((group) => (
-              <div key={group.label}>
-                <p className="text-sm font-semibold text-white">{group.label}</p>
-                <ul className="mt-3 flex flex-col gap-2">
-                  {group.items.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-sm transition-colors hover:text-honey"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 lg:flex-1">
+            <div>
+              <p className="text-sm font-semibold text-white">Locations</p>
+              <ul className="mt-3 flex flex-col gap-3">
+                {LOCATIONS.map((location) => (
+                  <li key={location.slug}>
+                    <p className="text-sm font-semibold text-white/90">{location.city}</p>
+                    <p className="text-sm">{location.address}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold text-white">Contact Us</p>
+              <div className="mt-3 flex flex-col gap-3">
+                <a
+                  href="tel:1300066716"
+                  className="flex items-center gap-2 text-sm transition-colors hover:text-honey"
+                >
+                  <Phone className="h-3.5 w-3.5 shrink-0" />
+                  1300 066 716
+                </a>
+                {STATE_CONTACTS.map(({ state, email }) => (
+                  <div key={state}>
+                    <p className="flex items-center gap-2 text-sm font-semibold text-white/90">
+                      <Mail className="h-3.5 w-3.5 shrink-0" />
+                      {state}
+                    </p>
+                    <a
+                      href={`mailto:${email}`}
+                      className="text-sm transition-colors hover:text-honey"
+                    >
+                      {email}
+                    </a>
+                  </div>
+                ))}
               </div>
-            ))}
-          </nav>
+            </div>
+          </div>
         </div>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
