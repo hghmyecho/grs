@@ -50,7 +50,7 @@ export const DISCIPLINES: Discipline[] = [
         ],
       },
       {
-        heading: "Physical Stream",
+        heading: "Physical Speciality",
         items: [
           "Home Modifications (basic and complex)",
           "Assistive Technology Prescription & Reports",
@@ -61,7 +61,7 @@ export const DISCIPLINES: Discipline[] = [
         ],
       },
       {
-        heading: "Psychosocial Stream",
+        heading: "Psychosocial Speciality",
         items: [
           "Cognitive Assessment and Therapy",
           "Sensory Assessment and Sensory Integration Intervention",
@@ -71,7 +71,7 @@ export const DISCIPLINES: Discipline[] = [
         ],
       },
       {
-        heading: "Paediatric Stream (0 to School-Aged)",
+        heading: "Paediatric Speciality (0 to School-Aged)",
         items: [
           "Behaviour assessment and intervention",
           "Sensory Assessment and Integration",

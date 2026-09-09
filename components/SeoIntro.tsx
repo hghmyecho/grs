@@ -293,7 +293,7 @@ export default function SeoIntro() {
         <p className="mt-3">
           If you&rsquo;re ready to get started, explore our{" "}
           <a href="#services" className={linkCls}>
-            Clinical Streams
+            Clinical Specialities
           </a>{" "}
           and{" "}
           <a href="#disciplines" className={linkCls}>

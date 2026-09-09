@@ -73,14 +73,14 @@ export const STREAMS: Stream[] = [
     ],
     faqs: [
       {
-        question: "What conditions are included under the Physical Disability stream at GRS?",
+        question: "What conditions are included under the Physical Disability speciality at GRS?",
         answer:
           "GRS supports a broad range of conditions affecting movement and physical function, including neurological conditions such as ABI/TBI, stroke, multiple sclerosis, motor neurone disease, spinal cord injury, cerebral palsy, and spina bifida, as well as physical conditions like limb amputation, organ failure, cystic fibrosis, arthritis, and scoliosis. Support is tailored to each person's specific diagnosis and needs.",
       },
       {
         question: "Which GRS services typically support people with a physical disability?",
         answer:
-          "Depending on individual goals, people in this stream may work with occupational therapists, physiotherapists, speech pathologists, psychologists, dietitians, and allied health assistants. The combination of services is chosen based on each person's functional needs, whether that involves mobility, self-care, communication, nutrition, or emotional wellbeing.",
+          "Depending on individual goals, people in this speciality may work with occupational therapists, physiotherapists, speech pathologists, psychologists, dietitians, and allied health assistants. The combination of services is chosen based on each person's functional needs, whether that involves mobility, self-care, communication, nutrition, or emotional wellbeing.",
       },
       {
         question: "Is support for physical disability available at any age?",
@@ -150,7 +150,7 @@ export const STREAMS: Stream[] = [
     ],
     faqs: [
       {
-        question: "What age range does the GRS paediatrics stream cover?",
+        question: "What age range does the GRS paediatrics speciality cover?",
         answer:
           "GRS supports children and young people from birth to 18 years. This includes Early Childhood Early Intervention (ECEI) support for children aged 0 to 7, and school-aged services for children and adolescents aged 7 to 17, with therapy tailored to each stage of development.",
       },
@@ -226,9 +226,9 @@ export const STREAMS: Stream[] = [
     ],
     faqs: [
       {
-        question: "What conditions fall under the psychosocial disability stream?",
+        question: "What conditions fall under the psychosocial disability speciality?",
         answer:
-          "This stream supports people living with mental health conditions such as schizophrenia, bipolar affective disorder, depression, anxiety, OCD, PTSD, borderline personality disorder, and functional neurological disorder, as well as people whose psychosocial support needs relate to intellectual disability, autism, or Down syndrome.",
+          "This speciality supports people living with mental health conditions such as schizophrenia, bipolar affective disorder, depression, anxiety, OCD, PTSD, borderline personality disorder, and functional neurological disorder, as well as people whose psychosocial support needs relate to intellectual disability, autism, or Down syndrome.",
       },
       {
         question: "What does psychosocial disability actually affect day to day?",
@@ -238,7 +238,7 @@ export const STREAMS: Stream[] = [
       {
         question: "Which GRS professionals support people with psychosocial disability?",
         answer:
-          "People in this stream commonly work with psychologists, occupational therapists, and speech pathologists, and may also access specialist behaviour support where relevant. The mix of services depends on each person's goals, whether that is building social skills, daily routines, communication, or emotional coping strategies.",
+          "People in this speciality commonly work with psychologists, occupational therapists, and speech pathologists, and may also access specialist behaviour support where relevant. The mix of services depends on each person's goals, whether that is building social skills, daily routines, communication, or emotional coping strategies.",
       },
       {
         question: "Will GRS work alongside my psychiatrist or other mental health treatment?",

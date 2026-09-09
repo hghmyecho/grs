@@ -61,13 +61,13 @@ export default function ClinicalStreams() {
     <section id="services" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
-          <span className="eyebrow-script">Our Clinical Streams</span>
+          <span className="eyebrow-script">Our Clinical Specialities</span>
           <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-charcoal sm:text-4xl">
             Care organised around the people we support
           </h2>
           <p className="mt-4 text-charcoal/80">
-            Every stream is led by clinicians who specialise in that area of
-            need, working as one team around each participant.
+            Every speciality is led by clinicians who specialise in that area
+            of need, working as one team around each participant.
           </p>
         </div>
 
@@ -77,24 +77,24 @@ export default function ClinicalStreams() {
             <PhotoPanel
               href="/physical-disability"
               image="/photos/clinical-physical-disability.png"
-              alt="Portrait of a client supported through our Physical Disability stream"
+              alt="Portrait of a client supported through our Physical Disability speciality"
             />
             <TextPanel stream={STREAMS[1]} />
             <PhotoPanel
               href="/paediatrics"
               image="/photos/clinical-paediatrics.png"
-              alt="Portrait of a child supported through our Paediatrics stream"
+              alt="Portrait of a child supported through our Paediatrics speciality"
             />
             <PhotoPanel
               href="/psychosocial-disability"
               image="/photos/clinical-psychosocial-disability.png"
-              alt="Portrait of clients supported through our Psychosocial Disability stream"
+              alt="Portrait of clients supported through our Psychosocial Disability speciality"
             />
             <TextPanel stream={STREAMS[2]} />
             <PhotoPanel
               href="/specialist-behaviour-support-stream"
               image="/photos/clinical-specialist-behavioural-support.png"
-              alt="Portrait of a client supported through our Specialist Behavioural Support stream"
+              alt="Portrait of a client supported through our Specialist Behavioural Support speciality"
             />
             <TextPanel stream={STREAMS[3]} />
           </div>

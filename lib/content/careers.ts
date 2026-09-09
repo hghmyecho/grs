@@ -87,7 +87,7 @@ export const CAREERS: CareerPage[] = [
       },
       {
         question:
-          "What if I want to specialise deeply in one clinical stream instead of rotating or diversifying?",
+          "What if I want to specialise deeply in one clinical speciality instead of rotating or diversifying?",
         answer:
           "That's absolutely supported. The career path model is built around your strengths, so if deep specialisation in an area like paediatrics or specialist behaviour support is where you want to focus, your role and development plan can be shaped around that goal.",
       },
@@ -107,14 +107,14 @@ export const CAREERS: CareerPage[] = [
     slug: "clinical-rotations",
     title: "Clinical Rotations",
     tagline:
-      "Broaden your horizon of knowledge across every clinical stream.",
+      "Broaden your horizon of knowledge across every clinical speciality.",
     overview:
-      "Starting out as a clinician often means facing clients whose needs don't sit neatly within one clinical stream, and GRS designed its rotation model with exactly that reality in mind. GRS offers novice clinicians the opportunity to gain varied clinical experience by rotating through multiple clinical streams, so they can \"provide a better service to the clients who might have issues across a few different clinical streams,\" rather than referring complexity elsewhere or feeling underprepared for it. Rather than being placed in a single stream from day one and expected to specialise immediately, new clinicians get structured exposure to different client groups, presentations, and ways of working, under the guidance of experienced clinicians in each area. The experience also helps clinicians identify and strengthen their clinical interests, supporting future career specialisation, so decisions about long-term focus are grounded in genuine hands-on experience rather than assumption or guesswork. For many clinicians, this is where a career direction they hadn't previously considered — behaviour support, or paediatrics, for instance — becomes a clear and confident choice, made with the breadth of exposure to compare it against, rather than in isolation.",
+      "Starting out as a clinician often means facing clients whose needs don't sit neatly within one clinical speciality, and GRS designed its rotation model with exactly that reality in mind. GRS offers novice clinicians the opportunity to gain varied clinical experience by rotating through multiple clinical specialities, so they can \"provide a better service to the clients who might have issues across a few different clinical specialities,\" rather than referring complexity elsewhere or feeling underprepared for it. Rather than being placed in a single speciality from day one and expected to specialise immediately, new clinicians get structured exposure to different client groups, presentations, and ways of working, under the guidance of experienced clinicians in each area. The experience also helps clinicians identify and strengthen their clinical interests, supporting future career specialisation, so decisions about long-term focus are grounded in genuine hands-on experience rather than assumption or guesswork. For many clinicians, this is where a career direction they hadn't previously considered — behaviour support, or paediatrics, for instance — becomes a clear and confident choice, made with the breadth of exposure to compare it against, rather than in isolation.",
     approach:
-      "A typical rotation cycle for a new grad or early-career clinician is less about being thrown in the deep end and more about deliberate, supported exposure. You'll move through streams such as physical disability, psychosocial disability, paediatrics, and specialist behaviour support, working alongside clinicians who already know that caseload well, so questions get answered in real time rather than after the fact. Rotations give you a working vocabulary across streams you might otherwise never encounter early in your career, which matters enormously in disability and community health settings where a single client's presentation can touch several of these areas at once. It also means your first genuine specialisation choice is an informed one — made after trying the work, not just reading a position description. Clinicians who value variety, want to build broad clinical confidence before narrowing their focus, or simply aren't sure yet which stream suits them best tend to find this structure a natural fit, and a strong foundation for whatever direction they choose next.",
+      "A typical rotation cycle for a new grad or early-career clinician is less about being thrown in the deep end and more about deliberate, supported exposure. You'll move through specialities such as physical disability, psychosocial disability, paediatrics, and specialist behaviour support, working alongside clinicians who already know that caseload well, so questions get answered in real time rather than after the fact. Rotations give you a working vocabulary across specialities you might otherwise never encounter early in your career, which matters enormously in disability and community health settings where a single client's presentation can touch several of these areas at once. It also means your first genuine specialisation choice is an informed one — made after trying the work, not just reading a position description. Clinicians who value variety, want to build broad clinical confidence before narrowing their focus, or simply aren't sure yet which speciality suits them best tend to find this structure a natural fit, and a strong foundation for whatever direction they choose next.",
     sections: [
       {
-        heading: "Clinical Streams You'll Rotate Through",
+        heading: "Clinical Specialities You'll Rotate Through",
         items: [
           "Physical Disability",
           "Psychosocial Disability",
@@ -127,27 +127,27 @@ export const CAREERS: CareerPage[] = [
       {
         question: "Who is the rotation program actually for?",
         answer:
-          "It's designed with novice and early-career clinicians in mind — those who benefit most from varied exposure before settling into a specialisation. If you're newer to the field or simply want to broaden your experience across streams, this is the pathway built with you in mind.",
+          "It's designed with novice and early-career clinicians in mind — those who benefit most from varied exposure before settling into a specialisation. If you're newer to the field or simply want to broaden your experience across specialities, this is the pathway built with you in mind.",
       },
       {
-        question: "Which clinical streams will I rotate through?",
+        question: "Which clinical specialities will I rotate through?",
         answer:
-          "Rotations cover GRS's core clinical streams: physical disability, psychosocial disability, paediatrics, and specialist behaviour support. Each stream exposes you to genuinely different client presentations, referral types, and ways of working, giving you a broad, well-rounded base of clinical experience to draw on for the rest of your career.",
+          "Rotations cover GRS's core clinical specialities: physical disability, psychosocial disability, paediatrics, and specialist behaviour support. Each speciality exposes you to genuinely different client presentations, referral types, and ways of working, giving you a broad, well-rounded base of clinical experience to draw on for the rest of your career.",
       },
       {
         question: "Do I get to choose my specialisation afterwards?",
         answer:
-          "Yes — the rotation experience exists specifically to help you identify and strengthen your clinical interests based on real exposure, not guesswork. Once you've rotated through the streams, you're well placed to pursue the specialisation that genuinely suits your interests and strengths.",
+          "Yes — the rotation experience exists specifically to help you identify and strengthen your clinical interests based on real exposure, not guesswork. Once you've rotated through the specialities, you're well placed to pursue the specialisation that genuinely suits your interests and strengths.",
       },
       {
-        question: "Will I be supported while working in an unfamiliar stream?",
+        question: "Will I be supported while working in an unfamiliar speciality?",
         answer:
-          "You'll be working alongside clinicians who are already experienced in that stream as you rotate through it, so you're never navigating unfamiliar territory entirely alone. This supported structure, rather than a sink-or-swim approach, is central to how GRS designs the rotation experience for newer clinicians.",
+          "You'll be working alongside clinicians who are already experienced in that speciality as you rotate through it, so you're never navigating unfamiliar territory entirely alone. This supported structure, rather than a sink-or-swim approach, is central to how GRS designs the rotation experience for newer clinicians.",
       },
       {
         question: "Is clinical rotation only relevant to certain professions, like OT?",
         answer:
-          "The rotation model applies across the clinical streams GRS works in, so it's relevant to a range of allied health disciplines, not just one profession. Get in touch with GRS to discuss how rotations apply to your specific discipline and experience level.",
+          "The rotation model applies across the clinical specialities GRS works in, so it's relevant to a range of allied health disciplines, not just one profession. Get in touch with GRS to discuss how rotations apply to your specific discipline and experience level.",
       },
       {
         question: "How do I apply for a rotation-based role at GRS?",
@@ -155,14 +155,14 @@ export const CAREERS: CareerPage[] = [
           "Visit /join-us to see current openings and learn more about how GRS supports early-career clinicians more broadly. If a rotation-based role isn't currently advertised, reaching out directly is a good way to express your interest ahead of future opportunities opening up.",
       },
       {
-        question: "How is my performance assessed while I'm rotating through different streams?",
+        question: "How is my performance assessed while I'm rotating through different specialities?",
         answer:
-          "Feedback during rotations typically comes from the experienced clinicians you're working alongside in each stream, alongside your usual supervision and PADP review process. This gives you input from multiple perspectives as you build experience across different clinical areas.",
+          "Feedback during rotations typically comes from the experienced clinicians you're working alongside in each speciality, alongside your usual supervision and PADP review process. This gives you input from multiple perspectives as you build experience across different clinical areas.",
       },
       {
-        question: "Can I request to skip a rotation stream I'm not interested in?",
+        question: "Can I request to skip a rotation speciality I'm not interested in?",
         answer:
-          "Rotations are designed to give broad exposure before specialising, so the program generally covers all core streams. If you have strong existing experience or a clear specialisation in mind, it's worth discussing this directly with GRS to see what flexibility might be possible.",
+          "Rotations are designed to give broad exposure before specialising, so the program generally covers all core specialities. If you have strong existing experience or a clear specialisation in mind, it's worth discussing this directly with GRS to see what flexibility might be possible.",
       },
     ],
   },
@@ -195,7 +195,7 @@ export const CAREERS: CareerPage[] = [
       {
         question: "How is my supervisor chosen?",
         answer:
-          "Senior therapists and clinical educators develop the frameworks that connect clinicians with primary and supporting supervisors, so matching is considered rather than random. It takes into account your clinical stream, experience level, and development needs, so the relationship is genuinely useful, not just a formality.",
+          "Senior therapists and clinical educators develop the frameworks that connect clinicians with primary and supporting supervisors, so matching is considered rather than random. It takes into account your clinical speciality, experience level, and development needs, so the relationship is genuinely useful, not just a formality.",
       },
       {
         question: "Does GRS's supervision model meet professional registration requirements?",
@@ -205,7 +205,7 @@ export const CAREERS: CareerPage[] = [
       {
         question: "How often will I have supervision?",
         answer:
-          "Frequency depends on your role, experience level, and clinical stream, since supervision is tailored rather than one-size-fits-all. Newer or more junior clinicians can generally expect more regular contact; for specifics relevant to a particular role, it's best to ask directly when you enquire.",
+          "Frequency depends on your role, experience level, and clinical speciality, since supervision is tailored rather than one-size-fits-all. Newer or more junior clinicians can generally expect more regular contact; for specifics relevant to a particular role, it's best to ask directly when you enquire.",
       },
       {
         question: "Is supervision only for less experienced clinicians?",
@@ -231,7 +231,7 @@ export const CAREERS: CareerPage[] = [
     overview:
       "For allied health clinicians, CPD is often treated as a compliance requirement to satisfy at registration renewal time, but at GRS it's approached as an ongoing, genuinely valued part of clinical practice. We highly value CPD activities and provide a variety of forms of continued professional development support, including monthly clinical in-services, peer review sessions, group external training workshops, and annual individual training funds, giving clinicians multiple regular touchpoints to build knowledge rather than relying on a single annual course. This is organised by our clinical educators across our Sydney, Brisbane, and Gold Coast teams, so the offering reflects the realities and clinical focus of each region while still connecting clinicians across the organisation. Staff are expected to actively contribute by sharing professional knowledge with the wider team, which means CPD at GRS runs in both directions — clinicians aren't just recipients of training, they're also expected to bring their own expertise, case learnings, and clinical interests back to the group. For clinicians who want their professional development to feel like a genuine, collaborative part of their working life rather than an obligation squeezed in around it, this structure is designed with that expectation in mind.",
     approach:
-      "CPD at GRS works as a genuine mix of structured and self-directed activity, all of which counts towards the CPD hours clinicians need to maintain their AHPRA registration. Monthly clinical in-services and peer review sessions give a regular, built-in rhythm of learning that doesn't depend on individually sourcing every activity yourself, while group external training workshops bring in outside expertise on topics the team identifies as valuable. Annual individual training funds then let clinicians pursue development specific to their own interests or specialisation, whether that's a particular course, conference, or certification relevant to their clinical stream. Because staff are expected to actively contribute by sharing professional knowledge with the wider team, presenting back on a course you've attended or a case you've learned from is a normal, expected part of the process, not an optional extra — which means your CPD also builds your visibility and standing within the team. Clinicians who want their professional development to actually stick, rather than sitting as a box ticked once a year, tend to find this collaborative, regularly-scheduled approach a meaningful part of why they stay.",
+      "CPD at GRS works as a genuine mix of structured and self-directed activity, all of which counts towards the CPD hours clinicians need to maintain their AHPRA registration. Monthly clinical in-services and peer review sessions give a regular, built-in rhythm of learning that doesn't depend on individually sourcing every activity yourself, while group external training workshops bring in outside expertise on topics the team identifies as valuable. Annual individual training funds then let clinicians pursue development specific to their own interests or specialisation, whether that's a particular course, conference, or certification relevant to their clinical speciality. Because staff are expected to actively contribute by sharing professional knowledge with the wider team, presenting back on a course you've attended or a case you've learned from is a normal, expected part of the process, not an optional extra — which means your CPD also builds your visibility and standing within the team. Clinicians who want their professional development to actually stick, rather than sitting as a box ticked once a year, tend to find this collaborative, regularly-scheduled approach a meaningful part of why they stay.",
     sections: [
       {
         heading: "Forms of CPD Support",
@@ -287,7 +287,7 @@ export const CAREERS: CareerPage[] = [
     title: "Current Advertised Positions",
     tagline: "See what's open right now.",
     overview:
-      "Looking at current openings is often the most direct way to get a sense of where an organisation is growing and what it actually needs right now, and GRS keeps this list reflective of real, active hiring rather than evergreen placeholder ads. Our current open roles span Occupational Therapy, Psychology, and administrative support across our Queensland and NSW teams, giving a snapshot of the disciplines and locations where GRS is expanding its clinical and operational capacity at any given time. Because roles are reviewed and updated regularly, what's advertised here reflects genuine current need, whether that's a senior clinical position, a team leadership role, or entry points for clinicians newer to a particular stream. Beyond the specifics of any one role, it's worth knowing what other clinicians think of working here: GRS holds an Indeed Employer Rating of 4.4 out of 5, based on 31 reviews, which offers an independent, external perspective on day-to-day experience at GRS from people who've actually worked here, rather than relying solely on what an employer says about itself. If a role that fits isn't listed today, it's still worth reaching out, since positions open regularly across our growing Queensland and NSW teams.",
+      "Looking at current openings is often the most direct way to get a sense of where an organisation is growing and what it actually needs right now, and GRS keeps this list reflective of real, active hiring rather than evergreen placeholder ads. Our current open roles span Occupational Therapy, Psychology, and administrative support across our Queensland and NSW teams, giving a snapshot of the disciplines and locations where GRS is expanding its clinical and operational capacity at any given time. Because roles are reviewed and updated regularly, what's advertised here reflects genuine current need, whether that's a senior clinical position, a team leadership role, or entry points for clinicians newer to a particular speciality. Beyond the specifics of any one role, it's worth knowing what other clinicians think of working here: GRS holds an Indeed Employer Rating of 4.4 out of 5, based on 31 reviews, which offers an independent, external perspective on day-to-day experience at GRS from people who've actually worked here, rather than relying solely on what an employer says about itself. If a role that fits isn't listed today, it's still worth reaching out, since positions open regularly across our growing Queensland and NSW teams.",
     approach:
       "Applying for a role at GRS generally starts with submitting an application against a specific advertised position, followed by a conversation with the team to talk through your experience, clinical interests, and what you're looking for next — much like any considered clinical recruitment process, rather than a purely transactional one. Because GRS builds roles around individual strengths through its career path model, conversations at this stage often go beyond the position description itself, exploring where you might sit within the clinical specialty, team leadership, or business development streams over time. Once you're on board, onboarding is designed to connect you with the right supervisory and team supports early, including being matched with a primary supervisor as part of the broader clinical supervision framework, rather than leaving you to find your feet alone. For clinicians who've experienced recruitment processes that feel impersonal or purely box-ticking, a process grounded in genuine conversation about fit, interests, and long-term direction — backed by an Indeed Employer Rating of 4.4 out of 5 from people who've been through it themselves — tends to stand out.",
     sections: [

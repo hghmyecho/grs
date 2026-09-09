@@ -11,7 +11,7 @@ export default function StreamPage({ stream }: { stream: Stream }) {
 
   const breadcrumbItems = [
     { name: "Home", href: "/" },
-    { name: "Clinical Streams", href: "/#services" },
+    { name: "Clinical Specialities", href: "/#services" },
     { name: title, href: `/${slug}` },
   ];
 
@@ -33,7 +33,7 @@ export default function StreamPage({ stream }: { stream: Stream }) {
       <section className="bg-navy-800 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <span className="eyebrow-script">
-            Clinical Stream
+            Clinical Speciality
           </span>
           <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
             {title}

@@ -61,7 +61,7 @@ export const NAV_LINKS: NavGroup[] = [
     href: "#services",
     items: [
       {
-        label: "Clinical Streams",
+        label: "Clinical Specialities",
         description: "Physical disability, paediatrics, and more",
         href: "#services",
         icon: Layers,
