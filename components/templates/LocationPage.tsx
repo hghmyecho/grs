@@ -1,4 +1,5 @@
-import { ArrowRight, Calculator, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Bus, Calculator, MapPin, ParkingCircle } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import type { Location } from "@/lib/content/locations";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -12,6 +13,7 @@ export default function LocationPage({ location }: { location: Location }) {
     city,
     state,
     address,
+    image,
     phone,
     serviceArea,
     overview,
@@ -39,15 +41,31 @@ export default function LocationPage({ location }: { location: Location }) {
       />
       <Breadcrumbs items={breadcrumbItems} />
 
-      <section className="bg-navy-800 py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <span className="eyebrow-script">
+      <section className="relative overflow-hidden bg-navy-800 py-16 lg:py-24">
+        {image && (
+          <>
+            <Image
+              src={image}
+              alt=""
+              aria-hidden
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-navy-950/75" />
+          </>
+        )}
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
+          <span className="rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white">
             {state}
           </span>
-          <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-            GRS {city}
+          <h1
+            className="mt-4 text-4xl text-white sm:text-5xl"
+            style={{ fontFamily: "var(--font-script)" }}
+          >
+            {city}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-white/70">{serviceArea}</p>
+          <p className="mt-3 max-w-2xl text-white/80">{serviceArea}</p>
         </div>
       </section>
 
@@ -62,27 +80,37 @@ export default function LocationPage({ location }: { location: Location }) {
             <p className="mt-4 text-sm leading-relaxed text-charcoal/80">{approach}</p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-2xl border border-honey/20 p-6">
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-2xl border border-honey/20 bg-white p-6">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-honey text-white">
                 <MapPin className="h-5 w-5" />
               </span>
-              <h2 className="mt-4 font-display text-base font-bold text-charcoal">
+              <h2 className="mt-4 font-display text-sm font-bold uppercase tracking-wide text-rust">
                 Clinic Address
               </h2>
               <p className="mt-1 text-sm leading-relaxed text-charcoal/80">{address}</p>
               {clinicNote && (
-                <p className="mt-2 text-sm leading-relaxed text-charcoal/60">{clinicNote}</p>
+                <p className="mt-2 text-xs leading-relaxed text-charcoal/60">{clinicNote}</p>
               )}
+              <p className="mt-2 text-sm font-semibold text-rust">{phone}</p>
             </div>
-            <div className="rounded-2xl border border-honey/20 p-6">
+            <div className="rounded-2xl border border-honey/20 bg-white p-6">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-honey text-white">
-                <Phone className="h-5 w-5" />
+                <Bus className="h-5 w-5" />
               </span>
-              <h2 className="mt-4 font-display text-base font-bold text-charcoal">
-                Get In Touch
+              <h2 className="mt-4 font-display text-sm font-bold uppercase tracking-wide text-rust">
+                Getting There
               </h2>
-              <p className="mt-1 text-sm leading-relaxed text-charcoal/80">{phone}</p>
+              <p className="mt-1 text-sm leading-relaxed text-charcoal/80">{transport}</p>
+            </div>
+            <div className="rounded-2xl border border-honey/20 bg-white p-6">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-honey text-white">
+                <ParkingCircle className="h-5 w-5" />
+              </span>
+              <h2 className="mt-4 font-display text-sm font-bold uppercase tracking-wide text-rust">
+                Parking
+              </h2>
+              <p className="mt-1 text-sm leading-relaxed text-charcoal/80">{parking}</p>
             </div>
           </div>
 
@@ -100,19 +128,6 @@ export default function LocationPage({ location }: { location: Location }) {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            <div>
-              <h2 className="font-display text-lg font-bold text-charcoal">
-                Getting there
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-charcoal/80">{transport}</p>
-            </div>
-            <div>
-              <h2 className="font-display text-lg font-bold text-charcoal">Parking</h2>
-              <p className="mt-3 text-sm leading-relaxed text-charcoal/80">{parking}</p>
-            </div>
           </div>
 
           <FaqSection faqs={faqs} />
