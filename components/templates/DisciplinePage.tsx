@@ -1,20 +1,70 @@
 import { ArrowRight, Check } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import type { Discipline } from "@/lib/content/disciplines";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import JsonLd from "@/components/JsonLd";
 import { faqSchema, medicalWebPageSchema, schemaGraph } from "@/lib/schema";
+import {
+  Activity,
+  Baby,
+  Brain,
+  ClipboardList,
+  Dumbbell,
+  FileCheck,
+  Footprints,
+  Heart,
+  HeartHandshake,
+  HeartPulse,
+  MessageCircle,
+  Palette,
+  Salad,
+  Search,
+  Sparkles,
+  Tablet,
+  Users,
+  Utensils,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
+
+/** 3 icons per discipline, matching the order of that discipline's
+ * `highlights` array — keeps icon choice out of the plain content data. */
+const HIGHLIGHT_ICONS: Record<string, [LucideIcon, LucideIcon, LucideIcon]> = {
+  "occupational-therapy": [Activity, Brain, Baby],
+  physiotherapy: [Footprints, Dumbbell, Wrench],
+  "speech-pathology": [MessageCircle, Utensils, Tablet],
+  psychology: [Heart, Search, Sparkles],
+  dietetics: [ClipboardList, Utensils, Salad],
+  "art-therapy": [Palette, HeartHandshake, Users],
+  "music-therapy": [HeartPulse, MessageCircle, Activity],
+  "specialist-behaviour-support-disciplines": [Search, FileCheck, Users],
+};
 
 export default function DisciplinePage({ discipline }: { discipline: Discipline }) {
-  const { slug, title, description, overview, approach, benefits, serviceGroups, tags, faqs } =
-    discipline;
+  const {
+    slug,
+    title,
+    description,
+    image,
+    gradient,
+    overview,
+    approach,
+    benefits,
+    highlights,
+    serviceGroups,
+    tags,
+    faqs,
+  } = discipline;
 
   const breadcrumbItems = [
     { name: "Home", href: "/" },
     { name: "Disciplines", href: "/#disciplines" },
     { name: title, href: `/${slug}` },
   ];
+
+  const highlightIcons = HIGHLIGHT_ICONS[slug] ?? [Sparkles, Sparkles, Sparkles];
 
   return (
     <>
@@ -32,21 +82,50 @@ export default function DisciplinePage({ discipline }: { discipline: Discipline 
       <Breadcrumbs items={breadcrumbItems} />
 
       <section className="bg-navy-800 py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white"
-              >
-                {tag}
-              </span>
-            ))}
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="text-center lg:text-left">
+              <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
+                {title}
+              </h1>
+              <p className="mx-auto mt-4 max-w-2xl text-white/70 lg:mx-0">{description}</p>
+            </div>
+
+            {image && (
+              <div className="relative mx-auto aspect-[4/3] w-full max-w-md lg:mx-0">
+                <div
+                  aria-hidden
+                  className="absolute -left-6 -top-6 h-32 w-32 rounded-full bg-honey/20 blur-2xl"
+                />
+                <div
+                  aria-hidden
+                  className="absolute -bottom-8 -right-4 h-40 w-40 rounded-full bg-rust/20 blur-2xl"
+                />
+                <div
+                  className={`relative h-full w-full overflow-hidden rounded-3xl bg-gradient-to-br shadow-xl ${gradient}`}
+                >
+                  <Image
+                    src={image}
+                    alt=""
+                    aria-hidden
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 90vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            )}
           </div>
-          <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-            {title}
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-white/70">{description}</p>
         </div>
       </section>
 
@@ -79,11 +158,35 @@ export default function DisciplinePage({ discipline }: { discipline: Discipline 
             </div>
           )}
 
-          {serviceGroups.length > 0 && (
-            <div className="mt-12 space-y-10">
-              <h2 className="font-display text-xl font-bold text-charcoal">
-                What we offer
+          {highlights.length > 0 && (
+            <div className="mt-12">
+              <h2 className="text-center font-display text-xl font-bold text-charcoal">
+                What We Offer
               </h2>
+              <div className="mt-8 grid gap-6 sm:grid-cols-3">
+                {highlights.map(({ title: hTitle, description: hDescription }, i) => {
+                  const Icon = highlightIcons[i] ?? Sparkles;
+                  return (
+                    <div
+                      key={hTitle}
+                      className="rounded-2xl border border-honey/20 bg-white p-6 text-center shadow-sm"
+                    >
+                      <Icon className="mx-auto h-8 w-8 text-rust" strokeWidth={1.5} />
+                      <h3 className="mt-3 font-display text-sm font-bold text-charcoal">
+                        {hTitle}
+                      </h3>
+                      <p className="mt-1.5 text-xs leading-relaxed text-charcoal/80">
+                        {hDescription}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {serviceGroups.length > 0 && (
+            <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2">
               {serviceGroups.map((group, i) => (
                 <div key={group.heading ?? i}>
                   {group.heading && (
