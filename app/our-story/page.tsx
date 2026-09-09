@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Flame, Heart, Sparkles } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import StoryTimeline from "@/components/StoryTimeline";
 
 export const metadata: Metadata = {
   title: "Our Story",
@@ -8,59 +9,6 @@ export const metadata: Metadata = {
     "How Global Rehabilitation Service started during the 2017 NDIS rollout and grew into a clinician-led, multidisciplinary allied health provider across NSW & QLD.",
   alternates: { canonical: "/our-story" },
 };
-
-const MILESTONES = [
-  {
-    title: "Where it began",
-    body: "GRS was founded with a vision to deliver high-quality, multidisciplinary healthcare for the disability sector. Our founding clinicians trained and worked extensively in Australia's public health system, where they saw firsthand the constraints therapists faced and the challenges people with disability encountered accessing services.",
-    gradient: "from-navy-700 to-navy-950",
-  },
-  {
-    title: "A different kind of provider",
-    body: "During the 2017 NDIS rollout, our founders identified an opportunity to establish a private multidisciplinary service offering therapeutic care that is efficient, individually tailored, and flexible — while maintaining the public health system's standards for quality assurance and evidence-based care.",
-    gradient: "from-orange-400 to-orange-600",
-  },
-  {
-    title: "How we've grown",
-    body: "In the years since, our team has expanded and the way we deliver care has evolved to meet changing client needs. Every step of that growth has stayed 100% directed and managed by clinicians, in pursuit of a simple goal: to become a benchmark for quality and client satisfaction.",
-    gradient: "from-peach-200 to-navy-700",
-  },
-];
-
-function StoryTimeline() {
-  return (
-    <div className="space-y-12 lg:space-y-10">
-      {MILESTONES.map(({ title, body, gradient }, i) => {
-        const reversed = i % 2 === 1;
-        return (
-          <div
-            key={title}
-            className={`flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-0 ${
-              reversed ? "lg:flex-row-reverse" : ""
-            }`}
-          >
-            <div
-              className={`h-48 w-full shrink-0 rounded-2xl bg-gradient-to-br shadow-sm lg:h-auto lg:flex-1 ${gradient} ${
-                reversed ? "lg:rotate-1" : "lg:-rotate-1"
-              }`}
-            />
-            <div
-              aria-hidden
-              className="hidden lg:relative lg:flex lg:w-16 lg:shrink-0 lg:items-center lg:justify-center"
-            >
-              <div className="h-full w-px border-l-2 border-dashed border-honey/60" />
-              <span className="absolute h-3 w-3 rounded-full bg-honey" />
-            </div>
-            <div className="flex flex-1 flex-col justify-center">
-              <h2 className="font-display text-xl font-bold text-charcoal">{title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-charcoal/80">{body}</p>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 const VALUES = [
   {
