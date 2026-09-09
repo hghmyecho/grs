@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Funding Streams",
   description:
-    "GRS is a registered provider for NDIS, Medicare, Home Care Packages, and Medibank CareComplete — allied health funding streams across NSW & QLD.",
+    "GRS is a registered provider for NDIS, Medicare, Home Care Packages, and private health fund clients — allied health funding streams across NSW & QLD.",
   alternates: { canonical: "/funding-stream" },
 };
 
@@ -15,24 +15,36 @@ const FUNDING_STREAMS = [
     title: "NDIS",
     description:
       "The funding scheme designed for eligible participants to cover their daily living and therapeutic support care needs.",
+    border: "border-purple-600",
+    heading: "text-purple-700",
+    iconBg: "bg-purple-600/10 text-purple-700",
   },
   {
     icon: HeartHandshake,
-    title: "Medibank CareComplete",
+    title: "Private Health Fund Clients",
     description:
       "One of the largest chronic disease management programs in Australia. This Medibank-developed program supports the better management of chronic and complex health conditions.",
+    border: "border-blue-600",
+    heading: "text-blue-700",
+    iconBg: "bg-blue-600/10 text-blue-700",
   },
   {
     icon: Home,
     title: "Home Care Package",
     description:
       "One of the ways older Australians can access affordable care services at home. Designed for those with more complex care needs than the Commonwealth Home Support Programme can provide.",
+    border: "border-charcoal",
+    heading: "text-charcoal",
+    iconBg: "bg-charcoal/10 text-charcoal",
   },
   {
     icon: Stethoscope,
     title: "Medicare",
     description:
       "Provides a range of coverage for allied health services, including the Chronic Disease Management (formerly Extended Primary Care) Plan and the Mental Health Care Plan.",
+    border: "border-teal",
+    heading: "text-teal",
+    iconBg: "bg-teal/10 text-teal",
   },
 ];
 
@@ -57,16 +69,16 @@ export default function FundingStreamPage() {
       <section className="bg-tan px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 sm:grid-cols-2">
-            {FUNDING_STREAMS.map(({ icon: Icon, title, description }) => (
+            {FUNDING_STREAMS.map(({ icon: Icon, title, description, border, heading, iconBg }) => (
               <div
                 key={title}
-                className="flex items-start gap-4 rounded-2xl bg-white p-8 shadow-sm"
+                className={`flex items-start gap-4 rounded-2xl border-2 bg-white p-8 shadow-sm ${border}`}
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-honey text-white">
+                <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${iconBg}`}>
                   <Icon className="h-5 w-5" />
                 </span>
                 <div>
-                  <h2 className="font-display text-lg font-bold text-charcoal">
+                  <h2 className={`font-display text-lg font-bold ${heading}`}>
                     {title}
                   </h2>
                   <p className="mt-2 text-sm leading-relaxed text-charcoal/80">
@@ -87,10 +99,10 @@ export default function FundingStreamPage() {
               stream.
             </p>
             <a
-              href="/make-a-referral"
+              href="/contact-us"
               className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-charcoal shadow-sm transition-transform hover:-translate-y-0.5"
             >
-              Make a Referral
+              Contact Us
             </a>
           </div>
         </div>
