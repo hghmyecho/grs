@@ -78,11 +78,9 @@ export default function OurGovernancePage() {
             {PILLARS.map(({ icon: Icon, title, description }) => (
               <div
                 key={title}
-                className="rounded-2xl bg-white p-8 text-center shadow-sm"
+                className="rounded-2xl border-2 border-honey bg-white p-8 text-center shadow-sm"
               >
-                <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-honey text-white">
-                  <Icon className="h-6 w-6" />
-                </span>
+                <Icon className="mx-auto h-10 w-10 text-charcoal" strokeWidth={1.5} />
                 <h2 className="mt-5 font-display text-lg font-bold text-charcoal">
                   {title}
                 </h2>
@@ -106,13 +104,10 @@ export default function OurGovernancePage() {
             </h2>
           </div>
 
-          <div className="mt-10 space-y-6">
+          <div className="mt-10 space-y-8">
             {COMMITTEES.map(({ acronym, name, description }) => (
-              <div
-                key={acronym}
-                className="flex flex-col gap-4 rounded-2xl border border-honey/20 p-8 sm:flex-row sm:items-start"
-              >
-                <span className="flex h-14 w-16 shrink-0 items-center justify-center rounded-xl bg-navy-800 font-display text-sm font-bold text-white">
+              <div key={acronym} className="flex flex-col gap-4 sm:flex-row sm:items-start">
+                <span className="flex h-14 w-16 shrink-0 items-center justify-center rounded-xl bg-rust font-display text-sm font-bold text-white">
                   {acronym}
                 </span>
                 <div>
