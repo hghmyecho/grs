@@ -1,15 +1,6 @@
 import type { Metadata } from "next";
-import {
-  ArrowRight,
-  Briefcase,
-  BookOpen,
-  GraduationCap,
-  Repeat,
-  ShieldCheck,
-  Sparkles,
-  Users,
-} from "lucide-react";
-import { CAREERS } from "@/lib/content/careers";
+import { ArrowRight } from "lucide-react";
+import { CAREERS, type CareerPage } from "@/lib/content/careers";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -19,15 +10,24 @@ export const metadata: Metadata = {
   alternates: { canonical: "/join-us" },
 };
 
-const ICONS: Record<string, typeof Users> = {
-  "clinical-supervison": ShieldCheck,
-  "career-path": Briefcase,
-  "continued-professional-development": GraduationCap,
-  "clinical-rotations": Repeat,
-  "currrent-advertised-positions": BookOpen,
-};
+/**
+ * Display order + photo placement matches the Figma "Join Us" page
+ * (GRS-to-send) — a staggered card wall where only Clinical Supervision
+ * and Continued Professional Development carry a photo. No real photo
+ * assets exist for career content yet, so those two use the same
+ * gradient-placeholder pattern as the team/location cards.
+ */
+const CARD_ORDER: { slug: string; gradient?: string }[] = [
+  { slug: "clinical-supervison", gradient: "from-navy-700 to-navy-950" },
+  { slug: "currrent-advertised-positions" },
+  { slug: "career-path" },
+  { slug: "clinical-rotations" },
+  { slug: "continued-professional-development", gradient: "from-orange-400 to-orange-600" },
+];
 
 export default function JoinUsPage() {
+  const bySlug = new Map(CAREERS.map((c) => [c.slug, c]));
+
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Join Us", href: "/join-us" }]} />
@@ -49,36 +49,39 @@ export default function JoinUsPage() {
 
       <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-5xl">
-          <div className="grid gap-6 sm:grid-cols-2">
-            {CAREERS.map(({ slug, title, tagline }, index) => {
-              const Icon = ICONS[slug] ?? Sparkles;
+          <div className="columns-1 gap-6 sm:columns-2">
+            {CARD_ORDER.map(({ slug, gradient }) => {
+              const career = bySlug.get(slug);
+              if (!career) return null;
+              const { title, tagline } = career as CareerPage;
+
               return (
                 <a
                   key={slug}
                   href={`/${slug}`}
-                  className={`bounce-transition group flex flex-col rounded-2xl border border-honey/20 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                    index % 2 === 0 ? "hover:-rotate-1" : "hover:rotate-1"
-                  }`}
+                  className="group mb-6 block break-inside-avoid overflow-hidden rounded-2xl border-2 border-honey bg-white transition-shadow hover:shadow-lg"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-honey text-white transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h2 className="mt-5 font-display text-lg font-bold text-charcoal">
-                    {title}
-                  </h2>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal/80">
-                    {tagline}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-rust">
-                    Learn more
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
+                  {gradient && (
+                    <div className={`h-40 bg-gradient-to-br ${gradient}`} />
+                  )}
+                  <div className="p-6">
+                    <h2 className="font-display text-lg font-bold text-charcoal">
+                      {title}
+                    </h2>
+                    <p className="mt-1 text-sm leading-relaxed text-charcoal/80">
+                      {tagline}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-rust px-4 py-2 text-xs font-semibold text-white shadow-sm transition-transform duration-300 group-hover:translate-x-1">
+                      Learn more
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </div>
                 </a>
               );
             })}
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-12 text-center">
             <p className="text-sm text-charcoal/80">
               Ready to see what&apos;s open right now?
             </p>
