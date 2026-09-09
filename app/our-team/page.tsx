@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/our-team" },
 };
 
-function LeadershipGrid({ people }: { people: TeamMember[] }) {
+function TeamGrid({ people }: { people: TeamMember[] }) {
   return (
     <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {people.map(({ slug, name, role, gradient, hasProfile }) => {
@@ -44,24 +44,11 @@ function LeadershipGrid({ people }: { people: TeamMember[] }) {
   );
 }
 
-function StaffList({ title, people }: { title: string; people: TeamMember[] }) {
+function TeamSection({ title, people }: { title: string; people: TeamMember[] }) {
   return (
     <div>
-      <h2 className="font-display text-xl font-bold text-charcoal">{title}</h2>
-      <ul className="mt-5 grid gap-x-8 gap-y-3 text-sm text-charcoal/80 sm:grid-cols-2">
-        {people.map(({ slug, name, role, hasProfile }) => (
-          <li key={slug} className="leading-relaxed">
-            {hasProfile ? (
-              <Link href={`/${slug}`} className="font-semibold text-charcoal hover:underline">
-                {name}
-              </Link>
-            ) : (
-              <span className="font-semibold text-charcoal">{name}</span>
-            )}
-            {role ? <span> — {role}</span> : null}
-          </li>
-        ))}
-      </ul>
+      <h2 className="font-display text-2xl font-bold text-charcoal sm:text-3xl">{title}</h2>
+      <TeamGrid people={people} />
     </div>
   );
 }
@@ -103,15 +90,15 @@ export default function OurTeamPage() {
             </h2>
           </div>
 
-          <LeadershipGrid people={leadership} />
+          <TeamGrid people={leadership} />
         </div>
       </section>
 
       <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-4xl space-y-14">
-          <StaffList title={GROUP_LABELS.senior} people={senior} />
-          <StaffList title={GROUP_LABELS.general} people={general} />
-          <StaffList title={GROUP_LABELS.admin} people={admin} />
+        <div className="mx-auto max-w-6xl space-y-16">
+          <TeamSection title={GROUP_LABELS.senior} people={senior} />
+          <TeamSection title={GROUP_LABELS.general} people={general} />
+          <TeamSection title={GROUP_LABELS.admin} people={admin} />
 
           <div className="rounded-2xl bg-tan p-8 text-center">
             <h2 className="font-display text-xl font-bold text-charcoal">
