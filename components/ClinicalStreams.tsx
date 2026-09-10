@@ -58,7 +58,7 @@ function PhotoPanel({ href, image, alt }: { href: string; image: string; alt: st
 
 export default function ClinicalStreams() {
   return (
-    <section id="services" className="bg-cream py-20 lg:py-28">
+    <section id="services" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
           <span className="eyebrow-script">Our Clinical Specialities</span>

@@ -16,7 +16,10 @@ export default function Hero() {
           </span>
 
           <h1 className="relative mt-5 font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-            Your goals. Your journey.{" "}
+            Your goals.
+            <br />
+            Your journey.
+            <br />
             <span className="relative inline-block">
               Our expertise
               <svg
