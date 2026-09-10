@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-2">
-      <div className="relative grid overflow-hidden lg:grid-cols-2">
+    <section className="px-6 pt-6 lg:px-8 lg:pt-8">
+      <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] lg:grid-cols-2">
         {/* Left: copy panel */}
         <div className="relative overflow-hidden bg-navy-800 px-8 py-14 sm:px-12 lg:py-20">
           <div className="blob-float pointer-events-none absolute -left-16 -top-16 h-64 w-64 bg-flame/25 blur-3xl" />
@@ -57,7 +57,7 @@ export default function Hero() {
             src="/photos/hero-team-2026.png"
             alt="The GRS team"
             fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
+            sizes="(min-width: 1024px) 640px, 100vw"
             className="object-cover object-top"
             priority
           />
