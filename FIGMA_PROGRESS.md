@@ -20,7 +20,9 @@ Tracking which pages in the [GRS-to-send Figma file](https://www.figma.com/desig
 | Brisbane | ✅ Done | Covered by the Sydney/LocationPage template work above. |
 | Gold Coast | ✅ Done | Covered by the Sydney/LocationPage template work above. |
 | Career Path | ✅ Done | Turned out to be the shared `CareerPage` template — restyled for **all 5 career sub-pages** (Career Path, Clinical Rotations, Clinical Supervision, Continued Professional Development, Current Advertised Positions): inline dot-separated section rows, optional "Our Approach" highlight cards on Career Path only (`520cf2f`). |
-| Staff Profile Template | ⏳ Not yet re-confirmed | Believed already covered — `/bronwyn-wright` was built from this template on Sep 8 2026 (node 450-622), before this tracking pass started. Worth a quick re-check against Figma rather than assuming. |
+| Staff Profile Template | ✅ N/A | Re-checked node 450-622 — turned out to be an `html.to.design` snapshot of our own live `/bronwyn-wright` page (frame literally named `https://grs-nu.vercel.app/...`), not a fresh design spec. Same pattern as the Specialist Behaviour Support / Our Team snapshots above — nothing to build. |
+
+**All pages in the GRS-to-send Figma file are now accounted for.** No open items remain from this coverage pass.
 
 ## Patterns established along the way
 
