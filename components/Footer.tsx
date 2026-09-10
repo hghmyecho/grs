@@ -96,7 +96,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 lg:flex-1">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:max-w-md lg:max-w-none lg:grid-cols-none lg:flex lg:gap-x-20">
             <div>
               <p className="text-sm font-semibold text-white">Locations</p>
               <ul className="mt-3 flex flex-col gap-3">
