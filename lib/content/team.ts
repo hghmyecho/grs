@@ -19,16 +19,22 @@ export const GROUP_LABELS: Record<TeamGroup, string> = {
 export interface StaffProfile {
   /** Pills under the name — region, supervisor status, years of experience, etc. */
   badges: string[];
-  /** "About {firstName}" body copy, one paragraph per array entry */
+  /** "About {name}" body copy, one paragraph per array entry */
   about: string[];
+  /** Optional — leave empty to hide the "Training & Approaches" section entirely. */
   trainingApproaches: string[];
+  /** Optional — leave blank to hide the "Qualifications" section entirely. */
   qualifications: string;
-  previousRoles: string[];
 }
 
 export interface TeamMember {
   /** Stable id used as the React key and, when hasProfile is true, the /[slug] URL. Kebab-case, unique. */
   slug: string;
+  /**
+   * First name / preferred name ONLY — last names are deliberately excluded
+   * sitewide (and from this data file) for staff confidentiality, per the
+   * SLP team leads' Sep 11 2026 request. Don't reintroduce last names here.
+   */
   name: string;
   /** Short subtitle shown next to the name everywhere this person appears */
   role: string;
@@ -67,7 +73,6 @@ export interface StaffPageContent {
   about: string[];
   trainingApproaches: string[];
   qualifications: string;
-  previousRoles: string[];
 }
 
 export function getStaffProfile(slug: string): StaffPageContent | undefined {

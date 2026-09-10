@@ -13,9 +13,7 @@ import { personSchema, schemaGraph } from "@/lib/schema";
 // elsewhere that class is a small label above a bold h1/h2, but here it
 // *is* the heading.
 export default function StaffProfilePage({ staff }: { staff: StaffPageContent }) {
-  const { slug, name, role, badges, gradient, about, trainingApproaches, qualifications, previousRoles } =
-    staff;
-  const firstName = name.split(" ")[0];
+  const { slug, name, role, badges, gradient, about, trainingApproaches, qualifications } = staff;
 
   const breadcrumbItems = [
     { name: "Home", href: "/" },
@@ -59,7 +57,7 @@ export default function StaffProfilePage({ staff }: { staff: StaffPageContent })
       <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl divide-y divide-charcoal/10">
           <div className="pb-10">
-            <span className="eyebrow-script">About {firstName}</span>
+            <span className="eyebrow-script">About {name}</span>
             <div className="mt-4 space-y-4">
               {about.map((paragraph, i) => (
                 <p key={i} className="text-sm leading-relaxed text-charcoal/80">
@@ -69,36 +67,28 @@ export default function StaffProfilePage({ staff }: { staff: StaffPageContent })
             </div>
           </div>
 
-          <div className="py-10">
-            <span className="eyebrow-script">Training &amp; Approaches</span>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {trainingApproaches.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-honey/40 px-3.5 py-1.5 text-xs font-semibold text-honey"
-                >
-                  {item}
-                </span>
-              ))}
+          {trainingApproaches.length > 0 && (
+            <div className="py-10">
+              <span className="eyebrow-script">Training &amp; Approaches</span>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {trainingApproaches.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-honey/40 px-3.5 py-1.5 text-xs font-semibold text-honey"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="grid gap-8 pt-10 sm:grid-cols-2">
-            <div>
+          {qualifications && (
+            <div className="py-10">
               <span className="eyebrow-script">Qualifications</span>
               <p className="mt-4 text-sm leading-relaxed text-charcoal/80">{qualifications}</p>
             </div>
-            <div>
-              <span className="eyebrow-script">Previous Roles</span>
-              <ul className="mt-4 space-y-1.5">
-                {previousRoles.map((item) => (
-                  <li key={item} className="text-sm leading-relaxed text-charcoal/80">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          )}
 
           <div className="pt-10">
             <Link

@@ -1,69 +1,73 @@
 [
   {
-    "slug": "haozhi-nick-jiang",
-    "name": "Haozhi (Nick) Jiang",
+    "slug": "nick",
+    "name": "Nick",
     "role": "Founder, Business Development Manager, Occupational Therapist",
     "group": "leadership",
     "gradient": "from-navy-700 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "howard-law",
-    "name": "Howard Law",
+    "slug": "howard",
+    "name": "Howard",
     "role": "Co-Founder, NSW Service Manager, Occupational Therapist",
     "group": "leadership",
     "gradient": "from-orange-400 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "dan-bock",
-    "name": "Dan Bock",
+    "slug": "dan",
+    "name": "Dan",
     "role": "QLD Service Manager, Occupational Therapist",
     "group": "leadership",
     "gradient": "from-peach-200 to-orange-400",
     "hasProfile": false
   },
   {
-    "slug": "marco-chan",
-    "name": "Marco Chan",
+    "slug": "marco",
+    "name": "Marco",
     "role": "NSW OT Team Lead — Psychosocial",
     "group": "leadership",
     "gradient": "from-navy-500 to-navy-900",
     "hasProfile": false
   },
   {
-    "slug": "kristin-mcconkey",
-    "name": "Kristin McConkey",
+    "slug": "kristin",
+    "name": "Kristin",
     "role": "QLD Assistant Service Manager, Speech Pathology Team Leader",
     "group": "leadership",
     "gradient": "from-orange-500 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "rachael-truong",
-    "name": "Rachael Truong",
+    "slug": "rachael",
+    "name": "Rachael",
     "role": "NSW Physiotherapy Team Leader",
     "group": "leadership",
     "gradient": "from-navy-950 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "lorie-koll",
-    "name": "Lorie Koll",
+    "slug": "lorie",
+    "name": "Lorie",
     "role": "NSW SLP Team Lead & Clinical Educator",
     "group": "leadership",
     "gradient": "from-peach-200 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "bronwyn-wright",
-    "name": "Bronwyn Wright",
+    "slug": "bronwyn",
+    "name": "Bronwyn",
     "role": "QLD Psychology Team Leader, Psychologist",
     "group": "leadership",
     "gradient": "from-orange-400 to-navy-950",
     "hasProfile": true,
     "profile": {
-      "badges": ["QLD", "Approved Supervisor", "15+ years experience"],
+      "badges": [
+        "QLD",
+        "Approved Supervisor",
+        "15+ years experience"
+      ],
       "about": [
         "Bronwyn has 15yrs experience working with mental health consumers with a variety of difficulties including anxiety, depression, bipolar affective disorder, borderline personality disorder, post traumatic stress disorder, eating disorders and psychotic disorders. She has a special interest in supporting people with emotional dysregulation build skills to obtain a ‘life worth living’.",
         "Bronwyn is a Psychology Board of Australia approved supervisor and is passionate about supporting her team to meet their potential. She draws on her previous leadership roles and training to promote a culture of excellence within the psychology team and across GRS."
@@ -76,304 +80,300 @@
         "EMDR",
         "Emerging Clinical Leaders Program"
       ],
-      "qualifications": "Bachelor of Science / Bachelor of Psychology (Hons), James Cook University, 2002",
-      "previousRoles": [
-        "Team Leader, Beenleigh Adult Mental Health, Qld Health",
-        "Senior Psychologist, Beenleigh Adult Mental Health, Qld Health"
-      ]
+      "qualifications": "Bachelor of Science / Bachelor of Psychology (Hons), James Cook University, 2002"
     }
   },
   {
-    "slug": "tarryn-kleinert",
-    "name": "Tarryn Kleinert",
+    "slug": "tarryn",
+    "name": "Tarryn",
     "role": "Senior Occupational Therapist, Physical",
     "group": "senior",
     "gradient": "from-navy-700 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "vinod-kanthan",
-    "name": "Vinod Kanthan",
+    "slug": "vinod",
+    "name": "Vinod",
     "role": "Senior Physiotherapist",
     "group": "senior",
     "gradient": "from-orange-400 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "macarena-zamorano",
-    "name": "Macarena Zamorano",
+    "slug": "macarena",
+    "name": "Macarena",
     "role": "Senior Occupational Therapist, Psychosocial",
     "group": "senior",
     "gradient": "from-peach-200 to-orange-400",
     "hasProfile": false
   },
   {
-    "slug": "ryan-ip",
-    "name": "Ryan Ip",
+    "slug": "ryan",
+    "name": "Ryan",
     "role": "Senior Occupational Therapist",
     "group": "senior",
     "gradient": "from-navy-500 to-navy-900",
     "hasProfile": false
   },
   {
-    "slug": "skye-kembery",
-    "name": "Skye Kembery",
+    "slug": "skye",
+    "name": "Skye",
     "role": "Senior Occupational Therapist, Psychosocial",
     "group": "senior",
     "gradient": "from-orange-500 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "priscilla-ho",
-    "name": "Priscilla Ho",
+    "slug": "priscilla",
+    "name": "Priscilla",
     "role": "Senior Occupational Therapy Team Clinical Educator",
     "group": "senior",
     "gradient": "from-navy-950 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "yogeshni-rao",
-    "name": "Yogeshni Rao",
+    "slug": "yogeshni",
+    "name": "Yogeshni",
     "role": "Senior Speech Pathologist",
     "group": "senior",
     "gradient": "from-peach-200 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "joy-liu",
-    "name": "Joy Liu",
+    "slug": "joy",
+    "name": "Joy",
     "role": "NSW Occupational Therapy Clinical Lead, Paediatrics",
     "group": "senior",
     "gradient": "from-orange-400 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "minami-nakaseko",
-    "name": "Minami Nakaseko",
+    "slug": "minami",
+    "name": "Minami",
     "role": "Senior Speech Pathologist",
     "group": "senior",
     "gradient": "from-navy-700 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "hong-bi",
-    "name": "Hong Bi",
+    "slug": "hong",
+    "name": "Hong",
     "role": "Senior Occupational Therapist, Paediatric",
     "group": "senior",
     "gradient": "from-orange-400 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "clement-tang",
-    "name": "Clement Tang",
+    "slug": "clement",
+    "name": "Clement",
     "role": "Senior Occupational Therapist, Driving Assessor",
     "group": "senior",
     "gradient": "from-peach-200 to-orange-400",
     "hasProfile": false
   },
   {
-    "slug": "laura-tran",
-    "name": "Laura Tran",
+    "slug": "laura-t",
+    "name": "Laura",
     "role": "Exercise Physiologist",
     "group": "general",
     "gradient": "from-navy-500 to-navy-900",
     "hasProfile": false
   },
   {
-    "slug": "hannah-pascoe",
-    "name": "Hannah Pascoe",
+    "slug": "hannah",
+    "name": "Hannah",
     "role": "Dietitian",
     "group": "general",
     "gradient": "from-orange-500 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "jasmine-lee",
-    "name": "Jasmine Lee",
+    "slug": "jasmine",
+    "name": "Jasmine",
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-navy-950 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "sophia-dwyer",
-    "name": "Sophia Dwyer",
+    "slug": "sophia",
+    "name": "Sophia",
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-peach-200 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "amelia-dinjar",
-    "name": "Amelia Dinjar",
+    "slug": "amelia",
+    "name": "Amelia",
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-orange-400 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "jaimison-simpson",
-    "name": "Jaimison Simpson",
+    "slug": "jaimison",
+    "name": "Jaimison",
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-navy-700 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "ellie-gibson",
-    "name": "Ellie Gibson",
+    "slug": "ellie",
+    "name": "Ellie",
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-orange-400 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "mimi-mccauley",
-    "name": "Mimi McCauley",
+    "slug": "mimi",
+    "name": "Mimi",
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-peach-200 to-orange-400",
     "hasProfile": false
   },
   {
-    "slug": "georgia-prichard",
-    "name": "Georgia Prichard",
+    "slug": "georgia",
+    "name": "Georgia",
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-navy-500 to-navy-900",
     "hasProfile": false
   },
   {
-    "slug": "shane-trevorrow",
-    "name": "Shane Trevorrow",
+    "slug": "shane",
+    "name": "Shane",
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-orange-500 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "ashley-glennie",
-    "name": "Ashley Glennie",
+    "slug": "ashley",
+    "name": "Ashley",
     "role": "Registered Psychologist",
     "group": "general",
     "gradient": "from-navy-950 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "emily-williams",
-    "name": "Emily Williams",
+    "slug": "emily",
+    "name": "Emily",
     "role": "Registered Psychologist",
     "group": "general",
     "gradient": "from-peach-200 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "teri-gallivan",
-    "name": "Teri Gallivan",
+    "slug": "teri",
+    "name": "Teri",
     "role": "Registered Psychologist",
     "group": "general",
     "gradient": "from-orange-400 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "mark-hellmrick",
-    "name": "Mark Hellmrick",
+    "slug": "mark",
+    "name": "Mark",
     "role": "Music Therapist",
     "group": "general",
     "gradient": "from-navy-700 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "daisy-leung",
-    "name": "Daisy Leung",
+    "slug": "daisy",
+    "name": "Daisy",
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-orange-400 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "wendy-dolan",
-    "name": "Wendy Dolan",
+    "slug": "wendy",
+    "name": "Wendy",
     "role": "Registered Psychologist",
     "group": "general",
     "gradient": "from-peach-200 to-orange-400",
     "hasProfile": false
   },
   {
-    "slug": "chantel-preston",
-    "name": "Chantel Preston",
+    "slug": "chantel",
+    "name": "Chantel",
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-navy-500 to-navy-900",
     "hasProfile": false
   },
   {
-    "slug": "karina-lai",
-    "name": "Karina Lai",
+    "slug": "karina",
+    "name": "Karina",
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-orange-500 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "laura-neufeld",
-    "name": "Laura Neufeld",
+    "slug": "laura-n",
+    "name": "Laura",
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-navy-950 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "latisha-branch",
-    "name": "Latisha Branch",
+    "slug": "latisha",
+    "name": "Latisha",
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-peach-200 to-navy-700",
     "hasProfile": false
   },
   {
-    "slug": "monica-nguyen",
-    "name": "Monica Nguyen",
+    "slug": "monica",
+    "name": "Monica",
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-orange-400 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "kevin-lim",
-    "name": "Kevin Lim",
+    "slug": "kevin",
+    "name": "Kevin",
     "role": "Physiotherapist",
     "group": "general",
     "gradient": "from-navy-700 to-navy-950",
     "hasProfile": false
   },
   {
-    "slug": "nina-papadopoulos",
-    "name": "Nina Papadopoulos",
+    "slug": "nina",
+    "name": "Nina",
     "role": "Senior Administrative Officer",
     "group": "admin",
     "gradient": "from-orange-400 to-orange-600",
     "hasProfile": false
   },
   {
-    "slug": "molly-trost",
-    "name": "Molly Trost",
+    "slug": "molly",
+    "name": "Molly",
     "role": "Senior Administrative Officer",
     "group": "admin",
     "gradient": "from-peach-200 to-orange-400",
     "hasProfile": false
   },
   {
-    "slug": "leticia-shirai-mendes",
-    "name": "Leticia Shirai Mendes",
+    "slug": "leticia",
+    "name": "Leticia",
     "role": "Administration Officer",
     "group": "admin",
     "gradient": "from-navy-500 to-navy-900",
     "hasProfile": false
   },
   {
-    "slug": "mia-bock",
-    "name": "Mia Bock",
+    "slug": "mia",
+    "name": "Mia",
     "role": "Administrative Officer",
     "group": "admin",
     "gradient": "from-orange-500 to-navy-700",

@@ -47,10 +47,9 @@ const EMPTY_PROFILE: StaffProfile = {
   about: [],
   trainingApproaches: [],
   qualifications: "",
-  previousRoles: [],
 };
 
-/** Add/remove/edit rows of a string[] field — used for badges, training tags, about paragraphs, and previous roles. */
+/** Add/remove/edit rows of a string[] field — used for badges, training tags, and about paragraphs. */
 function ListField({
   label,
   items,
@@ -142,7 +141,7 @@ function MemberEditor({
       <div className="grid gap-3 sm:grid-cols-2">
         <label className="block">
           <span className="text-xs font-semibold uppercase tracking-wide text-charcoal/60">
-            Name
+            Name (first name only — no last names, for staff privacy)
           </span>
           <input
             type="text"
@@ -245,14 +244,14 @@ function MemberEditor({
             multiline
           />
           <ListField
-            label="Training & Approaches"
+            label="Training & Approaches (optional — leave empty to hide this section)"
             items={profile.trainingApproaches}
             onChange={(trainingApproaches) => setProfile({ trainingApproaches })}
             placeholder="e.g. Dialectical Behavioural Therapy"
           />
           <label className="block">
             <span className="text-xs font-semibold uppercase tracking-wide text-charcoal/60">
-              Qualifications
+              Qualifications (optional — leave blank to hide this section)
             </span>
             <textarea
               value={profile.qualifications}
@@ -261,12 +260,6 @@ function MemberEditor({
               className={`mt-1 ${inputStyles}`}
             />
           </label>
-          <ListField
-            label="Previous Roles"
-            items={profile.previousRoles}
-            onChange={(previousRoles) => setProfile({ previousRoles })}
-            placeholder="e.g. Team Leader, Beenleigh Adult Mental Health, Qld Health"
-          />
         </div>
       )}
     </div>
