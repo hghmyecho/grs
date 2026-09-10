@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 py-5 backdrop-blur">
-      <div className="flex items-center justify-between gap-4 px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 lg:px-8">
         <Link href="/" prefetch={false} className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -97,7 +97,7 @@ export default function Header() {
 
       {open && (
         <div className="mt-4 max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-honey/20 bg-white px-6 py-4 lg:hidden">
-          <nav className="flex flex-col gap-1">
+          <nav className="mx-auto flex max-w-7xl flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <div key={link.label} className="border-b border-honey/20 py-2">
                 <button
