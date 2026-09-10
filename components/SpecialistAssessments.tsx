@@ -1,4 +1,4 @@
-import { ArrowRight, Car, ClipboardList, Home, Puzzle } from "lucide-react";
+import { ArrowRight, Brain, Car, ClipboardList, Home, Puzzle } from "lucide-react";
 import Link from "next/link";
 
 const ASSESSMENTS = [
@@ -29,6 +29,13 @@ const ASSESSMENTS = [
       "On-site evaluations of home and equipment needs, backed by our physical disability team's experience recommending practical solutions.",
     slug: "home-modification-assistive-technology-assessments",
   },
+  {
+    icon: Brain,
+    title: "Cognitive Assessments for Intellectual Disability",
+    description:
+      "Comprehensive cognitive and adaptive functioning evaluations led by our psychology team, to inform diagnosis, support planning, and NDIS applications.",
+    slug: "cognitive-assessments-intellectual-disability",
+  },
 ];
 
 const [FEATURED, ...REST] = ASSESSMENTS;
@@ -50,10 +57,10 @@ export default function SpecialistAssessments() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <Link
             href="/make-a-referral"
-            className="bounce-transition group relative overflow-hidden rounded-3xl bg-navy-800 p-8 text-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl lg:col-span-3 lg:flex lg:items-center lg:justify-between lg:p-10"
+            className="bounce-transition group relative overflow-hidden rounded-3xl bg-navy-800 p-8 text-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl sm:col-span-2 lg:col-span-4 lg:flex lg:items-center lg:justify-between lg:p-10"
           >
             <div
               aria-hidden

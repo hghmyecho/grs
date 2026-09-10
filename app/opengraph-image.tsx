@@ -50,7 +50,7 @@ export default function OpengraphImage() {
             maxWidth: 900,
           }}
         >
-          Holistic care, built around your whole story.
+          Your goals. Your journey. Our expertise.
         </div>
 
         <div

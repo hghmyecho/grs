@@ -1,9 +1,10 @@
 // Individual pages for the Specialist Assessments homepage section (see
-// components/SpecialistAssessments.tsx). Covers the 3 non-featured cards
+// components/SpecialistAssessments.tsx). Covers the non-featured cards
 // (Functional Capacity, Autism Diagnostic, Home Modification & Assistive
-// Technology) — the featured OT Driving Assessments banner still links
-// straight to /make-a-referral rather than a standalone page, per the
-// client's "3 cards" framing of this request.
+// Technology, Cognitive Assessments for Intellectual Disability) — the
+// featured OT Driving Assessments banner still links straight to
+// /make-a-referral rather than a standalone page, per the client's
+// original "3 cards" framing of this request.
 import type { FaqItem } from "@/lib/schema";
 
 export interface Assessment {
@@ -109,6 +110,38 @@ export const ASSESSMENTS: Assessment[] = [
         question: "What happens after the assessment?",
         answer:
           "You'll receive a written report with prioritised recommendations. Our team can also help clarify next steps, including how to source recommended equipment or engage a builder for approved modifications.",
+      },
+    ],
+  },
+  {
+    slug: "cognitive-assessments-intellectual-disability",
+    title: "Cognitive Assessments for Intellectual Disability",
+    description:
+      "Comprehensive cognitive and adaptive functioning evaluations led by our psychology team, to inform diagnosis, support planning, and NDIS applications.",
+    overview:
+      "A cognitive assessment for intellectual disability combines standardised intelligence testing with a structured look at adaptive functioning — how a person manages everyday skills like communication, self-care, and social participation — to build a clear, evidence-based picture of cognitive ability and support needs. GRS psychologists conduct these assessments for children, adolescents, and adults, using recognised tools such as the Wechsler intelligence scales alongside adaptive behaviour measures, so the resulting profile reflects both test performance and real-world functioning. Results are often central to establishing a diagnosis, confirming NDIS access, or informing school-based or workplace supports.",
+    whatToExpect:
+      "The process usually begins with an intake conversation covering developmental history, current concerns, and relevant background from family, carers, or teachers, followed by one or more sessions of standardised cognitive testing and adaptive functioning measures administered by a registered psychologist. Sessions are paced to the person's needs, with breaks built in where required. Once complete, we prepare a detailed report setting out cognitive and adaptive functioning results, a diagnostic conclusion where appropriate, and practical recommendations for support, education, and funding applications — and we're available to talk through the findings with families or the broader support team afterwards.",
+    faqs: [
+      {
+        question: "Who is a cognitive assessment for intellectual disability for?",
+        answer:
+          "This assessment suits children, adolescents, and adults where there's a question about intellectual functioning — whether that's confirming a diagnosis, establishing NDIS eligibility, or informing school or workplace support planning.",
+      },
+      {
+        question: "What tools are used in the assessment?",
+        answer:
+          "We use standardised, internationally recognised measures — such as the Wechsler intelligence scales and adaptive behaviour questionnaires — selected and administered by a registered psychologist based on the person's age and presentation.",
+      },
+      {
+        question: "How long does the assessment take?",
+        answer:
+          "Most assessments involve an initial intake session plus one or two further testing sessions, followed by a feedback session once the report is complete. Exact timing depends on the person's needs and pacing requirements.",
+      },
+      {
+        question: "Can this assessment support an NDIS application?",
+        answer:
+          "Yes. A comprehensive cognitive and adaptive functioning report from a qualified psychologist is commonly used to support NDIS access requests and plan reviews relating to intellectual disability.",
       },
     ],
   },

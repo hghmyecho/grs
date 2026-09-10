@@ -16,9 +16,9 @@ export default function Hero() {
           </span>
 
           <h1 className="relative mt-5 font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-            Holistic care, built around your{" "}
+            Your goals. Your journey.{" "}
             <span className="relative inline-block">
-              whole story
+              Our expertise
               <svg
                 aria-hidden
                 viewBox="0 0 200 16"
