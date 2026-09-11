@@ -33,7 +33,7 @@ export default function Locations() {
           {LOCATIONS.map(({ slug, city, state, address, gradient, image, servicesOffered }) => (
             <div
               key={city}
-              className={`bounce-transition relative flex h-[460px] flex-col justify-end overflow-hidden rounded-[2rem] bg-gradient-to-br ${gradient} shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl`}
+              className={`bounce-transition relative flex h-[460px] flex-col justify-end overflow-hidden rounded-[2rem] border-2 border-honey bg-gradient-to-br ${gradient} shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl`}
             >
               {image && (
                 <Image
