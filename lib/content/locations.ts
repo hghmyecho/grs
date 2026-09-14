@@ -24,6 +24,7 @@ export interface Location {
   parking: string;
   clinicNote?: string;
   directionsImages?: { src: string; alt: string; caption: string }[];
+  mapEmbedUrl?: string;
   faqs: FaqItem[];
 }
 
@@ -182,6 +183,8 @@ export const LOCATIONS: Location[] = [
       "The G-Link tram stops at the corner of Scarborough Street and Nerang Street, about a 350-metre walk from the clinic (trams run roughly every 10 minutes).",
     parking:
       "Up to 3 hours free at the Southport Central carpark (enter via Lawson Street) or the Australia Fair carpark (enter via Garden Street). We're on Level 2 of Southport Central 1 Tower — turn right out of the lift and we're on the right of the corridor.",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=Southport+Central+1,+56+Scarborough+Street,+Southport+QLD+4215&z=17&output=embed",
     directionsImages: [
       {
         src: "/photos/directions-goldcoast-carpark-gate.jpg",

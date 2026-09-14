@@ -23,6 +23,7 @@ export default function LocationPage({ location }: { location: Location }) {
     parking,
     clinicNote,
     directionsImages,
+    mapEmbedUrl,
     faqs,
   } = location;
 
@@ -114,6 +115,23 @@ export default function LocationPage({ location }: { location: Location }) {
               <p className="mt-1 text-sm leading-relaxed text-charcoal/80">{parking}</p>
             </div>
           </div>
+
+          {mapEmbedUrl && (
+            <div className="mt-12">
+              <h2 className="font-display text-xl font-bold text-charcoal">
+                Where we are
+              </h2>
+              <div className="mt-5 overflow-hidden rounded-2xl border border-honey/20">
+                <iframe
+                  src={mapEmbedUrl}
+                  title={`Map of the block around the ${city} clinic`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-80 w-full sm:h-96"
+                />
+              </div>
+            </div>
+          )}
 
           {directionsImages && directionsImages.length > 0 && (
             <div className="mt-12">
