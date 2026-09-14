@@ -23,6 +23,7 @@ export interface Location {
   transport: string;
   parking: string;
   clinicNote?: string;
+  directionsImages?: { src: string; alt: string; caption: string }[];
   faqs: FaqItem[];
 }
 
@@ -178,9 +179,35 @@ export const LOCATIONS: Location[] = [
       "Specialist Behaviour Support",
     ],
     transport:
-      "Nerang St Station is accessible by bus or light rail, a 5-minute walk behind the clinic on Nerang Street.",
+      "The G-Link tram stops at the corner of Scarborough Street and Nerang Street, about a 350-metre walk from the clinic (trams run roughly every 10 minutes).",
     parking:
-      "2 hours of free customer parking onsite, 2-hour street parking on Little High Street, and Athol Patterson Park Car Park nearby (from $2/hour, up to $6/day).",
+      "Up to 3 hours free at the Southport Central carpark (enter via Lawson Street) or the Australia Fair carpark (enter via Garden Street). We're on Level 2 of Southport Central 1 Tower — turn right out of the lift and we're on the right of the corridor.",
+    directionsImages: [
+      {
+        src: "/photos/directions-goldcoast-carpark-gate.jpg",
+        alt: "Coloured floor lines leading to the Tower 1 lift lobby inside the Southport Central carpark",
+        caption:
+          "From the Southport Central carpark (Lawson Street), follow the blue line to Tower 1, staying left of the secured gate.",
+      },
+      {
+        src: "/photos/directions-goldcoast-crossing.jpg",
+        alt: "Green and white pedestrian crossing at the Australia Fair carpark exit",
+        caption:
+          "From the Australia Fair carpark (Garden Street), take the lift to Ground Level, turn right, and cross at the green-and-white crossing.",
+      },
+      {
+        src: "/photos/directions-goldcoast-breezeway.jpg",
+        alt: "Breezeway and food court walkway towards Scarborough Street",
+        caption:
+          "Exit via the breezeway and walk through the food court towards Scarborough Street, about 250 metres.",
+      },
+      {
+        src: "/photos/directions-goldcoast-central1-sign.jpg",
+        alt: "“Central 1” foyer sign marking the building entrance",
+        caption:
+          "Enter through the foyer marked “Central 1”, then take the lift up to Level 2 and turn right.",
+      },
+    ],
     faqs: [
       {
         question: "What areas does GRS Gold Coast service?",
@@ -195,12 +222,12 @@ export const LOCATIONS: Location[] = [
       {
         question: "Is there parking at the Southport clinic?",
         answer:
-          "Yes. There are 2 hours of free customer parking onsite and 2-hour street parking on Little High Street. Athol Patterson Park Car Park is also nearby, with rates from $2 per hour up to $6 per day, giving you a few options depending on how long you need.",
+          "Yes. You can park for up to 3 hours free at the Southport Central carpark, accessed via Lawson Street, or the Australia Fair carpark, accessed via Garden Street. We're on Level 2 of Southport Central 1 Tower — our Admin Team is happy to talk you through directions if you call 1300 066 716.",
       },
       {
         question: "How do I reach the clinic by public transport?",
         answer:
-          "Nerang St Station is a short, roughly five-minute walk behind the clinic on Nerang Street, and is accessible by both bus and light rail. This makes the Southport clinic a convenient option for participants and families travelling in from across the Gold Coast.",
+          "The G-Link tram stops near the corner of Scarborough Street and Nerang Street, about a 350-metre walk from the clinic, with trams running roughly every 10 minutes. This makes the Southport clinic a convenient option for participants and families travelling in from across the Gold Coast.",
       },
       {
         question: "Can I choose between home visits and clinic appointments?",

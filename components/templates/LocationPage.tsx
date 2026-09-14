@@ -22,6 +22,7 @@ export default function LocationPage({ location }: { location: Location }) {
     transport,
     parking,
     clinicNote,
+    directionsImages,
     faqs,
   } = location;
 
@@ -113,6 +114,35 @@ export default function LocationPage({ location }: { location: Location }) {
               <p className="mt-1 text-sm leading-relaxed text-charcoal/80">{parking}</p>
             </div>
           </div>
+
+          {directionsImages && directionsImages.length > 0 && (
+            <div className="mt-12">
+              <h2 className="font-display text-xl font-bold text-charcoal">
+                Finding us
+              </h2>
+              <div className="mt-5 grid gap-6 sm:grid-cols-2">
+                {directionsImages.map((d) => (
+                  <figure
+                    key={d.src}
+                    className="overflow-hidden rounded-2xl border border-honey/20 bg-white"
+                  >
+                    <div className="relative aspect-[4/3]">
+                      <Image
+                        src={d.src}
+                        alt={d.alt}
+                        fill
+                        sizes="(min-width: 640px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="p-4 text-xs leading-relaxed text-charcoal/70">
+                      {d.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="mt-12">
             <h2 className="font-display text-xl font-bold text-charcoal">
