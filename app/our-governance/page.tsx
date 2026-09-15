@@ -72,7 +72,7 @@ export default function OurGovernancePage() {
         </div>
       </section>
 
-      <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-tan px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 sm:grid-cols-3">
             {PILLARS.map(({ icon: Icon, title, description }) => (
@@ -93,7 +93,7 @@ export default function OurGovernancePage() {
         </div>
       </section>
 
-      <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
+      <section className="bg-tan px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-4xl">
           <div className="max-w-2xl">
             <span className="eyebrow-script">
