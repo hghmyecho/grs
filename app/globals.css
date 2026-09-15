@@ -154,3 +154,18 @@ body {
 .bounce-transition {
   transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+/* A4 print sizing for standalone info sheets (e.g. /goldcoast/find-us) —
+   most browsers strip background colors/borders by default when printing,
+   so force them to render, and size the page to A4 with sensible margins. */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

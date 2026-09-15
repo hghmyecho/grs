@@ -11,7 +11,7 @@ export default function Header() {
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 py-5 backdrop-blur">
+    <header className="sticky top-0 z-50 bg-white/95 py-5 backdrop-blur print:hidden">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 lg:px-8">
         <Link href="/" prefetch={false} className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}

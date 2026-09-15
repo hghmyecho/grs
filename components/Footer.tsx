@@ -53,7 +53,7 @@ function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   return (
-    <footer id="footer-contact" className="bg-navy-800 text-white/70">
+    <footer id="footer-contact" className="bg-navy-800 text-white/70 print:hidden">
       <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
           <div className="lg:max-w-[220px] lg:shrink-0">
