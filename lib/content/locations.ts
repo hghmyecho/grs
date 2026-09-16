@@ -30,6 +30,12 @@ export interface Location {
   introHeadingScript?: string;
   introHeadingBold?: string;
   introVideoImage?: string;
+  // A full-bleed photo band right after the intro section — Figma's own
+  // node (368:949) is another "Photography placeholder" layer with no
+  // text, so this reuses the real GRS group photo (the only genuinely
+  // wide/landscape team photo available; the location hero shots are all
+  // single-building exteriors) rather than a Sydney-specific shot.
+  teamPhotoBand?: string;
   overview: string;
   approach: string;
   servicesOffered: string[];
@@ -59,6 +65,7 @@ export const LOCATIONS: Location[] = [
     introHeadingScript: "Our team",
     introHeadingBold: "blends home-based visits with clinic-based sessions at our Silverwater clinic",
     introVideoImage: "/photos/location-sydney.jpg",
+    teamPhotoBand: "/photos/hero-team-2026.png",
     overview:
       "GRS Sydney supports NDIS participants and their families across Greater Sydney, from Hornsby in the north to Sutherland in the south, and from Cabramatta in the west to Manly in the east. Our team blends home-based visits, where therapists come to you in your own environment, with clinic-based sessions at our Silverwater location for those who prefer to attend in person. Set within Gateway Business Park's Small Tower, the Silverwater clinic includes a large sensory and physio gym, giving participants access to purpose-built equipment alongside their everyday supports. Whether you are newly approved for NDIS funding or looking to change providers, our multidisciplinary team brings together Occupational Therapy, Physiotherapy, Speech Pathology, Dietetics, Music Therapy and Art Therapy, making it easier to coordinate care across the different goals in your plan. We work with participants of all ages, alongside the families, carers and support coordinators around them, to build supports that fit real life rather than a fixed template. Whether you are new to GRS or new to the NDIS altogether, you can expect a warm welcome, clear communication, and a team genuinely interested in understanding what matters to you before recommending a way forward together.",
     approach:

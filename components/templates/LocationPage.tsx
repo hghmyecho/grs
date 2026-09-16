@@ -19,6 +19,7 @@ export default function LocationPage({ location }: { location: Location }) {
     introHeadingScript,
     introHeadingBold,
     introVideoImage,
+    teamPhotoBand,
     overview,
     approach,
     servicesOffered,
@@ -130,6 +131,24 @@ export default function LocationPage({ location }: { location: Location }) {
             </div>
           </div>
         </section>
+      )}
+
+      {teamPhotoBand && (
+        // Full-bleed photo band right after the intro section, matching
+        // this page's Figma frame (node 368:949) — a plain wide photo
+        // strip on a navy backdrop, no text. Figma's own layer is another
+        // untitled "Photography placeholder", so this reuses the real
+        // GRS group photo (see the Location interface's comment).
+        <div className="relative aspect-[1905/427] w-full overflow-hidden bg-navy-800">
+          <Image
+            src={teamPhotoBand}
+            alt=""
+            aria-hidden
+            fill
+            sizes="100vw"
+            className="object-cover object-top"
+          />
+        </div>
       )}
 
       <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
