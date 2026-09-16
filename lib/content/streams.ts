@@ -10,6 +10,25 @@ export interface StreamConditionGroup {
   items: string[];
 }
 
+export interface StreamHighlight {
+  title: string;
+  description: string;
+}
+
+// One photo within a staggered hero collage — position/size as percentages
+// of the collage container, matching an exact Figma layer's geometry (see
+// heroCollage below). `focus` is a CSS object-position value, for when the
+// same photo is reused at a different crop to fill an extra slot.
+export interface StreamHeroPhoto {
+  src: string;
+  left: string;
+  top: string;
+  width: string;
+  height: string;
+  z: number;
+  focus?: string;
+}
+
 export interface Stream {
   slug: string;
   title: string;
@@ -20,6 +39,14 @@ export interface Stream {
   badgeBg: string;
   badgeText: string;
   ringColor: string;
+  // Optional richer-hero fields (image-collage-left/text-right hero +
+  // "What We Offer" cards) — added Sep 2026 for Specialist Behaviour
+  // Support specifically, replicating its exact Figma layer geometry
+  // (node 483-9, pulled via the Figma API — see the entry below for the
+  // maths). The other 3 streams don't set these and keep their existing
+  // centered text-only hero / no highlights section.
+  heroCollage?: StreamHeroPhoto[];
+  highlights?: StreamHighlight[];
   overview: string;
   approach: string;
   conditionGroups: StreamConditionGroup[];
@@ -278,6 +305,41 @@ export const STREAMS: Stream[] = [
     badgeBg: "bg-white/15",
     badgeText: "text-white",
     ringColor: "text-peach-200/40",
+    // Hero collage + "What We Offer" cards, matching this page's actual
+    // Figma frame (node 483-9) layer-for-layer — pulled via the Figma API
+    // since the frame is filed under a misleading page name in Figma (it's
+    // genuinely this topic's hero, confirmed by its real "Psychologists
+    // work with..." text matching disciplines.ts's Psychology copy almost
+    // verbatim — Figma's file just mis-filed it). 3 "Photography
+    // placeholder" rectangles at x/y/w/h (-98..456, -1706..-1185) become
+    // these left/top/width/height percentages of that bounding box.
+    // Client confirmed: match Figma exactly (image-left/text-right, 3-photo
+    // collage, no tag pills — this hero variant has none), overriding the
+    // DisciplinePage-style single-photo/text-left hero used elsewhere.
+    // Only 2 distinct real photos exist for this topic, so the tall top
+    // slot's photo is reused (different object-position crop) in the
+    // smaller right slot — those two aren't adjacent/similarly-sized, so
+    // the repeat reads less as an obvious duplicate than pairing it with
+    // the adjacent, similarly-sized bottom-left slot would.
+    heroCollage: [
+      { src: "/photos/clinical-specialist-behavioural-support.png", left: "20.76%", top: "0%", width: "46.75%", height: "68.52%", z: 20 },
+      { src: "/photos/discipline-specialist-behaviour-support.png", left: "0%", top: "49.33%", width: "47.11%", height: "50.67%", z: 30 },
+      { src: "/photos/clinical-specialist-behavioural-support.png", left: "59.03%", top: "39.35%", width: "40.97%", height: "46.64%", z: 10, focus: "bottom" },
+    ],
+    highlights: [
+      {
+        title: "Functional Assessment",
+        description: "Understanding the causes behind behaviours of concern.",
+      },
+      {
+        title: "Behaviour Support Plans",
+        description: "Interim and comprehensive PBS plans, aligned with NDIS requirements.",
+      },
+      {
+        title: "Family & Support Worker Training",
+        description: "Consistent, confident responses across every environment.",
+      },
+    ],
     overview:
       "Specialist behaviour support is for people whose cognitive, emotional, social, or physical impairments affect their ability to behave in safe or socially appropriate ways, or place their safety and emotional wellbeing at risk. This can include people who display behaviours of concern, who are at risk of using or experiencing restrictive practices, or whose support needs mean families, carers, and support workers require guidance on how to respond safely and consistently. GRS is an NDIS-registered Specialist Behaviour Support provider, delivering support through the Positive Behaviour Support (PBS) framework, an evidence-based, person-centred approach that seeks to understand the reasons behind behaviour and build positive, sustainable ways of meeting a person's needs. Our specialist behaviour support practitioners work closely with participants, families, support workers, and other treating professionals to design strategies that improve quality of life while reducing reliance on restrictive practices where possible. GRS's support spans from initial risk assessment through to ongoing assessment, implementation, and long-term review, ensuring strategies remain current as a person's circumstances change. This support can benefit people across a wide range of ages and disability types, wherever behaviour support needs have been identified as part of their NDIS plan.",
     approach:
