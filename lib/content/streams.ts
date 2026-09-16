@@ -43,14 +43,16 @@ export interface Stream {
   // Support Stream specifically, replicating its exact Figma layers
   // (node 483-9, pulled via the Figma API). The other 3 streams don't set
   // these and keep their existing plain centered hero / no intro-collage /
-  // no highlights section. Figma's page has TWO distinct blocks the earlier
-  // pass conflated: (1) the standard DisciplinePage-style tags+photo hero
-  // (tags/image/gradient below), and (2) a separate cream-background intro
-  // section right after it — a 2-part heading, the 3-photo staggered
-  // collage, and a paragraph — before "Our Approach".
+  // no highlights section. Figma's page has TWO distinct blocks: (1) a
+  // full-bleed photo banner hero — tags/image below; NOT the rounded-card
+  // DisciplinePage-style hero, confirmed by pulling node 483:185's raw
+  // layer JSON (a horizontal navy-to-transparent gradient scrim over a
+  // full-bleed photo, Seaweed Script white title, honey-orange tag pills)
+  // — and (2) a separate cream-background intro section right after it —
+  // a 2-part heading, the 3-photo staggered collage, and a paragraph —
+  // before "Our Approach".
   tags?: string[];
   image?: string;
-  gradient?: string;
   introHeadingScript?: string;
   introHeadingBold?: string;
   heroCollage?: StreamHeroPhoto[];
@@ -318,19 +320,21 @@ export const STREAMS: Stream[] = [
     // misleading page name in Figma (it's genuinely this topic's page,
     // confirmed by its real "Psychologists work with..." text matching
     // disciplines.ts's Psychology copy almost verbatim — Figma's file just
-    // mis-filed it). Rendering that frame via Figma's image API (not just
-    // raw layer coordinates) revealed TWO distinct blocks a first pass
-    // conflated into one: the standard tags+photo hero (below), and a
-    // SEPARATE intro section with its own 2-part heading, a 3-photo
-    // staggered collage, and a paragraph — sitting after the hero, before
-    // "Our Approach". See StreamHeroPhoto/heroCollage below for that
-    // section; tags/image/gradient here are the ordinary hero, reusing the
-    // discipline version's own values (specialist-behaviour-support-
-    // disciplines in disciplines.ts — same clinical content, different nav
-    // grouping).
+    // mis-filed it). The frame has TWO distinct blocks: a full-bleed photo
+    // banner hero (below — NOT the rounded-card DisciplinePage-style hero;
+    // two earlier passes wrongly assumed that reused pattern before
+    // pulling node 483:185's own raw layer JSON, which is a horizontal
+    // navy-to-transparent gradient scrim over a full-bleed photo, matching
+    // components/templates/LocationPage.tsx's existing hero pattern much
+    // more closely), and a SEPARATE intro section with its own 2-part
+    // heading, a 3-photo staggered collage, and a paragraph — sitting
+    // after the hero, before "Our Approach". See StreamHeroPhoto/
+    // heroCollage below for that section; tags/image here are the ordinary
+    // hero, reusing the discipline version's own values
+    // (specialist-behaviour-support-disciplines in disciplines.ts — same
+    // clinical content, different nav grouping).
     tags: ["All ages", "PBS"],
     image: "/photos/clinical-specialist-behavioural-support.png",
-    gradient: "from-orange-600 to-navy-950",
     // The intro section's 2-part heading — Figma's Psychology version reads
     // "Therapeutic support" (script) + "through disability, illness, and
     // life transitions" (bold). Mirrored here by splitting this stream's
