@@ -67,9 +67,9 @@ export const NAV_LINKS: NavGroup[] = [
         icon: Layers,
       },
       {
-        label: "Disciplines",
+        label: "Disciplinary Summary",
         description: "OT, physiotherapy, speech pathology, and more",
-        href: "#services",
+        href: "/disciplinary-summary",
         icon: Stethoscope,
       },
       {
