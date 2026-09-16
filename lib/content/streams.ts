@@ -39,12 +39,20 @@ export interface Stream {
   badgeBg: string;
   badgeText: string;
   ringColor: string;
-  // Optional richer-hero fields (image-collage-left/text-right hero +
-  // "What We Offer" cards) — added Sep 2026 for Specialist Behaviour
-  // Support specifically, replicating its exact Figma layer geometry
-  // (node 483-9, pulled via the Figma API — see the entry below for the
-  // maths). The other 3 streams don't set these and keep their existing
-  // centered text-only hero / no highlights section.
+  // Optional richer-page fields — added Sep 2026 for Specialist Behaviour
+  // Support Stream specifically, replicating its exact Figma layers
+  // (node 483-9, pulled via the Figma API). The other 3 streams don't set
+  // these and keep their existing plain centered hero / no intro-collage /
+  // no highlights section. Figma's page has TWO distinct blocks the earlier
+  // pass conflated: (1) the standard DisciplinePage-style tags+photo hero
+  // (tags/image/gradient below), and (2) a separate cream-background intro
+  // section right after it — a 2-part heading, the 3-photo staggered
+  // collage, and a paragraph — before "Our Approach".
+  tags?: string[];
+  image?: string;
+  gradient?: string;
+  introHeadingScript?: string;
+  introHeadingBold?: string;
   heroCollage?: StreamHeroPhoto[];
   highlights?: StreamHighlight[];
   overview: string;
@@ -305,22 +313,38 @@ export const STREAMS: Stream[] = [
     badgeBg: "bg-white/15",
     badgeText: "text-white",
     ringColor: "text-peach-200/40",
-    // Hero collage + "What We Offer" cards, matching this page's actual
-    // Figma frame (node 483-9) layer-for-layer — pulled via the Figma API
-    // since the frame is filed under a misleading page name in Figma (it's
-    // genuinely this topic's hero, confirmed by its real "Psychologists
-    // work with..." text matching disciplines.ts's Psychology copy almost
-    // verbatim — Figma's file just mis-filed it). 3 "Photography
-    // placeholder" rectangles at x/y/w/h (-98..456, -1706..-1185) become
-    // these left/top/width/height percentages of that bounding box.
-    // Client confirmed: match Figma exactly (image-left/text-right, 3-photo
-    // collage, no tag pills — this hero variant has none), overriding the
-    // DisciplinePage-style single-photo/text-left hero used elsewhere.
-    // Only 2 distinct real photos exist for this topic, so the tall top
-    // slot's photo is reused (different object-position crop) in the
-    // smaller right slot — those two aren't adjacent/similarly-sized, so
-    // the repeat reads less as an obvious duplicate than pairing it with
-    // the adjacent, similarly-sized bottom-left slot would.
+    // Matching this page's actual Figma frame (node 483:9) layer-for-layer
+    // — pulled via the Figma API since the frame is filed under a
+    // misleading page name in Figma (it's genuinely this topic's page,
+    // confirmed by its real "Psychologists work with..." text matching
+    // disciplines.ts's Psychology copy almost verbatim — Figma's file just
+    // mis-filed it). Rendering that frame via Figma's image API (not just
+    // raw layer coordinates) revealed TWO distinct blocks a first pass
+    // conflated into one: the standard tags+photo hero (below), and a
+    // SEPARATE intro section with its own 2-part heading, a 3-photo
+    // staggered collage, and a paragraph — sitting after the hero, before
+    // "Our Approach". See StreamHeroPhoto/heroCollage below for that
+    // section; tags/image/gradient here are the ordinary hero, reusing the
+    // discipline version's own values (specialist-behaviour-support-
+    // disciplines in disciplines.ts — same clinical content, different nav
+    // grouping).
+    tags: ["All ages", "PBS"],
+    image: "/photos/clinical-specialist-behavioural-support.png",
+    gradient: "from-orange-600 to-navy-950",
+    // The intro section's 2-part heading — Figma's Psychology version reads
+    // "Therapeutic support" (script) + "through disability, illness, and
+    // life transitions" (bold). Mirrored here by splitting this stream's
+    // own `description` at the same "short subject + prepositional clause"
+    // point, rather than inventing new copy.
+    introHeadingScript: "Positive, evidence-based support",
+    introHeadingBold: "for safety, wellbeing, and cognitive-social adaptation.",
+    // 3 "Photography placeholder" rectangles at x/y/w/h (-98..456,
+    // -1706..-1185) become these left/top/width/height percentages of that
+    // bounding box. Only 2 distinct real photos exist for this topic, so
+    // the tall top slot's photo is reused (different object-position crop)
+    // in the smaller right slot — those two aren't adjacent/similarly-
+    // sized, so the repeat reads less as an obvious duplicate than pairing
+    // it with the adjacent, similarly-sized bottom-left slot would.
     heroCollage: [
       { src: "/photos/clinical-specialist-behavioural-support.png", left: "20.76%", top: "0%", width: "46.75%", height: "68.52%", z: 20 },
       { src: "/photos/discipline-specialist-behaviour-support.png", left: "0%", top: "49.33%", width: "47.11%", height: "50.67%", z: 30 },

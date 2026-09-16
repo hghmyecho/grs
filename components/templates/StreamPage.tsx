@@ -17,8 +17,13 @@ const HIGHLIGHT_ICONS: Record<string, [typeof Search, typeof FileCheck, typeof U
 };
 
 export default function StreamPage({ stream }: { stream: Stream }) {
-  const { slug, title, description, heroCollage, highlights, overview, approach, conditionGroups, faqs } = stream;
+  const {
+    slug, title, description, tags, image, gradient,
+    introHeadingScript, introHeadingBold, heroCollage,
+    highlights, overview, approach, conditionGroups, faqs,
+  } = stream;
   const highlightIcons = HIGHLIGHT_ICONS[slug] ?? [Search, FileCheck, Users];
+  const hasIntroCollage = !!(heroCollage && heroCollage.length > 0);
 
   const breadcrumbItems = [
     { name: "Home", href: "/" },
@@ -41,40 +46,52 @@ export default function StreamPage({ stream }: { stream: Stream }) {
       />
       <Breadcrumbs items={breadcrumbItems} />
 
-      {heroCollage && heroCollage.length > 0 ? (
-        // Image-collage-left / text-right hero, matching this page's exact
-        // Figma layer geometry (see the heroCollage entry in streams.ts for
-        // the maths) — currently only Specialist Behaviour Support Stream
-        // sets this; the other 3 streams fall through to the plain centered
-        // hero below.
+      {tags && image ? (
+        // DisciplinePage-style tags+photo hero — currently only Specialist
+        // Behaviour Support Stream sets tags/image/gradient (per the
+        // client's request to match its Figma page); the other 3 streams
+        // fall through to the plain centered hero below.
         <section className="bg-navy-800 py-16 lg:py-20">
           <div className="mx-auto max-w-6xl px-6 lg:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-              <div className="relative mx-auto aspect-[554/521] w-full max-w-lg lg:order-1">
-                {heroCollage.map((photo, i) => (
-                  <div
-                    key={i}
-                    className="absolute overflow-hidden rounded-2xl shadow-xl"
-                    style={{ left: photo.left, top: photo.top, width: photo.width, height: photo.height, zIndex: photo.z }}
-                  >
-                    <Image
-                      src={photo.src}
-                      alt=""
-                      aria-hidden
-                      fill
-                      sizes="(min-width: 1024px) 30vw, 60vw"
-                      className="object-cover"
-                      style={photo.focus ? { objectPosition: photo.focus } : undefined}
-                    />
-                  </div>
-                ))}
-              </div>
-
-              <div className="text-center lg:order-2 lg:text-left">
-                <h1 className="font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
+              <div className="text-center lg:text-left">
+                <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                  {tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
                   {title}
                 </h1>
                 <p className="mx-auto mt-4 max-w-2xl text-white/70 lg:mx-0">{description}</p>
+              </div>
+
+              <div className="relative mx-auto aspect-[4/3] w-full max-w-md lg:mx-0">
+                <div
+                  aria-hidden
+                  className="absolute -left-6 -top-6 h-32 w-32 rounded-full bg-honey/20 blur-2xl"
+                />
+                <div
+                  aria-hidden
+                  className="absolute -bottom-8 -right-4 h-40 w-40 rounded-full bg-rust/20 blur-2xl"
+                />
+                <div
+                  className={`relative h-full w-full overflow-hidden rounded-3xl bg-gradient-to-br shadow-xl ${gradient}`}
+                >
+                  <Image
+                    src={image}
+                    alt=""
+                    aria-hidden
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 90vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -93,9 +110,57 @@ export default function StreamPage({ stream }: { stream: Stream }) {
         </section>
       )}
 
+      {hasIntroCollage && (
+        // Separate intro section right after the hero — a 2-part heading,
+        // the 3-photo staggered collage (left, exact Figma layer geometry —
+        // see the heroCollage entry in streams.ts for the maths), and this
+        // stream's own overview paragraph (right). Figma's page uses
+        // `overview` here rather than as a standalone paragraph further
+        // down, so the main section below skips it when this is present.
+        <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              <div className="relative mx-auto aspect-[554/521] w-full max-w-lg">
+                {heroCollage!.map((photo, i) => (
+                  <div
+                    key={i}
+                    className="absolute overflow-hidden rounded-2xl shadow-xl"
+                    style={{ left: photo.left, top: photo.top, width: photo.width, height: photo.height, zIndex: photo.z }}
+                  >
+                    <Image
+                      src={photo.src}
+                      alt=""
+                      aria-hidden
+                      fill
+                      sizes="(min-width: 1024px) 30vw, 60vw"
+                      className="object-cover"
+                      style={photo.focus ? { objectPosition: photo.focus } : undefined}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div>
+                {introHeadingScript && (
+                  <span className="eyebrow-script">{introHeadingScript}</span>
+                )}
+                {introHeadingBold && (
+                  <h2 className="mt-2 font-display text-2xl font-bold leading-snug text-charcoal">
+                    {introHeadingBold}
+                  </h2>
+                )}
+                <p className="mt-4 text-sm leading-relaxed text-charcoal/80">{overview}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
-          <p className="text-sm leading-relaxed text-charcoal/80">{overview}</p>
+          {!hasIntroCollage && (
+            <p className="text-sm leading-relaxed text-charcoal/80">{overview}</p>
+          )}
 
           <div className="mt-12">
             <h2 className="font-display text-lg font-bold text-charcoal">
