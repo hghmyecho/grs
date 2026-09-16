@@ -43,6 +43,14 @@ export default function LocationPage({ location }: { location: Location }) {
       />
       <Breadcrumbs items={breadcrumbItems} />
 
+      {/* Full-bleed photo banner hero, matching this page's actual Figma
+          layer (node 341:180) layer-for-layer: a horizontal navy-to-
+          transparent gradient scrim over a full-bleed photo (same exact
+          gradient stops as the Specialist Behaviour Support Stream hero —
+          see components/templates/StreamPage.tsx — confirming this is one
+          shared "Section" hero component in the Figma file), a plain bold
+          honey-orange state label (not a pill), and a large white Seaweed
+          Script city title. */}
       <section className="relative overflow-hidden bg-navy-800 py-16 lg:py-24">
         {image && (
           <>
@@ -54,15 +62,16 @@ export default function LocationPage({ location }: { location: Location }) {
               sizes="100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-navy-950/75" />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-[linear-gradient(to_right,#14304f_33%,rgba(20,48,79,0.64)_51%,rgba(20,48,79,0)_66%)]"
+            />
           </>
         )}
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
-          <span className="rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white">
-            {state}
-          </span>
+          <span className="text-[28px] font-extrabold text-honey">{state}</span>
           <h1
-            className="mt-4 text-4xl text-white sm:text-5xl"
+            className="mt-3 text-4xl text-white sm:text-5xl"
             style={{ fontFamily: "var(--font-script)" }}
           >
             {city}
