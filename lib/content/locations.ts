@@ -17,6 +17,19 @@ export interface Location {
   image?: string;
   phone: string;
   serviceArea: string;
+  // Optional intro section right after the hero — added Sep 2026 for
+  // Sydney specifically, matching its exact Figma frame (node 366:944,
+  // pulled via the Figma API): a 2-part heading (script + bold, mixed
+  // styling within one Figma text layer, extracted from its
+  // characterStyleOverrides) beside a video-thumbnail card (photo + play
+  // button). No actual video source exists yet for this card (checked
+  // grs.health and grs-live.joidea.com — neither has one), so the play
+  // button is decorative for now, per the client's call; wire up a real
+  // video here once one exists. The other 2 locations don't set these and
+  // keep the plain overview-paragraph-first layout below.
+  introHeadingScript?: string;
+  introHeadingBold?: string;
+  introVideoImage?: string;
   overview: string;
   approach: string;
   servicesOffered: string[];
@@ -39,6 +52,13 @@ export const LOCATIONS: Location[] = [
     phone: "1300 066 716",
     serviceArea:
       "Home-based services across Sydney from Hornsby (north) to Sutherland (south), Cabramatta (west) to Manly (east), plus clinic-based services at Silverwater.",
+    // Figma's text has a "Silverwate" typo (missing the final "r") —
+    // corrected here rather than reproduced verbatim. No dedicated
+    // second photo exists for this card, so it reuses the hero's own
+    // image (the only real Sydney photo asset in public/photos).
+    introHeadingScript: "Our team",
+    introHeadingBold: "blends home-based visits with clinic-based sessions at our Silverwater clinic",
+    introVideoImage: "/photos/location-sydney.jpg",
     overview:
       "GRS Sydney supports NDIS participants and their families across Greater Sydney, from Hornsby in the north to Sutherland in the south, and from Cabramatta in the west to Manly in the east. Our team blends home-based visits, where therapists come to you in your own environment, with clinic-based sessions at our Silverwater location for those who prefer to attend in person. Set within Gateway Business Park's Small Tower, the Silverwater clinic includes a large sensory and physio gym, giving participants access to purpose-built equipment alongside their everyday supports. Whether you are newly approved for NDIS funding or looking to change providers, our multidisciplinary team brings together Occupational Therapy, Physiotherapy, Speech Pathology, Dietetics, Music Therapy and Art Therapy, making it easier to coordinate care across the different goals in your plan. We work with participants of all ages, alongside the families, carers and support coordinators around them, to build supports that fit real life rather than a fixed template. Whether you are new to GRS or new to the NDIS altogether, you can expect a warm welcome, clear communication, and a team genuinely interested in understanding what matters to you before recommending a way forward together.",
     approach:

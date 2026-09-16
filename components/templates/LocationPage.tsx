@@ -1,4 +1,4 @@
-import { ArrowRight, Bus, Calculator, MapPin, ParkingCircle } from "lucide-react";
+import { ArrowRight, Bus, Calculator, MapPin, ParkingCircle, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Location } from "@/lib/content/locations";
@@ -16,6 +16,9 @@ export default function LocationPage({ location }: { location: Location }) {
     image,
     phone,
     serviceArea,
+    introHeadingScript,
+    introHeadingBold,
+    introVideoImage,
     overview,
     approach,
     servicesOffered,
@@ -26,6 +29,7 @@ export default function LocationPage({ location }: { location: Location }) {
     mapEmbedUrl,
     faqs,
   } = location;
+  const hasIntro = !!(introHeadingScript || introHeadingBold || introVideoImage);
 
   const breadcrumbItems = [
     { name: "Home", href: "/" },
@@ -80,9 +84,59 @@ export default function LocationPage({ location }: { location: Location }) {
         </div>
       </section>
 
+      {hasIntro && (
+        // Separate intro section right after the hero, matching this
+        // page's Figma frame (node 366:944) layer-for-layer: a 2-part
+        // heading (script + bold — one Figma text layer with mixed
+        // per-character styling, split here into introHeadingScript/
+        // introHeadingBold) beside a video-thumbnail card. No real video
+        // source exists for this card yet, so the play button is
+        // decorative (see the Location interface's comment in
+        // lib/content/locations.ts) — this stream's own `overview` is
+        // used here rather than as a standalone paragraph further down,
+        // so the main section below skips it when this is present.
+        <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              {introVideoImage && (
+                <div className="relative mx-auto aspect-video w-full overflow-hidden rounded-2xl shadow-xl">
+                  <Image
+                    src={introVideoImage}
+                    alt=""
+                    aria-hidden
+                    fill
+                    sizes="(min-width: 1024px) 45vw, 90vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg">
+                      <Play className="ml-1 h-6 w-6 fill-navy-800 text-navy-800" />
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              <div>
+                {introHeadingScript && (
+                  <span className="eyebrow-script">{introHeadingScript}</span>
+                )}
+                {introHeadingBold && (
+                  <h2 className="mt-2 font-display text-2xl font-bold leading-snug text-charcoal">
+                    {introHeadingBold}
+                  </h2>
+                )}
+                <p className="mt-4 text-sm leading-relaxed text-charcoal/80">{overview}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="bg-cream px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl">
-          <p className="text-sm leading-relaxed text-charcoal/80">{overview}</p>
+          {!hasIntro && (
+            <p className="text-sm leading-relaxed text-charcoal/80">{overview}</p>
+          )}
 
           <div className="mt-12">
             <h2 className="font-display text-lg font-bold text-charcoal">
