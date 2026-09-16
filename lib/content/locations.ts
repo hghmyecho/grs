@@ -38,6 +38,15 @@ export interface Location {
   teamPhotoBand?: string;
   overview: string;
   approach: string;
+  // 3 icon+label items below the Our Approach paragraph — added Sep 2026
+  // for Sydney, matching node 341:168 (its heading/paragraph styling —
+  // centered honey-orange uppercase heading, justified paragraph — now
+  // applies to all 3 locations below, since it's the same shared section
+  // design; only the labels/icons here are Sydney-specific content).
+  // Figma's icons are hand-drawn illustrations with no exportable asset;
+  // components/templates/LocationPage.tsx maps these labels to plain
+  // lucide-react icons by slug instead.
+  approachHighlights?: string[];
   servicesOffered: string[];
   transport: string;
   parking: string;
@@ -70,6 +79,7 @@ export const LOCATIONS: Location[] = [
       "GRS Sydney supports NDIS participants and their families across Greater Sydney, from Hornsby in the north to Sutherland in the south, and from Cabramatta in the west to Manly in the east. Our team blends home-based visits, where therapists come to you in your own environment, with clinic-based sessions at our Silverwater location for those who prefer to attend in person. Set within Gateway Business Park's Small Tower, the Silverwater clinic includes a large sensory and physio gym, giving participants access to purpose-built equipment alongside their everyday supports. Whether you are newly approved for NDIS funding or looking to change providers, our multidisciplinary team brings together Occupational Therapy, Physiotherapy, Speech Pathology, Dietetics, Music Therapy and Art Therapy, making it easier to coordinate care across the different goals in your plan. We work with participants of all ages, alongside the families, carers and support coordinators around them, to build supports that fit real life rather than a fixed template. Whether you are new to GRS or new to the NDIS altogether, you can expect a warm welcome, clear communication, and a team genuinely interested in understanding what matters to you before recommending a way forward together.",
     approach:
       "At GRS Sydney, Occupational Therapy, Physiotherapy, Speech Pathology, Dietetics, Music Therapy and Art Therapy work together rather than in isolation. Where a participant's plan includes several supports, our clinicians share observations and adjust their own input so therapy goals reinforce one another instead of pulling in different directions. Every plan of support starts with what matters to the person and their family, then maps back to the goals in their NDIS plan. We stay in regular contact with support coordinators, plan managers, families and carers, so everyone understands what is happening and why. Because we offer both home visits and clinic-based sessions at Silverwater, we can move between the two as circumstances change, using the sensory and physio gym when it adds value, and meeting people at home when that suits them better. The result is a flexible, joined-up approach built around the person, not around a single service in isolation.",
+    approachHighlights: ["Shared, joined-up care", "Person-first goals", "Clinic or home, your choice"],
     servicesOffered: [
       "Occupational Therapy",
       "Physiotherapy",

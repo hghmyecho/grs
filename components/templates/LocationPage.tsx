@@ -1,4 +1,15 @@
-import { ArrowRight, Bus, Calculator, MapPin, ParkingCircle, Play } from "lucide-react";
+import {
+  ArrowRight,
+  Bus,
+  Calculator,
+  DoorOpen,
+  Heart,
+  MapPin,
+  ParkingCircle,
+  Play,
+  Share2,
+  type LucideIcon,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Location } from "@/lib/content/locations";
@@ -6,6 +17,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import JsonLd from "@/components/JsonLd";
 import { faqSchema, medicalClinicSchema, schemaGraph } from "@/lib/schema";
+
+// One icon per approachHighlights entry, matched by slug — Figma's own
+// icons are hand-drawn illustrations with no exportable asset, so these
+// are plain lucide-react stand-ins instead. Keeps icon choice out of the
+// plain content data, same pattern as StreamPage/DisciplinePage.
+const APPROACH_ICONS: Record<string, [LucideIcon, LucideIcon, LucideIcon]> = {
+  sydney: [Share2, Heart, DoorOpen],
+};
 
 export default function LocationPage({ location }: { location: Location }) {
   const {
@@ -29,8 +48,10 @@ export default function LocationPage({ location }: { location: Location }) {
     directionsImages,
     mapEmbedUrl,
     faqs,
+    approachHighlights,
   } = location;
   const hasIntro = !!(introHeadingScript || introHeadingBold || introVideoImage);
+  const approachIcons = APPROACH_ICONS[slug] ?? [Share2, Heart, DoorOpen];
 
   const breadcrumbItems = [
     { name: "Home", href: "/" },
@@ -158,10 +179,30 @@ export default function LocationPage({ location }: { location: Location }) {
           )}
 
           <div className="mt-12">
-            <h2 className="font-display text-lg font-bold text-charcoal">
+            {/* Matches this page's Figma frame (node 341:168) exactly:
+                centered, uppercase, honey-orange heading (Figma's own
+                textCase: UPPER — "Our Approach" content stays as typed,
+                CSS does the casing) and a justified paragraph, rather
+                than the small left-aligned heading this section
+                previously had. */}
+            <h2 className="text-center font-display text-3xl font-extrabold uppercase text-honey sm:text-4xl">
               Our Approach
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-charcoal/80">{approach}</p>
+            <p className="mt-4 text-justify text-sm leading-relaxed text-charcoal/80">{approach}</p>
+
+            {approachHighlights && approachHighlights.length > 0 && (
+              <div className="mt-8 grid gap-8 sm:grid-cols-3">
+                {approachHighlights.map((label, i) => {
+                  const Icon = approachIcons[i] ?? Heart;
+                  return (
+                    <div key={label} className="flex flex-col items-center text-center">
+                      <Icon className="h-9 w-9 text-honey" strokeWidth={1.5} />
+                      <span className="mt-3 text-sm font-medium text-honey">{label}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
