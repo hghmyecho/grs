@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ClipboardList, FileCheck, ShieldCheck } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -55,40 +56,41 @@ export default function OurGovernancePage() {
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Our Governance", href: "/our-governance" }]} />
-      <section className="bg-navy-800 py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <div className="text-center lg:text-left">
-              <span className="eyebrow-script">
-                Governance
-              </span>
-              <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-                Corporate governance built for accountability and care
-              </h1>
-              <p className="mx-auto mt-4 max-w-2xl text-white/70 lg:mx-0">
-                Our governance framework provides a balance between
-                performance, accountability, and quality — supporting
-                optimal clinical outcomes, efficient use of resources, and
-                ethical decision-making across GRS.
-              </p>
-            </div>
-
-            {/* Figma shows a photo here, explicitly labeled "Photography
-                placeholder" (no real asset) — using the same gradient-block
-                treatment as the DisciplinePage/LocationPage hero pattern
-                instead of fabricating a stock photo. */}
-            <div className="relative mx-auto aspect-[4/3] w-full max-w-md lg:mx-0">
-              <div
-                aria-hidden
-                className="absolute -left-6 -top-6 h-32 w-32 rounded-full bg-honey/20 blur-2xl"
-              />
-              <div
-                aria-hidden
-                className="absolute -bottom-8 -right-4 h-40 w-40 rounded-full bg-rust/20 blur-2xl"
-              />
-              <div className="relative h-full w-full rounded-3xl bg-gradient-to-br from-honey to-rust shadow-xl" />
-            </div>
-          </div>
+      {/* Full-bleed photo banner hero — matching the style of the location
+          pages' hero (components/templates/LocationPage.tsx), per the
+          client's request (Sep 2026) to reuse that look here. Text content
+          unchanged from the original rounded-card hero, only the styling
+          and layout changed. No dedicated governance photo exists (Figma's
+          own layer here is an unfilled "Photography placeholder"), so this
+          reuses the real GRS team photo, same fallback used for Sydney's
+          team photo band. */}
+      <section className="relative overflow-hidden bg-navy-800 py-16 lg:py-24">
+        <Image
+          src="/photos/hero-team-2026.png"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[linear-gradient(to_right,#14304f_33%,rgba(20,48,79,0.64)_51%,rgba(20,48,79,0)_66%)]"
+        />
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
+          <span className="text-[28px] font-extrabold text-honey">Governance</span>
+          <h1
+            className="mt-3 text-4xl text-white sm:text-5xl"
+            style={{ fontFamily: "var(--font-script)" }}
+          >
+            Corporate governance built for accountability and care
+          </h1>
+          <p className="mt-3 max-w-2xl text-white/80">
+            Our governance framework provides a balance between
+            performance, accountability, and quality — supporting
+            optimal clinical outcomes, efficient use of resources, and
+            ethical decision-making across GRS.
+          </p>
         </div>
       </section>
 
