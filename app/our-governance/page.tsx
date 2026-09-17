@@ -82,10 +82,7 @@ export default function OurGovernancePage() {
         />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
           <span className="eyebrow-script">Governance</span>
-          <h1
-            className="mt-3 text-4xl text-white sm:text-5xl"
-            style={{ fontFamily: "var(--font-script)" }}
-          >
+          <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl">
             Corporate governance built for accountability and care
           </h1>
           <p className="mt-3 max-w-2xl text-white/80">
