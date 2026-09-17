@@ -4,7 +4,7 @@ import { DISCIPLINES } from "@/lib/content/disciplines";
 
 export default function Disciplines() {
   return (
-    <section id="disciplines" className="bg-white py-20 lg:py-28">
+    <section id="disciplines" className="bg-white pb-20 pt-4 lg:pb-28 lg:pt-8">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
           <span className="eyebrow-script">Our Disciplines</span>
