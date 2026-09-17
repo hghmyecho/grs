@@ -60,8 +60,11 @@ export default function OurGovernancePage() {
           pages' hero (components/templates/LocationPage.tsx), per the
           client's request (Sep 2026) to reuse that look here. Text content
           unchanged from the original rounded-card hero, only the styling
-          and layout changed. No dedicated governance photo exists (Figma's
-          own layer here is an unfilled "Photography placeholder"), so this
+          and layout changed — including keeping the "Governance" label in
+          Seaweed Script (eyebrow-script) rather than switching to the
+          location hero's plain-bold state-label style, per the client's
+          follow-up. No dedicated governance photo exists (Figma's own
+          layer here is an unfilled "Photography placeholder"), so this
           reuses the real GRS team photo, same fallback used for Sydney's
           team photo band. */}
       <section className="relative overflow-hidden bg-navy-800 py-16 lg:py-24">
@@ -78,7 +81,7 @@ export default function OurGovernancePage() {
           className="absolute inset-0 bg-[linear-gradient(to_right,#14304f_33%,rgba(20,48,79,0.64)_51%,rgba(20,48,79,0)_66%)]"
         />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
-          <span className="text-[28px] font-extrabold text-honey">Governance</span>
+          <span className="eyebrow-script">Governance</span>
           <h1
             className="mt-3 text-4xl text-white sm:text-5xl"
             style={{ fontFamily: "var(--font-script)" }}
