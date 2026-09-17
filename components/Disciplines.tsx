@@ -4,14 +4,14 @@ import { DISCIPLINES } from "@/lib/content/disciplines";
 
 export default function Disciplines() {
   return (
-    <section id="disciplines" className="bg-navy-800 py-20 lg:py-28">
+    <section id="disciplines" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
           <span className="eyebrow-script">Our Disciplines</span>
-          <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-cream sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-charcoal sm:text-4xl">
             One team, eight ways to support you
           </h2>
-          <p className="mt-4 text-cream/60">
+          <p className="mt-4 text-charcoal/80">
             Clinicians across every discipline collaborate on shared goals,
             so care never feels fragmented.
           </p>
