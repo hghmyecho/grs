@@ -36,14 +36,18 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Right: team photo panel */}
-        <div className="relative min-h-[420px] overflow-hidden lg:min-h-0">
+        {/* Right: team photo panel — swapped (Sep 2026) for a stylized
+            cutout graphic (transparent background, decorative stars/blobs
+            already baked into the asset) rather than a plain rectangular
+            photo, so it needs its own light backdrop + object-contain
+            instead of the previous full-bleed object-cover treatment. */}
+        <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden bg-cream lg:min-h-0">
           <Image
-            src="/photos/hero-team-2026.png"
-            alt="The GRS team"
+            src="/photos/hero-team-illustrated.png"
+            alt="Illustrated collage of the GRS team"
             fill
             sizes="(min-width: 1024px) 640px, 100vw"
-            className="object-cover object-top"
+            className="object-contain p-6"
             priority
           />
         </div>
