@@ -41,6 +41,8 @@ export interface TeamMember {
   group: TeamGroup;
   /** Placeholder photo gradient (Tailwind from/to classes) — see GRADIENT_OPTIONS */
   gradient: string;
+  /** Optional real photo under /public/photos/team — falls back to the gradient when absent */
+  image?: string;
   hasProfile: boolean;
   profile?: StaffProfile;
 }

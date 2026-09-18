@@ -5,6 +5,7 @@
     "role": "Founder, Business Development Manager, Occupational Therapist",
     "group": "leadership",
     "gradient": "from-navy-700 to-navy-950",
+    "image": "/photos/team/nick.jpg",
     "hasProfile": false
   },
   {
@@ -13,6 +14,7 @@
     "role": "Co-Founder, NSW Service Manager, Occupational Therapist",
     "group": "leadership",
     "gradient": "from-orange-400 to-orange-600",
+    "image": "/photos/team/howard.jpg",
     "hasProfile": false
   },
   {
@@ -21,6 +23,7 @@
     "role": "QLD Service Manager, Occupational Therapist",
     "group": "leadership",
     "gradient": "from-peach-200 to-orange-400",
+    "image": "/photos/team/dan.jpg",
     "hasProfile": false
   },
   {
@@ -29,6 +32,7 @@
     "role": "NSW OT Team Lead — Psychosocial",
     "group": "leadership",
     "gradient": "from-navy-500 to-navy-900",
+    "image": "/photos/team/marco.jpg",
     "hasProfile": false
   },
   {
@@ -37,6 +41,7 @@
     "role": "QLD Assistant Service Manager, Speech Pathology Team Leader",
     "group": "leadership",
     "gradient": "from-orange-500 to-navy-700",
+    "image": "/photos/team/kristin.jpg",
     "hasProfile": false
   },
   {
@@ -45,6 +50,7 @@
     "role": "NSW Physiotherapy Team Leader",
     "group": "leadership",
     "gradient": "from-navy-950 to-orange-600",
+    "image": "/photos/team/rachael.jpg",
     "hasProfile": false
   },
   {
@@ -53,6 +59,7 @@
     "role": "NSW SLP Team Lead & Clinical Educator",
     "group": "leadership",
     "gradient": "from-peach-200 to-navy-700",
+    "image": "/photos/team/lorie.jpg",
     "hasProfile": false
   },
   {
@@ -61,6 +68,7 @@
     "role": "QLD Psychology Team Leader, Psychologist",
     "group": "leadership",
     "gradient": "from-orange-400 to-navy-950",
+    "image": "/photos/team/bronwyn.jpg",
     "hasProfile": true,
     "profile": {
       "badges": [
@@ -89,6 +97,7 @@
     "role": "Senior Occupational Therapist, Physical",
     "group": "senior",
     "gradient": "from-navy-700 to-navy-950",
+    "image": "/photos/team/tarryn.jpg",
     "hasProfile": false
   },
   {
@@ -97,6 +106,7 @@
     "role": "Senior Physiotherapist",
     "group": "senior",
     "gradient": "from-orange-400 to-orange-600",
+    "image": "/photos/team/vinod.jpeg",
     "hasProfile": false
   },
   {
@@ -105,6 +115,7 @@
     "role": "Senior Occupational Therapist, Psychosocial",
     "group": "senior",
     "gradient": "from-peach-200 to-orange-400",
+    "image": "/photos/team/macarena.png",
     "hasProfile": false
   },
   {
@@ -113,6 +124,7 @@
     "role": "Senior Occupational Therapist",
     "group": "senior",
     "gradient": "from-navy-500 to-navy-900",
+    "image": "/photos/team/ryan.jpg",
     "hasProfile": false
   },
   {
@@ -121,6 +133,7 @@
     "role": "Senior Occupational Therapist, Psychosocial",
     "group": "senior",
     "gradient": "from-orange-500 to-navy-700",
+    "image": "/photos/team/skye.jpg",
     "hasProfile": false
   },
   {
@@ -129,6 +142,7 @@
     "role": "Senior Occupational Therapy Team Clinical Educator",
     "group": "senior",
     "gradient": "from-navy-950 to-orange-600",
+    "image": "/photos/team/priscilla.jpg",
     "hasProfile": false
   },
   {
@@ -137,6 +151,7 @@
     "role": "Senior Speech Pathologist",
     "group": "senior",
     "gradient": "from-peach-200 to-navy-700",
+    "image": "/photos/team/yogeshni.jpg",
     "hasProfile": false
   },
   {
@@ -145,6 +160,7 @@
     "role": "NSW Occupational Therapy Clinical Lead, Paediatrics",
     "group": "senior",
     "gradient": "from-orange-400 to-navy-950",
+    "image": "/photos/team/joy.jpg",
     "hasProfile": false
   },
   {
@@ -153,6 +169,7 @@
     "role": "Senior Speech Pathologist",
     "group": "senior",
     "gradient": "from-navy-700 to-navy-950",
+    "image": "/photos/team/minami.jpg",
     "hasProfile": false
   },
   {
@@ -161,6 +178,7 @@
     "role": "Senior Occupational Therapist, Paediatric",
     "group": "senior",
     "gradient": "from-orange-400 to-orange-600",
+    "image": "/photos/team/hong.jpg",
     "hasProfile": false
   },
   {
@@ -169,6 +187,7 @@
     "role": "Senior Occupational Therapist, Driving Assessor",
     "group": "senior",
     "gradient": "from-peach-200 to-orange-400",
+    "image": "/photos/team/clement.jpg",
     "hasProfile": false
   },
   {
@@ -177,6 +196,7 @@
     "role": "Exercise Physiologist",
     "group": "general",
     "gradient": "from-navy-500 to-navy-900",
+    "image": "/photos/team/laura-t.jpg",
     "hasProfile": false
   },
   {
@@ -185,6 +205,7 @@
     "role": "Dietitian",
     "group": "general",
     "gradient": "from-orange-500 to-navy-700",
+    "image": "/photos/team/hannah.jpg",
     "hasProfile": false
   },
   {
@@ -193,6 +214,7 @@
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-navy-950 to-orange-600",
+    "image": "/photos/team/jasmine.jpg",
     "hasProfile": false
   },
   {
@@ -201,6 +223,7 @@
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-peach-200 to-navy-700",
+    "image": "/photos/team/sophia.jpg",
     "hasProfile": false
   },
   {
@@ -209,6 +232,7 @@
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-orange-400 to-navy-950",
+    "image": "/photos/team/amelia.png",
     "hasProfile": false
   },
   {
@@ -217,6 +241,7 @@
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-navy-700 to-navy-950",
+    "image": "/photos/team/jaimison.jpg",
     "hasProfile": false
   },
   {
@@ -233,6 +258,7 @@
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-peach-200 to-orange-400",
+    "image": "/photos/team/mimi.jpg",
     "hasProfile": false
   },
   {
@@ -241,6 +267,7 @@
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-navy-500 to-navy-900",
+    "image": "/photos/team/georgia.png",
     "hasProfile": false
   },
   {
@@ -249,6 +276,7 @@
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-orange-500 to-navy-700",
+    "image": "/photos/team/shane.jpg",
     "hasProfile": false
   },
   {
@@ -257,6 +285,7 @@
     "role": "Registered Psychologist",
     "group": "general",
     "gradient": "from-navy-950 to-orange-600",
+    "image": "/photos/team/ashley.jpg",
     "hasProfile": false
   },
   {
@@ -265,6 +294,7 @@
     "role": "Registered Psychologist",
     "group": "general",
     "gradient": "from-peach-200 to-navy-700",
+    "image": "/photos/team/emily.jpg",
     "hasProfile": false
   },
   {
@@ -273,6 +303,7 @@
     "role": "Registered Psychologist",
     "group": "general",
     "gradient": "from-orange-400 to-navy-950",
+    "image": "/photos/team/teri.jpg",
     "hasProfile": false
   },
   {
@@ -281,6 +312,7 @@
     "role": "Music Therapist",
     "group": "general",
     "gradient": "from-navy-700 to-navy-950",
+    "image": "/photos/team/mark.jpeg",
     "hasProfile": false
   },
   {
@@ -289,6 +321,7 @@
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-orange-400 to-orange-600",
+    "image": "/photos/team/daisy.jpg",
     "hasProfile": false
   },
   {
@@ -297,6 +330,7 @@
     "role": "Registered Psychologist",
     "group": "general",
     "gradient": "from-peach-200 to-orange-400",
+    "image": "/photos/team/wendy.jpg",
     "hasProfile": false
   },
   {
@@ -305,6 +339,7 @@
     "role": "Occupational Therapist",
     "group": "general",
     "gradient": "from-navy-500 to-navy-900",
+    "image": "/photos/team/chantel.jpg",
     "hasProfile": false
   },
   {
@@ -313,6 +348,7 @@
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-orange-500 to-navy-700",
+    "image": "/photos/team/karina.jpg",
     "hasProfile": false
   },
   {
@@ -321,6 +357,7 @@
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-navy-950 to-orange-600",
+    "image": "/photos/team/laura-n.jpg",
     "hasProfile": false
   },
   {
@@ -329,6 +366,7 @@
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-peach-200 to-navy-700",
+    "image": "/photos/team/latisha.jpg",
     "hasProfile": false
   },
   {
@@ -337,6 +375,7 @@
     "role": "Speech Pathologist",
     "group": "general",
     "gradient": "from-orange-400 to-navy-950",
+    "image": "/photos/team/monica.png",
     "hasProfile": false
   },
   {
@@ -345,6 +384,7 @@
     "role": "Physiotherapist",
     "group": "general",
     "gradient": "from-navy-700 to-navy-950",
+    "image": "/photos/team/kevin.jpeg",
     "hasProfile": false
   },
   {
@@ -353,6 +393,7 @@
     "role": "Senior Administrative Officer",
     "group": "admin",
     "gradient": "from-orange-400 to-orange-600",
+    "image": "/photos/team/nina.jpg",
     "hasProfile": false
   },
   {
@@ -361,6 +402,7 @@
     "role": "Senior Administrative Officer",
     "group": "admin",
     "gradient": "from-peach-200 to-orange-400",
+    "image": "/photos/team/molly.jpeg",
     "hasProfile": false
   },
   {
@@ -369,6 +411,7 @@
     "role": "Administration Officer",
     "group": "admin",
     "gradient": "from-navy-500 to-navy-900",
+    "image": "/photos/team/leticia.png",
     "hasProfile": false
   },
   {
@@ -377,6 +420,7 @@
     "role": "Administrative Officer",
     "group": "admin",
     "gradient": "from-orange-500 to-navy-700",
+    "image": "/photos/team/mia.jpg",
     "hasProfile": false
   }
 ]

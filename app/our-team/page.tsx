@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { GROUP_LABELS, getTeamByGroup, type TeamMember } from "@/lib/content/team";
@@ -13,10 +14,20 @@ export const metadata: Metadata = {
 function TeamGrid({ people }: { people: TeamMember[] }) {
   return (
     <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {people.map(({ slug, name, role, gradient, hasProfile }) => {
+      {people.map(({ slug, name, role, gradient, image, hasProfile }) => {
         const card = (
           <>
-            <div className={`h-32 bg-gradient-to-br ${gradient}`} />
+            <div className={`relative h-32 bg-gradient-to-br ${gradient}`}>
+              {image ? (
+                <Image
+                  src={image}
+                  alt={name}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              ) : null}
+            </div>
             <div className="p-6">
               <h3 className="font-display text-base font-bold text-charcoal">{name}</h3>
               <p className="mt-1 text-xs leading-relaxed text-charcoal/80">{role}</p>
