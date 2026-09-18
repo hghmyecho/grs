@@ -69,7 +69,7 @@ export const STREAMS: Stream[] = [
     title: "Physical Disability",
     description:
       "Support for people navigating limits on movement, self-care, and independent daily living.",
-    panelBg: "bg-navy-950",
+    panelBg: "bg-navy-800",
     panelImage: "/backgrounds/physical-disability-blob.png",
     panelText: "text-cream",
     badgeBg: "bg-white/15",
@@ -151,7 +151,7 @@ export const STREAMS: Stream[] = [
     title: "Paediatrics",
     description:
       "Helping kids build skills to learn, play, move, communicate, and connect with others.",
-    panelBg: "bg-flame",
+    panelBg: "bg-honey",
     panelImage: "/backgrounds/paediatrics-blob.png",
     panelText: "text-charcoal",
     badgeBg: "bg-navy-950/10",
@@ -228,7 +228,7 @@ export const STREAMS: Stream[] = [
     title: "Psychosocial Disability",
     description:
       "Care for communication, social participation, learning, and everyday self-management.",
-    panelBg: "bg-peach-200",
+    panelBg: "bg-tan",
     panelImage: "/backgrounds/psychosocial-disability-blob.png",
     panelText: "text-charcoal",
     badgeBg: "bg-navy-950/10",
@@ -309,7 +309,7 @@ export const STREAMS: Stream[] = [
     title: "Specialist Behavioural Support",
     description:
       "Positive, evidence-based support for safety, wellbeing, and cognitive-social adaptation.",
-    panelBg: "bg-navy-700",
+    panelBg: "bg-navy-800",
     panelImage: "/backgrounds/specialist-behavioural-support-blob.png",
     panelText: "text-cream",
     badgeBg: "bg-white/15",
