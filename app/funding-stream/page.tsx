@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HeartHandshake, Home, Stethoscope, Wallet } from "lucide-react";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -9,42 +9,41 @@ export const metadata: Metadata = {
   alternates: { canonical: "/funding-stream" },
 };
 
+// Real scheme/provider logos (matching GRS-to-send Figma node 190:5392)
+// rather than generic icons — GRS is a registered/current provider for
+// each of these, same as the NDIS badge already shown in the footer.
 const FUNDING_STREAMS = [
   {
-    icon: Wallet,
+    logo: "/logos/ndis.png",
+    logoSize: 70,
     title: "NDIS",
     description:
       "The funding scheme designed for eligible participants to cover their daily living and therapeutic support care needs.",
-    border: "border-purple-600",
-    heading: "text-purple-700",
-    iconBg: "bg-purple-600/10 text-purple-700",
+    accent: "#6a2a78",
   },
   {
-    icon: HeartHandshake,
+    logo: "/logos/private-health.png",
+    logoSize: 70,
     title: "Private Health Fund Clients",
     description:
       "One of the largest chronic disease management programs in Australia. This Medibank-developed program supports the better management of chronic and complex health conditions.",
-    border: "border-blue-600",
-    heading: "text-blue-700",
-    iconBg: "bg-blue-600/10 text-blue-700",
+    accent: "#07a9f0",
   },
   {
-    icon: Home,
+    logo: "/logos/home-care-package.png",
+    logoSize: 104,
     title: "Home Care Package",
     description:
       "One of the ways older Australians can access affordable care services at home. Designed for those with more complex care needs than the Commonwealth Home Support Programme can provide.",
-    border: "border-charcoal",
-    heading: "text-charcoal",
-    iconBg: "bg-charcoal/10 text-charcoal",
+    accent: "#040707",
   },
   {
-    icon: Stethoscope,
+    logo: "/logos/medicare.png",
+    logoSize: 70,
     title: "Medicare",
     description:
       "Provides a range of coverage for allied health services, including the Chronic Disease Management (formerly Extended Primary Care) Plan and the Mental Health Care Plan.",
-    border: "border-teal",
-    heading: "text-teal",
-    iconBg: "bg-teal/10 text-teal",
+    accent: "#009448",
   },
 ];
 
@@ -69,21 +68,34 @@ export default function FundingStreamPage() {
       <section className="bg-tan px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 sm:grid-cols-2">
-            {FUNDING_STREAMS.map(({ icon: Icon, title, description, border, heading, iconBg }) => (
-              <div
-                key={title}
-                className={`flex items-start gap-4 rounded-2xl border-2 bg-white p-8 shadow-sm ${border}`}
-              >
-                <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${iconBg}`}>
-                  <Icon className="h-5 w-5" />
-                </span>
-                <div>
-                  <h2 className={`font-display text-lg font-bold ${heading}`}>
-                    {title}
-                  </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-charcoal/80">
-                    {description}
-                  </p>
+            {FUNDING_STREAMS.map(({ logo, logoSize, title, description, accent }) => (
+              <div key={title} className="relative">
+                <div
+                  aria-hidden
+                  className="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded-2xl"
+                  style={{ backgroundColor: accent }}
+                />
+                <div className="relative flex items-start gap-4 rounded-2xl border border-charcoal bg-cream p-8">
+                  <Image
+                    src={logo}
+                    alt=""
+                    aria-hidden
+                    width={logoSize}
+                    height={logoSize}
+                    className="shrink-0 object-contain"
+                    style={{ width: logoSize, height: logoSize }}
+                  />
+                  <div>
+                    <h2
+                      className="font-display text-lg font-bold"
+                      style={{ color: accent }}
+                    >
+                      {title}
+                    </h2>
+                    <p className="mt-2 text-sm leading-relaxed text-charcoal/80">
+                      {description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
