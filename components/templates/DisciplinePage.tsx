@@ -186,7 +186,11 @@ export default function DisciplinePage({ discipline }: { discipline: Discipline 
           )}
 
           {serviceGroups.length > 0 && (
-            <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2">
+            <div
+              className={`mt-12 grid gap-x-8 gap-y-10 ${
+                serviceGroups.length > 1 ? "sm:grid-cols-2" : ""
+              }`}
+            >
               {serviceGroups.map((group, i) => (
                 <div key={group.heading ?? i}>
                   {group.heading && (
@@ -194,7 +198,11 @@ export default function DisciplinePage({ discipline }: { discipline: Discipline 
                       {group.heading}
                     </h3>
                   )}
-                  <ul className="mt-3 space-y-2">
+                  <ul
+                    className={`mt-3 gap-x-8 gap-y-2 ${
+                      serviceGroups.length > 1 ? "space-y-2" : "grid sm:grid-cols-2"
+                    }`}
+                  >
                     {group.items.map((item) => (
                       <li
                         key={item}
