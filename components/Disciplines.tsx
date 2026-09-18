@@ -2,6 +2,16 @@ import { ArrowRight, Check } from "lucide-react";
 import Image from "next/image";
 import { DISCIPLINES } from "@/lib/content/disciplines";
 
+// Specialist Behaviour Support is deliberately excluded from this homepage
+// grid to match the Figma design (GRS-to-send, node 230:8448), where that
+// card is hidden — the section heading still reads "eight ways" in Figma
+// itself even with only 7 cards shown, so that text is left as-is here too.
+// The discipline still has its own full page at /specialist-behaviour-
+// support-disciplines; it's just not featured in this homepage section.
+const HOMEPAGE_DISCIPLINES = DISCIPLINES.filter(
+  (d) => d.slug !== "specialist-behaviour-support-disciplines"
+);
+
 export default function Disciplines() {
   return (
     <section id="disciplines" className="bg-white pb-20 pt-4 lg:pb-28 lg:pt-8">
@@ -18,7 +28,7 @@ export default function Disciplines() {
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-          {DISCIPLINES.map(({ slug, tags, title, description, gradient, image }, index) => (
+          {HOMEPAGE_DISCIPLINES.map(({ slug, tags, title, description, gradient, image }, index) => (
             <div
               key={title}
               className={`bounce-transition group relative flex flex-col transition-all duration-300 hover:-translate-y-2 hover:rotate-0 ${
