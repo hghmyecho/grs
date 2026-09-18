@@ -52,6 +52,11 @@ export interface Location {
   parking: string;
   clinicNote?: string;
   directionsImages?: { src: string; alt: string; caption: string }[];
+  // Standalone page with the full step-by-step directions/photos (e.g.
+  // /goldcoast/find-us) — when set, the "Finding us" section on this
+  // location page links there instead of embedding directionsImages
+  // inline.
+  findUsUrl?: string;
   mapEmbedUrl?: string;
   faqs: FaqItem[];
 }
@@ -94,6 +99,8 @@ export const LOCATIONS: Location[] = [
       "Accessible by bus or Lidcombe Station.",
     parking:
       "Free onsite visitor parking and street parking on Wetherill St. South and Adderley St. East, with additional parking at Auburn Redyard Shopping Complex across the street.",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=Suite+102,+63+Parramatta+Road,+Silverwater+NSW+2128&z=17&output=embed",
     faqs: [
       {
         question: "What areas does GRS Sydney service?",
@@ -157,6 +164,8 @@ export const LOCATIONS: Location[] = [
       "Accessible by bus (5-minute walk) or Moorooka Station train (approximately 20-minute walk).",
     parking:
       "Four reserved free customer parking spaces onsite, plus free street parking nearby on Goodwin Terrace and Mayfield Road with unlimited hours.",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=8+Mayfield+Road,+Moorooka+QLD+4105&z=17&output=embed",
     faqs: [
       {
         question: "What areas does GRS Brisbane service?",
@@ -222,6 +231,7 @@ export const LOCATIONS: Location[] = [
       "Up to 3 hours free at the Southport Central carpark (enter via Lawson Street) or the Australia Fair carpark (enter via Garden Street). We're on Level 2 of Southport Central 1 Tower — turn right out of the lift and we're on the right of the corridor.",
     mapEmbedUrl:
       "https://www.google.com/maps?q=Southport+Central+1,+56+Scarborough+Street,+Southport+QLD+4215&z=17&output=embed",
+    findUsUrl: "/goldcoast/find-us",
     directionsImages: [
       {
         src: "/photos/directions-goldcoast-carpark-gate.jpg",
