@@ -4,14 +4,12 @@
 // without the two lists drifting apart.
 import {
   BookOpen,
-  Briefcase,
   Calculator,
   FileText,
   Layers,
   MapPin,
   MessageSquare,
   ShieldCheck,
-  Sparkles,
   Stethoscope,
   Users,
   Wallet,
@@ -107,30 +105,6 @@ export const NAV_LINKS: NavGroup[] = [
         description: "Estimate community visit costs",
         href: "/calculator",
         icon: Calculator,
-      },
-    ],
-  },
-  {
-    label: "Careers",
-    href: "/join-us",
-    items: [
-      {
-        label: "Join Us",
-        description: "Career development at GRS",
-        href: "/join-us",
-        icon: Sparkles,
-      },
-      {
-        label: "Career Path",
-        description: "Transparent roles and progression",
-        href: "/career-path",
-        icon: Briefcase,
-      },
-      {
-        label: "Current Positions",
-        description: "See what's open right now",
-        href: "/currrent-advertised-positions",
-        icon: FileText,
       },
     ],
   },

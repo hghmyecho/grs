@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { DISCIPLINES } from "@/lib/content/disciplines";
 import { STREAMS } from "@/lib/content/streams";
 import { LOCATIONS } from "@/lib/content/locations";
-import { CAREERS } from "@/lib/content/careers";
 import { ASSESSMENTS } from "@/lib/content/assessments";
 import { TEAM } from "@/lib/content/team";
 
@@ -20,7 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contact-us", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/feedback-and-complaint", priority: 0.5, changeFrequency: "monthly" as const },
     { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" as const },
-    { path: "/join-us", priority: 0.6, changeFrequency: "monthly" as const },
+    // /join-us and the CAREERS sub-pages are deliberately excluded — hidden
+    // from launch per the client's decision (not ready, not a launch
+    // priority). The routes still exist; see NAV_LINKS in lib/content/nav.ts
+    // for the matching nav removal.
     { path: "/book-online", priority: 0.5, changeFrequency: "monthly" as const },
     { path: "/calculator", priority: 0.5, changeFrequency: "monthly" as const },
     { path: "/disciplinary-summary", priority: 0.4, changeFrequency: "monthly" as const },
@@ -37,11 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...LOCATIONS.map((l) => ({
       path: `/${l.slug}`,
       priority: 0.8,
-      changeFrequency: "monthly" as const,
-    })),
-    ...CAREERS.map((c) => ({
-      path: `/${c.slug}`,
-      priority: 0.4,
       changeFrequency: "monthly" as const,
     })),
     ...ASSESSMENTS.map((a) => ({
