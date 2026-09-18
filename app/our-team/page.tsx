@@ -17,7 +17,7 @@ function TeamGrid({ people }: { people: TeamMember[] }) {
       {people.map(({ slug, name, role, gradient, image, hasProfile }) => {
         const card = (
           <>
-            <div className={`relative h-32 bg-gradient-to-br ${gradient}`}>
+            <div className={`relative aspect-square bg-gradient-to-br ${gradient}`}>
               {image ? (
                 <Image
                   src={image}
